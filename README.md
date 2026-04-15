@@ -44,6 +44,13 @@ This repository enforces high-tier industry standards:
 
 ---
 
+## 📄 License & Attribution
+
+- **Non-Commercial Use**: This project is intended strictly for personal and non-commercial purposes.
+- **Attribution**: The rules and configurations within this repository are curated for personal use, with references and inspiration drawn from various open-source projects on GitHub.
+
+---
+
 ## 👨‍💻 Author
 
 **Tran Phu Phat** (phattpde140043)

@@ -1,23 +1,24 @@
 ---
-name: api-design
-description: "REST API design patterns for resource naming, pagination strategies, filtering/sorting conventions, versioning lifecycle, and rate limiting implementation. Complements existing status code and error response rules. USE WHEN: Designing new API endpoints or resource URLs; Implementing pagination (choosing offset vs cursor). NOT FOR: unrelated tasks outside this scope or tasks better served by a more specific skill."
+name: api-and-interface-design
+description: "Guides stable API and interface design. Use when designing REST/GraphQL endpoints, resource naming, pagination, versioning, or defining type contracts between modules/frontend-backend. Includes pagination, filtering, and rate limiting patterns."
 ---
 
-# API Design Patterns
+# API and Interface Design
 
 ## Purpose
 
-Provide concrete implementation patterns for API design decisions beyond status codes and error formats (which are already enforced by project instructions).
+Provide concrete implementation patterns and architectural principles for API and interface design. Good interfaces make the right thing easy and the wrong thing hard. This applies to REST APIs, module boundaries, component props, and any surface where one piece of code talks to another.
 
 ---
 
 # When to Activate
 
 - Designing new API endpoints or resource URLs
+- Defining module boundaries or contracts between teams
+- Creating component prop interfaces
 - Implementing pagination (choosing offset vs cursor)
 - Adding filtering, sorting, or search to list endpoints
 - Planning API versioning or deprecation
-- Implementing rate limiting response headers
 - Reviewing API contract consistency
 
 ---
@@ -41,10 +42,24 @@ Provide concrete implementation patterns for API design decisions beyond status 
 - Authentication/authorization → `engineering-guardrails` + `aspnetcore-framework-playbook`
 - Rate limiting mandate → `engineering-guardrails`
 - Security headers → `engineering-guardrails`
+# Core Principles
+
+### Hyrum's Law
+> With a sufficient number of users of an API, all observable behaviors of your system will be depended on by somebody, regardless of what you promise in the contract.
+
+- **Be intentional about what you expose.** Every observable behavior is a potential commitment.
+- **Don't leak implementation details.** If users can observe it, they will depend on it.
+- **Tests are not enough.** Even with perfect contract tests, "safe" changes can break real users who depend on undocumented behavior.
+
+### The One-Version Rule
+Avoid forcing consumers to choose between multiple versions of the same dependency or API. Design for a world where only one version exists at a time — extend rather than fork.
+
+### Contract First
+Define the interface before implementing it. The contract is the spec — implementation follows.
 
 ---
 
-# Resource URL Design
+# Resource URL Design (REST)
 
 ## Naming Rules
 
@@ -70,7 +85,6 @@ POST /api/v1/auth/refresh
 ❌ /api/v1/user                  → singular (use plural)
 ❌ /api/v1/team_members          → snake_case in URLs
 ❌ /api/v1/users/123/getOrders   → verb in nested resource
-❌ /api/v1/users/search          → use query param instead: /api/v1/users?q=term
 ```
 
 ---
@@ -81,83 +95,78 @@ POST /api/v1/auth/refresh
 |--------|-----------|------|---------|
 | GET | Yes | Yes | Retrieve resources |
 | POST | No | No | Create resources, trigger actions |
-| PUT | Yes | No | Full replacement |
-| PATCH | No* | No | Partial update |
+| PUT | Yes | No | Full replacement (idempotent) |
+| PATCH | Yes/No | No | Partial update |
 | DELETE | Yes | No | Remove a resource |
-
 *PATCH can be made idempotent with proper implementation.
+---
+
+# Boundary Validation
+
+Trust internal code. Validate at system edges where external input enters (API handlers, form submissions, external service responses).
+
+> **Third-party API responses are untrusted data.** Validate their shape and content before using them. A compromised or misbehaving external service can return unexpected types or malicious content.
 
 ---
 
 # Pagination Patterns
 
 ## Offset-Based (Simple)
-
-```
-GET /api/v1/users?page=2&pageSize=20
-```
+`GET /api/v1/users?page=2&pageSize=20`
 
 ```csharp
-// ASP.NET Core implementation
-public async Task<ActionResult<PagedResponse<UserResponse>>> GetUsersAsync(
-    [FromQuery] int page = 1,
-    [FromQuery] int pageSize = 20)
+// Implementation logic
+public async Task<PagedResponse<T>> GetPagedAsync(int page, int pageSize)
 {
-    var query = _context.Users.AsNoTracking();
-    var total = await query.CountAsync();
-
-    var items = await query
-        .OrderByDescending(u => u.CreatedAt)
+    var totalCount = await _dbSet.CountAsync();
+    var data = await _dbSet
         .Skip((page - 1) * pageSize)
         .Take(pageSize)
-        .Select(u => UserResponse.FromEntity(u))
         .ToListAsync();
 
-    return Ok(new PagedResponse<UserResponse>(items, total, page, pageSize));
+    return new PagedResponse<T>(data, totalCount, page, pageSize);
 }
 ```
 
-**Pros:** Easy to implement, supports "jump to page N"
-**Cons:** Slow on large offsets, inconsistent with concurrent inserts
+- **Pros**: 
+    - Easiest to implement.
+    - Supports "Jump to Page N" functionality.
+    - Stateless on the server.
+- **Cons**: 
+    - **Performance**: O(N) complexity for database scan (becomes very slow at high page numbers).
+    - **Inconsistency**: If items are added/deleted while paging, items can be skipped or appear twice.
 
 ## Cursor-Based (Scalable)
-
-```
-GET /api/v1/users?cursor=eyJpZCI6MTIzfQ&limit=20
-```
+`GET /api/v1/users?cursor=eyJpZCI6MTIzfQ&limit=20`
 
 ```csharp
-// ASP.NET Core implementation
-public async Task<ActionResult<CursorResponse<UserResponse>>> GetUsersAsync(
-    [FromQuery] string? cursor = null,
-    [FromQuery] int limit = 20)
+// Implementation logic
+public async Task<PagedResponse<T>> GetCursorPagedAsync(string? cursor, int limit)
 {
-    var decodedCursor = cursor != null
-        ? DecodeCursor(cursor)
-        : null;
+    var decoded = DecodeCursor(cursor); // e.g., extracts LastId
+    
+    var query = _dbSet.AsQueryable();
+    if (decoded != null) {
+        query = query.Where(x => x.Id > decoded.LastId);
+    }
 
-    var query = _context.Users.AsNoTracking();
-
-    if (decodedCursor != null)
-        query = query.Where(u => u.Id.CompareTo(decodedCursor.Value) > 0);
-
-    var items = await query
-        .OrderBy(u => u.Id)
-        .Take(limit + 1) // fetch one extra to determine has_next
-        .Select(u => UserResponse.FromEntity(u))
+    var data = await query
+        .OrderBy(x => x.Id)
+        .Take(limit)
         .ToListAsync();
 
-    var hasNext = items.Count > limit;
-    if (hasNext) items.RemoveAt(items.Count - 1);
-
-    var nextCursor = hasNext ? EncodeCursor(items.Last().Id) : null;
-
-    return Ok(new CursorResponse<UserResponse>(items, hasNext, nextCursor));
+    var nextCursor = data.Count == limit ? EncodeCursor(data.Last().Id) : null;
+    
+    return new PagedResponse<T>(data, TotalCount: -1, Cursor: nextCursor);
 }
 ```
 
-**Pros:** Consistent O(1) performance, stable with concurrent inserts
-**Cons:** Cannot jump to arbitrary page, opaque cursor
+- **Pros**: 
+    - **Performance**: O(1) or O(log N) with proper indexing. Scalable to millions of records.
+    - **Consistency**: Guaranteed unique results even with concurrent inserts/deletes.
+- **Cons**: 
+    - Harder to implement.
+    - Does not support "Jump to Page N" (forward/backward navigation only).
 
 ## When to Use Which
 
@@ -167,34 +176,38 @@ public async Task<ActionResult<CursorResponse<UserResponse>>> GetUsersAsync(
 | Infinite scroll, feeds, large datasets | Cursor | Performance at scale |
 | Search results | Offset | Users expect page numbers |
 | Audit logs, event streams | Cursor | Append-only, high volume |
-
 ---
 
 # Collection Response Envelope
 
-```csharp
-// Offset-based response
-public record PagedResponse<T>(
-    IReadOnlyList<T> Data,
-    int Total,
-    int Page,
-    int PageSize)
-{
-    public int TotalPages => (int)Math.Ceiling((double)Total / PageSize);
-    public bool HasNext => Page < TotalPages;
-    public bool HasPrevious => Page > 1;
-}
+Always return collections within a top-level object to allow for metadata expansion without breaking the contract.
 
-// Cursor-based response
-public record CursorResponse<T>(
-    IReadOnlyList<T> Data,
-    bool HasNext,
-    string? NextCursor);
+```json
+{
+  "data": [
+    { "id": "task_1", "title": "First task" },
+    { "id": "task_2", "title": "Second task" }
+  ],
+  "meta": {
+    "totalCount": 150,
+    "page": 1,
+    "pageSize": 20,
+    "hasNextPage": true,
+    "cursor": "eyJpZCI6MjB9"
+  }
+}
 ```
 
 ---
 
 # Filtering, Sorting, and Search
+
+- **Filtering**: Use query parameters matching the field name or a structured filter object.
+  - `GET /api/v1/tasks?status=completed&priority=high`
+- **Sorting**: Use a `sort` parameter with `+` (asc) or `-` (desc) prefixes.
+  - `GET /api/v1/tasks?sort=-createdAt,+title`
+- **Search**: Use a `q` or `search` parameter for full-text search.
+  - `GET /api/v1/tasks?q=antigravity`
 
 ## Filtering Conventions
 
@@ -296,18 +309,31 @@ app.MapGet("/api/v1/users", handler)
 ```
 
 ---
+# Rate Limiting & Quotas
 
-# Rate Limiting Response Headers
+## Response Headers
+APIs should signal rate limit status to clients via standard headers:
+- `X-RateLimit-Limit`: The quota limit in the current window.
+- `X-RateLimit-Remaining`: The remaining quota in the current window.
+- `X-RateLimit-Reset`: The time at which the quota resets.
 
-```
-HTTP/1.1 200 OK
-X-RateLimit-Limit: 100
-X-RateLimit-Remaining: 95
-X-RateLimit-Reset: 1640000000
+## Rate Limiting Tiers (Example)
+| Tier | Limit | Use Case |
+|------|-------|----------|
+| Anonymous | 60/min | Public browsing |
+| Authenticated User | 1000/min | Standard app usage |
+| Internal/Service | 5000/min | System-to-system |
 
-# When exceeded (429 status code defined in project instructions)
-HTTP/1.1 429 Too Many Requests
-Retry-After: 60
+---
+
+# TypeScript Interface Patterns
+
+### Use Discriminated Unions for Variants
+```typescript
+type TaskStatus =
+  | { type: 'pending' }
+  | { type: 'in_progress'; assignee: string; startedAt: Date }
+  | { type: 'completed'; completedAt: Date; completedBy: string };
 ```
 
 ## Tier Design

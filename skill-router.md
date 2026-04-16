@@ -18,18 +18,25 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. U
 |---|---|---|
 | a11y-architect | designing or reviewing UI components/pages; building design systems and interaction patterns | non-accessibility visual style direction; backend security or infrastructure decisions |
 | agent-introspection-debugging | Maximum tool call or loop-limit failures; Repeated retries with no forward progress | unrelated tasks outside this scope |
-| api-design | Designing new API endpoints or resource URLs; Implementing pagination | unrelated tasks outside this scope |
+| api-and-interface-design | Designing new API endpoints or resource URLs; Implementing pagination; defining type contracts between modules; establishing boundaries between frontend and backend | unrelated tasks outside this scope |
 | architect | planning new cross-cutting features; refactoring large or tightly coupled systems | line-by-line implementation plans; build/type error fixing |
 | architecture-design | designing new systems, features, or making high-level technical decisions | unrelated tasks outside this scope |
+| browser-testing-with-devtools | Building/debugging UI; inspecting DOM/Console/Network; visual verification; performance profiling | backend-only changes; CLI tools; non-browser code |
+| ci-cd-and-automation | Setting up pipelines; automated quality gates (lint/type/test); deployment strategies; feature flags | local debugging only; manual tasks unrelated to automation |
 | article-writing | Drafting blog posts, essays, guides, tutorials; Turning notes into polished articles | unrelated tasks outside this scope |
 | brand-voice | Writing for social media, email, launch posts, threads, or product updates | unrelated tasks outside this scope |
 | build-error-resolver | build fails; TypeScript/type checker errors block progress | architecture redesign; feature expansion |
 | code-architect | translating approved feature direction into concrete code structure; adding multi-file capabilities | deep system architecture alternatives; code review/audit of final diffs |
 | code-explorer | before implementing features in unfamiliar areas; when debugging complex behavior paths | final architecture decision arbitration; code modification or refactor execution |
 | code-generation | generating boilerplate, scaffolding, or repetitive code structures | unrelated tasks outside this scope |
-| code-reviewer | immediately after writing/modifying code; before PR creation | implementing fixes itself; architecture planning from scratch |
-| code-simplifier | after feature implementation to reduce complexity; when changed files became hard to read | architecture redesign; behavior changes or feature additions |
-| coding-standards | reviewing or writing code quality baselines: naming, readability, KISS/DRY/YAGNI checks | framework architecture and layering; API contract/versioning details |
+| code-reviewer | thorough code review before merge; evaluating implementation quality | implementing fixes itself; architecture planning from scratch |
+| coding-standards-and-simplification | Writing new code; reviewing for maintainability; refactoring for clarity (KISS/DRY/YAGNI); simplified logic patterns | framework architecture and layering; API contract/versioning details |
+| context-engineering | Starting new sessions; Switching tasks; agent quality degradation; configuring project rules | unrelated tasks outside this scope |
+| idea-refine | raw concepts or vague ideas; startup concepts; process improvements; feature ideation | implementation-ready requirements; debugging existing code |
+| planning-and-task-breakdown | breaking work into implementable units; estimating scope; parallelizing work; vertical slicing | single-file changes; obvious scope; pre-defined task lists |
+| debugging-and-error-recovery | Systematic triage of test failures, build breaks, or runtime bugs; root-cause analysis | unrelated tasks outside this scope |
+| deprecation-and-migration | Replacing old systems/APIs; sunsetting features; consolidating duplicate logic; zombie code cleanup | new feature development; initial implementation |
+| documentation-and-adrs | Recording architectural decisions; writing public API docs; changelog maintenance; explaining "why" | documenting obvious code; throwaway prototypes |
 | comment-analyzer | after refactors or behavior changes; during code review of heavily commented modules | unrelated tasks outside this scope |
 | content-engine | writing X posts or threads; drafting LinkedIn posts or launch updates | deep voice derivation; long-form article craft |
 | conversation-analyzer | user repeatedly corrects assistant behavior; hook policy design is requested | unrelated tasks outside this scope |
@@ -58,9 +65,15 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. U
 | product-capability | PRD/roadmap note exists but implementation constraints are vague; feature crosses multiple services | unrelated tasks outside this scope |
 | resilience-patterns | adding retry logic, circuit breakers, timeouts, or fallback strategies | unrelated tasks outside this scope |
 | securities-audit | auditing for financial data handling, regulatory compliance, or sensitive data exposure | unrelated tasks outside this scope |
+| security-and-hardening | handling user input; authentication/authorization; storing sensitive data; external integrations | high-level threat modeling; legal compliance interpretation |
+| security-auditor | security-focused code review; threat analysis; hardening recommendations; vulnerability detection | broad architecture design unrelated to security |
 | security-review | implementing authentication/authorization; handling user input or file uploads | deep architecture-level threat modeling; compliance legal interpretation |
+| source-driven-development | framework-specific implementation; building boilerplate or starter patterns; verifying best practices | pure logic; renaming variables; speed-priority tasks |
+| spec-driven-development | starting new projects or features; ambiguous requirements; architectural decisions | single-line fixes; typo corrections; self-contained requirements |
 | strategic-compact | long sessions approaching context pressure; multi-phase tasks (research -> plan -> implement -> test) | runtime debugging or failure diagnosis; test/build verification workflows |
 | tdd-workflow | adding new features; fixing bugs or regressions | deep E2E framework patterns; post-implementation verification orchestration |
+| test-driven-development | implementing new logic; fixing bugs (Prove-It pattern); modifying existing functionality | pure configuration; documentation; static content |
+| test-engineer | designing test suites; writing tests for existing code; evaluating test quality and coverage | implementing features or fixes itself |
 | verification-loop | after a feature or significant change; before opening a PR | writing test suites from scratch; deep security architecture audits |
 | workspace-surface-audit | auditing project structure, file layout, or surface-level code organization | unrelated tasks outside this scope |
 | x-api | posting tweets or threads programmatically; reading timeline/mentions/user info | content strategy and editorial planning; cross-platform distribution |

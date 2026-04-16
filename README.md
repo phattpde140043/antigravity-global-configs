@@ -69,21 +69,37 @@ Under the hood, the system activates over 40 specialized skills. Here are the ke
 | Skill | What It Does |
 |-------|-------------|
 | [architect](./skills/architect/SKILL.md) | Planning new cross-cutting features and refactoring large systems. |
+| [idea-refine](./skills/idea-refine/SKILL.md) | Strategic ideation: divergent expansion and convergent refining of raw concepts. |
+| [spec-driven-development](./skills/spec-driven-development/SKILL.md) | Creating structured specifications and success criteria before any implementation. |
+| [planning-and-task-breakdown](./skills/planning-and-task-breakdown/SKILL.md) | Decomposing approved specs into small, verifiable, vertically-sliced tasks. |
 | [implementation-planning](./skills/implementation-planning/SKILL.md) | Decomposing approved specs into concrete, verifiable task lists. |
+| [context-engineering](./skills/context-engineering/SKILL.md) | AI-human collaboration: brain dumps, confusion management, and inline planning. |
+| [documentation-and-adrs](./skills/documentation-and-adrs/SKILL.md) | Recording architectural decisions (ADRs) and "Why over What" context. |
 
 ### Build
 | Skill | What It Does |
 |-------|-------------|
 | [frontend-patterns](./skills/frontend-patterns/SKILL.md) | React component architecture and modern frontend best practices. |
 | [dotnet-patterns](./skills/dotnet-patterns/SKILL.md) | C# / .NET service development and library patterns. |
+| [source-driven-development](./skills/source-driven-development/SKILL.md) | Verifying framework patterns and API signatures against official documentation. |
+| [api-and-interface-design](./skills/api-design/SKILL.md) | Contract-first design, Hyrum's Law, One-Version Rule, and boundary validation. |
+| [browser-testing-with-devtools](./skills/browser-testing-with-devtools/SKILL.md) | Live runtime inspection, DOM/Console/Network analysis, and visual verification. |
+| [deprecation-and-migration](./skills/deprecation-and-migration/SKILL.md) | Code lifecycle: Strangler/Adapter patterns and zombie code elimination. |
 | [mcp-server-patterns](./skills/mcp-server-patterns/SKILL.md) | Creating and updating Model Context Protocol servers. |
 
 ### Verify & Review
 | Skill | What It Does |
 |-------|-------------|
+| [test-driven-development](./skills/test-driven-development/SKILL.md) | Driving feature implementation and bug fixes with failing tests (Prove-It pattern). |
+| [test-engineer](./skills/test-engineer/SKILL.md) | Designing test suites, writing coverage-focused tests, and analyzing QA gaps. |
 | [tdd-workflow](./skills/tdd-workflow/SKILL.md) | Red-Green-Refactor logic for bug fixes and new features. |
-| [code-reviewer](./skills/code-reviewer/SKILL.md) | Multi-axis review focusing on KISS, DRY, and YAGNI. |
+| [code-reviewer](./skills/code-reviewer/SKILL.md) | Staff-level 5nd-dimension review: correctness, readability, architecture, security, performance. |
+| [security-and-hardening](./skills/security-and-hardening/SKILL.md) | Treating input as hostile and protecting against OWASP vulnerabilities. |
+| [security-auditor](./skills/security-auditor/SKILL.md) | Vulnerability detection, threat modeling, and practical exploit-focused hardening. |
 | [security-review](./skills/security-review/SKILL.md) | Hardening authentication, authorization, and input handling. |
+| [ci-cd-and-automation](./skills/ci-cd-and-automation/SKILL.md) | Pipeline logic, quality gates, feature flags, and deployment strategies. |
+| [debugging-and-error-recovery](./skills/debugging-and-error-recovery/SKILL.md) | Systematic root-cause debugging (Repro, Localize, Reduce, Bisect). |
+| [coding-standards-and-simplification](./skills/coding-standards/SKILL.md) | KISS/DRY/YAGNI principles, code smell checks, and simplification process. |
 
 ---
 

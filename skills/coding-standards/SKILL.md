@@ -1,14 +1,13 @@
 ---
-name: coding-standards
-description: "Use when reviewing or writing code quality baselines: naming, readability, immutability-first updates, simple design (KISS/DRY/YAGNI), code smell checks, and safe error-handling defaults across projects. USE WHEN: reviewing or writing code quality baselines: naming, readability, immutability-first updates, simple design (KISS/DRY/YAGNI), code smell checks, and safe error-handling defaults across projects. NOT FOR: framework architecture and layering; API contract/versioning details."
+name: coding-standards-and-simplification
+description: "Core quality baseline and code simplification guides. Use when writing code, reviewing for maintainability, or refactoring for clarity. Focuses on KISS, DRY, YAGNI, naming, async hygiene, and error handling."
 ---
 
-# Coding Standards (Core, Cross-Project)
+# Coding Standards and Simplification
 
 ## Purpose
 
-Define a minimal, reusable quality baseline that works across projects and languages.
-This skill is the common floor, not a framework playbook.
+Define a minimal quality baseline and a systematic process for simplifying code. The goal is code that is easier to read, understand, modify, and debug.
 
 ---
 
@@ -41,6 +40,7 @@ Do NOT use this skill as the primary source for:
 
 If available, defer to narrower skills for those areas.
 
+---
 ---
 
 ## Core Principles
@@ -77,44 +77,86 @@ If available, defer to narrower skills for those areas.
 - When mutation is required for performance, isolate and document why
 
 ---
+# The Principles of Simplicity
 
-## Naming Rules
-
-- Functions and methods should use verb-noun intent (for example: `fetchUserProfile`, `calculateScore`)
-- Booleans should read as predicates (`isReady`, `hasAccess`, `canRetry`)
-- Avoid vague identifiers (`data`, `value`, `temp`, `flag`) unless scope is tiny and obvious
-- Prefer domain terms over technical placeholders
-
----
-
-## Function and Structure Rules
-
-- Keep functions focused on one responsibility
-- Prefer early returns over deep nesting
-- Split long functions into small composable units
-- Remove dead code and stale comments
-
-Code smell checks:
-- long functions with mixed responsibilities
-- nested conditional chains
-- copy-paste blocks
-- magic numbers/strings without named constants
-- broad catch blocks that hide root cause
+1. **Readability First**: Clear names over short names. Intent should be obvious.
+2. **KISS (Keep It Simple, Stupid)**: Choose the simplest correct design. Avoid cleverness.
+3. **DRY (Don't Repeat Yourself)**: Extract repeated logic, but don't over-abstract one-offs.
+4. **YAGNI (You Ain't Gonna Need It)**: Build for current requirements only.
+5. **Chesterton's Fence**: Understand WHY code exists before you simplify or remove it.
+6. **Immutability-First**: Prefer non-mutating updates for objects/collections. Avoid in-place changes unless there is a clear benefit.
 
 ---
 
-## Error Handling Baseline
+# The Simplification Process
 
-- Validate external inputs at boundaries
-- Fail with actionable, non-sensitive messages
-- Preserve root cause in logs/telemetry when possible
-- Do not swallow exceptions silently
-- Normalize error shape per project conventions
+1. **Understand Before Touching**: Read context, check git blame, and identify edge cases.
+2. **Identify Opportunities**:
+    - **Structural Complexity**: Nested logic (3+ levels), long functions (50+ lines).
+    - **Naming**: Generic names (`data`, `temp`), abbreviations (`usr`, `cfg`).
+    - **Redundancy**: Copy-pasted logic, dead code, unnecessary wrappers.
+3. **Apply Incrementally**: One simplification at a time. Run tests after each change.
+4. **Rule of 500**: For refactors > 500 lines, use automation (codemods) rather than manual edits.
+
+### Structural Simplification
+| Pattern | Simplification |
+|---------|----------------|
+| Deep nesting | Extract into guard clauses or helper functions |
+| Long functions | Split into focused functions with descriptive names |
+| Boolean flags | Replace with options objects or separate specialized functions |
+
+### Naming & Readability
+| Pattern | Simplification |
+|---------|----------------|
+| Generic names | Rename to describe context (`validationErrors`, `userProfile`) |
+| Comments on "What" | Delete — the code should be clear enough |
+| Comments on "Why" | Keep — code cannot always express intent |
 
 ---
 
-## Async and Concurrency Baseline
+# Naming Rules
 
+- **Verb-Noun Intent**: Functions should use verb-noun naming (e.g., `fetchUserProfile`, `calculateScore`).
+- **Predicates for Booleans**: Booleans should read as questions/predicates (`isReady`, `hasAccess`, `canRetry`).
+- **Domain over Technical**: Prefer domain terms over technical placeholders.
+- **Avoid Vague Identifiers**: No `data`, `value`, `temp` unless the scope is tiny/obvious.
+
+---
+
+# Function and Structure Rules
+
+- **Single Responsibility**: Keep functions focused on one thing.
+- **Early Returns**: Use guard clauses to reduce nesting.
+- **Code Smell Checks**:
+    - Long functions with mixed responsibilities.
+    - Nested conditional chains.
+    - Magic numbers/strings without named constants.
+    - Broad catch blocks that hide root causes.
+
+---
+
+# Async and Concurrency Baseline
+
+- Use async patterns consistently for I/O
+- Run independent I/O concurrently where safe
+- Avoid accidental sequential waits
+- Protect shared mutable state when concurrency exists
+
+---
+
+## Review Checklist
+
+Before finalizing code, verify:
+
+- [ ] Names are descriptive and consistent
+- [ ] Logic is simple and understandable
+- [ ] No unnecessary abstraction or future-only code
+- [ ] Duplication is removed where it improves clarity
+- [ ] No high-risk code smells remain
+- [ ] Error handling is explicit and safe
+- [ ] Mutation is intentional and justified
+
+---
 - Use async patterns consistently for I/O
 - Run independent I/O concurrently where safe
 - Avoid accidental sequential waits
@@ -145,3 +187,35 @@ When this skill is activated, return:
 3. Residual risks and follow-up checks
 
 This keeps output practical and review-ready.
+
+
+- Use `async/await` patterns consistently for I/O.
+- Run independent I/O concurrently (e.g., `Task.WhenAll` or `Promise.all`) where safe.
+- Avoid accidental sequential waits.
+- Protect shared mutable state when concurrency exists.
+
+---
+
+# Error Handling Baseline
+
+- **Validate at Boundaries**: Trust internal code; validate at system edges (API handlers, form inputs).
+- **Fail Fast**: Stop execution as soon as a failure condition is met.
+- **Safe Messages**: Provide actionable, non-sensitive error messages.
+- **Don't Swallow Exceptions**: Never catch and ignore errors without logging or handling.
+
+---
+
+# Red Flags
+- Simplification that requires modifying tests to pass (you changed behavior).
+- "Simplified" code that is harder to follow than the original.
+- Broad cleanup mixed with feature or bug fix work (Must be separate PRs).
+- Removing error handling in the name of "cleanliness".
+
+---
+
+# Verification
+- [ ] All existing tests pass without modification.
+- [ ] Linter and Build pass.
+- [ ] Refactoring is separate from feature/fix logic.
+- [ ] No behavioral changes were introduced.
+- [ ] Naming and Structure rules followed.

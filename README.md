@@ -1,53 +1,98 @@
 # 🪐 Antigravity Global Configs
 
-[![GitHub license](https://img.shields.io/github/license/phattpde140043/antigravity-global-configs)](https://github.com/phattpde140043/antigravity-global-configs/blob/main/LICENSE)
-[![Commit Signing](https://img.shields.io/badge/git-signed-success)](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+**Production-grade engineering instructions for AI coding agents.**
 
-> **Centralized Intelligence and Behavioral Governance for Agentic AI.**
+These configurations encode the workflows, quality gates, and best practices that senior engineers use when building software. They ensure that AI agents follow a disciplined process across every phase of development.
 
-This repository contains the core logic, behavioral constraints, and specialized skill sets that define the personality and operational capability of the Agent. It serves as the "Global Knowledge Base" and "Rulebook" for all workspaces.
-
----
-
-## 🏗 Repository Architecture
-
-The project follows a modular architecture designed for scalability and clear separation of concerns:
-
-- **[`system.md`](./system.md)**: The "Core Persona". Defines who the Agent is, how it communicates, and its primary mission objectives.
-- **[`rules.md`](./rules.md)**: The "Operational Governance". Strictly enforces coding standards, architecture principles, and security protocols.
-- **[`skill-router.md`](./skill-router.md)**: The "Strategic Orchestrator". Maps incoming user requests to the most appropriate specialized skillsets.
-- **[`skills/`](./skills/)**: A library of atomic, task-specific instructions (e.g., Backend Engineering, UI/UX Research, Security Auditing).
-- **[`templates/`](./templates/)**: Standardized blueprints for documentation, API specs, and planning.
+```
+  DEFINE          PLAN           BUILD          VERIFY         REVIEW          SHIP
+ ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐      ┌──────┐
+ │ Idea │ ───▶ │ Spec │ ───▶ │ Code │ ───▶ │ Test │ ───▶ │  QA  │ ───▶ │  Go  │
+ │Refine│      │  PRD │      │ Impl │      │Debug │      │ Gate │      │ Live │
+ └──────┘      └──────┘      └──────┘      └──────┘      └──────┘      └──────┘
+  /spec          /plan          /build        /test         /review       /ship
+```
 
 ---
 
-## 🛠 Usage & Integration
+## Commands
 
-These configurations are designed to be loaded into an Agent's context. To keep your environment updated:
+6 core slash commands that map to the development lifecycle defined in [`workflow.md`](./workflow.md).
 
-1. **Clone/Sync**:
-   ```bash
-   git clone git@github-account2:phattpde140043/antigravity-global-configs.git ~/.antigravity-global
-   ```
-2. **Apply**: Ensure your Agent loader is pointed to this directory for global instruction resolution.
-
----
-
-## 🔐 Professional Standard & Security
-
-This repository enforces high-tier industry standards:
-
-- **Verified Authorship**: Every commit is digitally signed via **SSH Key** (GPG/SSH) to ensure integrity.
-- **Push Safeguards**: Integrated `pre-push` hooks prevent the deployment of broken configurations or accidental exposure of sensitive data.
-- **Branch Protection**: It is recommended to enable branch protection on the `main` branch via GitHub settings.
+| Phase | Command | Key Principle |
+|-------|---------|---------------|
+| **DEFINE** | `/spec` | Spec before code |
+| **PLAN** | `/plan` | Small, atomic tasks |
+| **BUILD** | `/build` | One slice at a time |
+| **VERIFY** | `/test` | Tests are proof |
+| **REVIEW** | `/review` | Improve code health |
+| **SHIP** | `/ship` | Faster is safer |
 
 ---
 
-## 📄 License & Attribution
+## Core Infrastructure
 
-- **Non-Commercial Use**: This project is intended strictly for personal and non-commercial purposes.
-- **Attribution**: The rules and configurations within this repository are curated for personal use, with references and inspiration drawn from various open-source projects on GitHub.
+The project follows a modular architecture for clear separation of concerns:
+
+- **[`system.md`](./system.md)**: **The Behavior Model**. Defines the agent's persona, communication style, and autonomous mindset.
+- **[`rules.md`](./rules.md)**: **Operational Governance**. Strictly enforces coding standards, security protocols, and scope control.
+- **[`workflow.md`](./workflow.md)**: **The Gated Lifecycle**. Mandatory state machine (DEFINE → SHIP) for all non-trivial tasks.
+- **[`patterns.md`](./patterns.md)**: **Communication Patterns**. Standardized templates for confusion management and change summaries.
+- **[`skill-router.md`](./skill-router.md)**: **Strategic Orchestrator**. Maps tasks to specialized skillsets.
+
+---
+
+## Quick Start
+
+### Integration
+
+To use these configs, ensure your Agent is pointed to this directory.
+
+**Manual Setup:**
+```bash
+git clone git@github.com:phattpde140043/antigravity-global-configs.git ~/.antigravity-global
+```
+
+**Global Loader:**
+Reference the files in your global instruction loader:
+```markdown
+- Load and apply rules.md, system.md, and workflow.md from ~/.antigravity-global/
+```
+
+---
+
+## Specialized Skills
+
+Under the hood, the system activates over 40 specialized skills. Here are the key ones:
+
+### Define & Plan
+| Skill | What It Does |
+|-------|-------------|
+| [architect](./skills/architect/SKILL.md) | Planning new cross-cutting features and refactoring large systems. |
+| [implementation-planning](./skills/implementation-planning/SKILL.md) | Decomposing approved specs into concrete, verifiable task lists. |
+
+### Build
+| Skill | What It Does |
+|-------|-------------|
+| [frontend-patterns](./skills/frontend-patterns/SKILL.md) | React component architecture and modern frontend best practices. |
+| [dotnet-patterns](./skills/dotnet-patterns/SKILL.md) | C# / .NET service development and library patterns. |
+| [mcp-server-patterns](./skills/mcp-server-patterns/SKILL.md) | Creating and updating Model Context Protocol servers. |
+
+### Verify & Review
+| Skill | What It Does |
+|-------|-------------|
+| [tdd-workflow](./skills/tdd-workflow/SKILL.md) | Red-Green-Refactor logic for bug fixes and new features. |
+| [code-reviewer](./skills/code-reviewer/SKILL.md) | Multi-axis review focusing on KISS, DRY, and YAGNI. |
+| [security-review](./skills/security-review/SKILL.md) | Hardening authentication, authorization, and input handling. |
+
+---
+
+## How it Works
+
+Every instruction follows a consistent anatomy:
+- **Process over Prose**: Workflows are step-by-step actions, not just advice.
+- **Verification Gates**: Every phase ends with mandatory evidence requirements (tests passing, build output).
+- **Anti-Rationalization**: Explicitly rebuts common excuses for skipping quality steps.
 
 ---
 
@@ -58,4 +103,4 @@ This repository enforces high-tier industry standards:
 - GitHub: [@phattpde140043](https://github.com/phattpde140043)
 
 ---
-*Generated with ❤️ for autonomous efficiency.*
+*Built for production-grade autonomous efficiency.*

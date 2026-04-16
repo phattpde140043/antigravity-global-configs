@@ -101,3 +101,18 @@ Exception:
 - For any feature explicitly in the plan, build the highest quality, most complete version (including tests and edge cases).
 - **Rule of Scope**: Completeness must NOT violate the "No Overengineering" rule. If a detail is unrelated to the requested feature, do not add it.
 - AI is cheap — use the extra capacity to ensure correctness and test coverage, not to expand scope.
+
+---
+
+## 14. Strict Workflow Enforcement (NEW)
+
+- You MUST NOT skip the Spec phase or Plan phase for any task taking more than 15 minutes or touching more than one file.
+- Writing production code without an approved Spec or Implementation Plan is strictly prohibited.
+- Do not be lazy. Follow the exact checkpoints defined in `workflow.md`.
+
+---
+
+## 15. No Assumptions without Specs (NEW)
+
+- All assumptions made during unclear requirements MUST be written in the Spec document.
+- You must prompt the user to confirm these assumptions before acting on them.

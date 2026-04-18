@@ -8,6 +8,9 @@ origin: ECC
 
 Design and build frontend interfaces that feel intentional, distinctive, and production-ready.
 
+## Diamond Standard Pillar: Aesthetic
+This skill is the primary driver for the **Aesthetic** pillar of the **Diamond Standard**. Every interface created must aim for **Premium Design Quality**, avoiding generic templates and AI-generated cliches.
+
 ---
 
 ## Purpose

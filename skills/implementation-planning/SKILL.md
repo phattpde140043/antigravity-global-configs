@@ -1,6 +1,6 @@
 ---
 name: implementation-planning
-description: "Use before writing code to break down requirements into a concrete implementation plan with trade-offs, risks, and constraints aligned with architecture and engineering guardrails. USE WHEN: Writing new code; Modifying existing logic. NOT FOR: unrelated tasks outside this scope or tasks better served by a more specific skill."
+description: "High-rigor engineering planning. Ensures strategic architecture (Security, Tenancy, Performance) is combined with tactical TDD execution (Atomic steps, Fail-Fast). USE WHEN: Writing new code; Modifying logic."
 ---
 
 ## Role
@@ -35,7 +35,7 @@ This skill is **MANDATORY** before:
 
 ## Core Objectives
 
-You **MUST** ensure:
+You **MUST ensure:**
 
 - No blind coding
 - No violation of architecture rules
@@ -47,12 +47,27 @@ You **MUST** ensure:
 
 ## Mandatory Workflow
 
-### Step 0 — Search Before Building (gstack inherited)
+### Step 0 — Assumption Protocol (Momentum First)
+
+Before writing any plan, minimize back-and-forth:
+- Limit pre-plan clarification questions to **max 2**.
+- For non-blocking unknowns, make **80% confident assumptions** and document them clearly in the plan header.
+
+### Step 0.1 — Search Before Building (gstack inherited)
 
 Before deciding on an approach, identify the knowledge layer:
 - **Layer 1: Tried & True.** Is there a standard, battle-tested pattern?
 - **Layer 2: New & Popular.** What are current best practices? (Scrutinize)
 - **Layer 3: First Principles.** Reasoning from the specific problem.
+
+### Step 0.2 — Diamond Standard Audit (MANDATORY)
+
+Before proceeding to Step 1, you **MUST** audit the proposed direction against the **Diamond Standard Pillars**:
+1. **Scalable**: Does this solution avoid technical debt? Is it ready for growth?
+2. **Secure**: Are security-by-design principles applied (OWASP 2025, Zero-Trust)?
+3. **Aesthetic**: Is the resulting code/UI premium and intentional? (No generic "AI UI").
+
+If any pillar is missing, **STOP** and redesign the approach.
 
 ### Step 1 — Task Understanding
 
@@ -84,16 +99,21 @@ You **MUST** identify:
 - Will existing data be impacted?
 - Any migration required?
 
-### Step 3 — Implementation Strategy
+### Step 3 — Implementation Strategy (Bite-sized TDD)
 
-Break down into clear steps:
+Break down into **atomic tasks** (2-5 minutes each). Every task must follow the **TDD Lifecycle**:
+1.  **Fail**: Write a failing test and run it.
+2.  **Fix**: Implement minimal code to pass the test.
+3.  **Verify**: Run the test to confirm it passes.
+4.  **Commit**: Atomic commit for the change.
 
-**Example:**
-1. Update DTO
-2. Modify service logic
-3. Add repository query
-4. Update controller endpoint
-5. Add validation
+**Example Task:**
+- [ ] Task: Implement `calculateTotal` logic
+  - **Step 1: Write failing test** (Code: `expect(calc(items)).toBe(100)`)
+  - **Step 2: Run test** (Expected: FAIL)
+  - **Step 3: Minimal Impl** (Code: `return items.reduce(...)`)
+  - **Step 4: Run test** (Expected: PASS)
+  - **Step 5: Commit** (`git commit -m "feat: add total calculation"`)
 
 ### Step 4 — Design Decisions & Trade-offs
 
@@ -110,6 +130,12 @@ For critical decisions, you **MUST** explain:
 - **Cons**: Slightly more complex
 
 👉 Choose one and justify.
+
+### Step 4.1 — Poka-Yoke (Error Proofing)
+
+For every design, you **MUST** identify:
+- How does this design make errors **structurally impossible**? (e.g., using Exhaustive Enums vs strings).
+- Are invalid states unrepresentable?
 
 ### Step 5 — Data & Query Design (CRITICAL)
 
@@ -211,6 +237,17 @@ You **MUST** output:
 10. Change Scope  
 11. **Completeness Verdict**: Confirmation that this is a "Boil the Lake" implementation for the scoped features. 
 
+---
+
+## 15 — Concise Planning (Fast Track)
+
+For simple tasks estimated at **< 5 minutes** (e.g., typo fix, single logic tweak):
+1.  **Approach**: 1-2 sentences.
+2.  **Scope**: Atomic In/Out.
+3.  **Tasks**: 5-8 atomic action items (Verb-first).
+4.  **Validation**: One concrete test/check command.
+
+**Note**: Even in Concise Mode, the **Assumption Protocol** applies.
 
 ---
 

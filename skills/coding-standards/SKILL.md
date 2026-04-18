@@ -7,15 +7,21 @@ description: "Core quality baseline and code simplification guides. Use when wri
 
 ## Purpose
 
-Define a minimal quality baseline and a systematic process for simplifying code. The goal is code that is easier to read, understand, modify, and debug.
+Define a minimal quality baseline and a systematic process for simplifying code. 
+
+**Senior Mindset**: Code is written for **people** (teammates and your future self), not just for machines. Follow the **Kaizen** mindset and the **TDD Iron Law** (Write tests before code) to ensure quality by design.
+
+
 
 ---
 
 ## When to Activate
 
-- Starting a new module and needing coding conventions
-- Reviewing maintainability and readability
-- Refactoring for clarity and lower complexity
+- **Readability Rules**: Clean Code by Robert C. Martin (Uncle Bob).
+- **Naming Conventions**: Intention-revealing, pronounceable, and searchable.
+- **Function Hygiene**: Small (< 20 lines), high cohesion, one level of abstraction.
+- **Commenting Policy**: "Don't comment bad code—rewrite it."
+- **Aesthetic Integrity**: Code structure and design must follow the **Diamond Standard Pillars**: Scalable, Secure, Aesthetic.
 - Enforcing naming, consistency, and code smell checks
 - Setting lint and formatting expectations
 
@@ -45,24 +51,27 @@ If available, defer to narrower skills for those areas.
 
 ## Core Principles
 
-## 1) Readability First
+## 1) Readable First, Clever Later (Strict)
 
-- Prefer clear names over short names
-- Make intent obvious from function and variable names
-- Keep formatting consistent and predictable
-- Prefer self-documenting code; comment only when intent is not obvious
+- **Prioritize Clarity**: Choose easy-to-understand code over "clever" or "hacky" implementations that save a few lines but increase cognitive load.
+- **The 6-Month Rule**: Ask yourself: "Will I or my teammates understand this logic in 6 months without explanation?"
+- Make intent obvious from function and variable names.
+- Keep formatting consistent and predictable.
+- Prefer self-documenting code; comment only to explain **WHY** (logic/intent), not **WHAT** (the code itself).
 
-## 2) KISS
+## 2) KISS & Trade-offs
 
-- Choose the simplest correct design
-- Avoid clever implementations that reduce clarity
-- Optimize only when there is evidence
+- Choose the simplest correct design.
+- Avoid premature optimization or abstraction.
+- **Balanced Trade-offs**: For senior tasks, balance readability, performance, and deadlines. Don't over-engineer for scenarios that don't exist yet.
 
-## 3) DRY
 
-- Extract repeated logic into helpers/modules
-- Centralize shared constants and validation patterns
-- Do not over-abstract one-off logic
+## 3) DRY (Don't Repeat Yourself)
+
+- **Duplication = Technical Debt**: Extract repeated logic into shared helpers or modules to prevent maintenance silos.
+- Centralize shared constants and validation patterns.
+- Do not over-abstract one-off logic (avoid "premature DRY").
+
 
 ## 4) YAGNI
 
@@ -76,6 +85,18 @@ If available, defer to narrower skills for those areas.
 - Avoid in-place changes unless there is a clear measured benefit
 - When mutation is required for performance, isolate and document why
 
+## 6) Poka-Yoke (Error Proofing)
+
+- **Design for structural impossibility**: Make invalid states unrepresentable (e.g., use Discriminated Unions/Enums instead of free strings).
+- **Validate at boundaries**: Trust internal code; strictly verify at system edges.
+- **Fail Fast & Loudly**: Stop execution immediately on contract violation.
+
+## 7) Just-In-Time (JIT) Optimization
+
+- Implement only current requirements (YAGNI).
+- **Optimize only after measurement**: Profile before optimizing. Never optimize based on intuition alone.
+
+
 ---
 # The Principles of Simplicity
 
@@ -83,8 +104,9 @@ If available, defer to narrower skills for those areas.
 2. **KISS (Keep It Simple, Stupid)**: Choose the simplest correct design. Avoid cleverness.
 3. **DRY (Don't Repeat Yourself)**: Extract repeated logic, but don't over-abstract one-offs.
 4. **YAGNI (You Ain't Gonna Need It)**: Build for current requirements only.
-5. **Chesterton's Fence**: Understand WHY code exists before you simplify or remove it.
-6. **Immutability-First**: Prefer non-mutating updates for objects/collections. Avoid in-place changes unless there is a clear benefit.
+5. **TDD First**: No production code without a failing test first (Red-Green-Refactor).
+6. **Chesterton's Fence**: Understand WHY code exists before you simplify or remove it.
+7. **Immutability-First**: Prefer non-mutating updates.
 
 ---
 
@@ -121,17 +143,40 @@ If available, defer to narrower skills for those areas.
 - **Domain over Technical**: Prefer domain terms over technical placeholders.
 - **Avoid Vague Identifiers**: No `data`, `value`, `temp` unless the scope is tiny/obvious.
 
+### Aesthetic Integrity (The Diamond Pillar)
+1. **Visual Balance**: Maintain consistent indentation, grouping related logic with whitespace.
+2. **Harmonious Naming**: Use consistent patterns across the codebase to create a "rhythm".
+3. **Explicit Design**: UI-related code (CSS/React) must aim for **Premium Aesthetics** as defined in `@frontend-design`.
+4. **Code-as-Art**: Treat every block of code as if other master engineers will read it for inspiration.
+- **Use Nouns for Classes**: `Customer`, `Order`, `WikiPage`. Avoid `Manager`, `Data`, `Info`.
+- **Use Verbs for Methods**: `postPayment`, `deletePage`, `isValid`.
+
+### Clean Code Principles (MANDATORY)
+1. **Small Functions**: Functions should be shorter than you think. Aim for **< 20 lines**.
+2. **Do One Thing (SRP)**: A function or class should have exactly one reason to change.
+3. **One Level of Abstraction**: Don't mix high-level business logic with low-level details (like regex or array slicing) in the same function.
+4. **Newspaper Metaphor**: Organize files with high-level concepts at the top and implementation details at the bottom.
+5. **No Side Effects**: Functions should not secretly change global state or hidden parameters.
+6. **Error Handling**: Use Exceptions instead of return codes. Don't return `null`; don't pass `null`.
+
+### .NET Specific Rules
+- **XML Documentation**: Provide comprehensive XML documentation for all public APIs, methods, and types. Use `<summary>`, `<param>`, and `<returns>` tags.
+- **Code Analysis**: Follow `.editorconfig` rules strictly. Ensure your code passes all **Roslyn Analyzers** and style checks. Do not suppress warnings without a documented architectural reason.
+
 ---
 
 # Function and Structure Rules
 
-- **Single Responsibility**: Keep functions focused on one thing.
+- **Single Responsibility (SRP)**: Each function should do **one thing well**. If you need a "step-by-step" comment inside a function, consider extracting those steps into smaller, named functions.
 - **Early Returns**: Use guard clauses to reduce nesting.
+- **The Kaizen (Boy Scout) Rule**: Always leave the code cleaner than you found it. Small, frequent improvements are the engine of quality.
+
 - **Code Smell Checks**:
-    - Long functions with mixed responsibilities.
-    - Nested conditional chains.
+    - Long functions (>50 lines) with mixed responsibilities.
+    - Nested conditional chains (3+ levels).
     - Magic numbers/strings without named constants.
-    - Broad catch blocks that hide root causes.
+    - Broad catch blocks that swallow context or hide root causes.
+
 
 ---
 
@@ -150,11 +195,14 @@ Before finalizing code, verify:
 
 - [ ] Names are descriptive and consistent
 - [ ] Logic is simple and understandable
-- [ ] No unnecessary abstraction or future-only code
-- [ ] Duplication is removed where it improves clarity
+- [ ] No unnecessary abstraction or future-only code (YAGNI)
+- [ ] Duplication is removed where it improves clarity (DRY)
+- [ ] **Poka-Yoke**: Invalid states are unrepresentable
+- [ ] **Kaizen**: Code is cleaner than before the change
 - [ ] No high-risk code smells remain
 - [ ] Error handling is explicit and safe
 - [ ] Mutation is intentional and justified
+
 
 ---
 - Use async patterns consistently for I/O

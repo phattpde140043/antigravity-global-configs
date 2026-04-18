@@ -41,13 +41,18 @@ Delegation:
 2. explicit over implicit (nullability, access, intent)
 3. depend on abstractions at service boundaries
 4. async all the way, never block async paths
-5. keep code simple, testable, and observable
+5. prioritize performance with ValueTypes and Spans where I/O or high-throughput logic exists
+6. keep code simple, testable, and observable
 
 ## Immutability and Modeling
 
 - prefer record/readonly/value-like models where mutation is not required
 - use init-only properties for request/DTO models when possible
 - make mutability explicit and justified
+- **Modern Features**: 
+    - Use **Pattern Matching** (switch expressions, property patterns) for clean conditional logic.
+    - Use `required` properties and `raw string literals` for safer and more readable DTOs.
+    - Use **Target-typed new** (`List<string> list = new();`) for brevity when the type is obvious.
 
 ## Dependency Injection and Boundaries
 
@@ -61,6 +66,7 @@ Delegation:
 - use Task.WhenAll for independent concurrent operations
 - avoid Result/Wait/GetAwaiter().GetResult() in request paths
 - avoid async void except event handlers
+- simplify small async methods with `ValueTask` or `ValueTask<T>` to reduce heap allocations on high-frequency hot paths.
 
 ## Configuration via Options Pattern
 
@@ -107,6 +113,13 @@ Delegation:
 - hardcoded config/secrets
 - large god classes with mixed responsibilities
 - string-concatenated queries or dynamic unsafe command building
+
+## Performance Mastery
+
+- Use `ReadOnlySpan<char>` or `Span<T>` for high-performance string/array manipulation (e.g., parsing, slicing).
+- Avoid unnecessary object allocations in loops; use `ArrayPool<T>` for large temporary buffers.
+- For high-throughput services, use **BenchmarkDotNet** to measure and validate performance improvements before committing to complex optimizations.
+- Prefer **Composition over Inheritance** to maintain flexibility and simplify testing.
 
 ## Practical Checklist
 

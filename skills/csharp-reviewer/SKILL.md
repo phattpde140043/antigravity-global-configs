@@ -63,6 +63,8 @@ Suggested diagnostics (when available):
 - nullable misuse and unsafe null-forgiving overuse
 - authz gaps on sensitive operations
 - thread-safety issues in shared mutable state
+- **Pattern Matching Misuse**: Incorrect or incomplete switch expressions on domain enums/types.
+- **Inheritance Misuse**: Deep class hierarchies; recommend **Composition over Inheritance** where applicable.
 
 ### MEDIUM
 
@@ -102,3 +104,6 @@ When activated, return:
 2. build/format/test status (if run)
 3. merge verdict with blocker list
 4. concise remediation priorities
+- **Nullable reference tracking**: Ensure `#nullable enable` is used and warnings are addressed, especially for public API contracts and DTOs.
+- **Enterprise Patterns**: Verify usage of SOLID principles, especially the Open/Closed Principle for service extensions.
+- **Microservices Boundary**: Check for leaked internal types or tight coupling across service boundaries.

@@ -1,12 +1,11 @@
 ---
 name: test-driven-development
-description: Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about to modify existing functionality.
+description: "Implementation of the Test-Driven Development lifecycle (Red-Green-Refactor). Enforces the Iron Law: No production code without a failing test first."
 ---
 
-# Test-Driven Development
+# Test-Driven Development (TDD)
 
 ## Overview
-
 Write a failing test before writing the code that makes it pass. For bug fixes, reproduce the bug with a test before attempting a fix. Tests are proof — "seems right" is not done. A codebase with good tests is an AI agent's superpower; a codebase without tests is a liability.
 
 ## When to Use
@@ -18,6 +17,15 @@ Write a failing test before writing the code that makes it pass. For bug fixes, 
 - Any change that could break existing behavior
 
 **When NOT to use:** Pure configuration changes, documentation updates, or static content changes that have no behavioral impact.
+Write the test first. Watch it fail. Write minimal code to pass.
+
+**Core principle:** If you didn't watch the test fail, you don't know if it tests the right thing.
+
+## The Three Laws of TDD (Uncle Bob)
+You must follow these laws strictly for every production file:
+1. **Don't write production code** until you have a failing unit test.
+2. **Don't write more of a unit test** than is sufficient to fail.
+3. **Don't write more production code** than is sufficient to pass the failing test.
 
 ## The TDD Cycle
 
@@ -224,6 +232,13 @@ Preference order (most to least preferred):
 2. Fake                 → In-memory version of a dependency (e.g., fake DB)
 3. Stub                 → Returns canned data, no behavior
 4. Mock (interaction)   → Verifies method calls — use sparingly
+
+## F.I.R.S.T. Strategy
+- **Fast**: Tests should run quickly to provide instant feedback.
+- **Independent**: Tests should not depend on the state or execution order of other tests.
+- **Repeatable**: Tests should produce the same results in any environment (CI, Local).
+- **Self-Validating**: Each test should have a clear binary pass/fail result.
+- **Timely**: Tests are written just before the production code (TDD).
 ```
 
 **Use mocks only when:** the real implementation is too slow, non-deterministic, or has side effects you can't control (external APIs, email sending). Over-mocking creates tests that pass while production breaks.
@@ -307,3 +322,39 @@ After completing any implementation:
 - [ ] Test names describe the behavior being verified
 - [ ] No tests were skipped or disabled
 - [ ] Coverage hasn't decreased (if tracked)
+
+## The Iron Law (STRICT)
+
+```
+NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
+```
+
+Write code before the test? Delete it. Start over. This ensures the test actually verifies the behavior and prevents speculative coding.
+
+**Exceptions**: 
+- Very small tasks (under 1 minute) like typos or simple text changes.
+- Generated code or boilerplate.
+- Configuration files.
+
+## Red-Green-Refactor Cycle
+
+1. **RED**: Write one minimal test showing what should happen.
+2. **Verify RED (MANDATORY)**: Run the test and confirm it fails for the expected reason (feature missing, not a syntax error).
+3. **GREEN**: Write the simplest, most minimal code required to pass the test. No YAGNI features.
+4. **Verify GREEN**: Run all tests and confirm they pass.
+5. **REFACTOR**: Clean up the code (remove duplication, improve names) while keeping the tests green.
+
+## Quality of a Good Test
+
+- **Atomic**: Tests one specific behavior.
+- **Independent**: Does not depend on the order of execution.
+- **Meaningful**: Tests must demonstrate desired API behavior and domain requirements, not just implementation details. Coverage % is secondary to behavior verification.
+- **Readable Assertions**: Use **FluentAssertions** (`result.Should().BeEquivalentTo(expected)`) to make the intent of the test obvious and provide descriptive failure messages.
+
+## Verification Checklist
+
+- [ ] Did I watch the test fail first?
+- [ ] Is the failure message clear and correct?
+- [ ] Did I write the *minimal* code to pass?
+- [ ] Do all other tests still pass?
+- [ ] Is the code cleaner after refactoring?

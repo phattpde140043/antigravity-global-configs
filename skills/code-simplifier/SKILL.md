@@ -44,6 +44,13 @@ Delegation:
 - reduce over-abstraction of single-use helpers
 - improve naming clarity without changing semantics
 
+## Refinement Principles
+
+1. **Clarity Over Brevity**: Explicit code is often better than overly compact code. Prefer clear steps over dense one-liners.
+2. **No Nested Ternaries**: Avoid nested ternary operators; prefer `if/else` chains or `switch` statements for multiple conditions.
+3. **Remove Redundant Abstractions**: Eliminate "wrapper" functions or classes that don't add value beyond a direct check.
+4. **Maintain Balance**: Avoid over-simplification that removes helpful abstractions or makes code harder to debug/extend.
+
 ## Process
 
 1. read changed files first

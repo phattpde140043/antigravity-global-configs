@@ -98,7 +98,7 @@ Under the hood, the system activates over 40 specialized skills. Here are the ke
 | [security-auditor](./skills/security-auditor/SKILL.md) | Vulnerability detection, threat modeling, and practical exploit-focused hardening. |
 | [security-review](./skills/security-review/SKILL.md) | Hardening authentication, authorization, and input handling. |
 | [ci-cd-and-automation](./skills/ci-cd-and-automation/SKILL.md) | Pipeline logic, quality gates, feature flags, and deployment strategies. |
-| [debugging-and-error-recovery](./skills/debugging-and-error-recovery/SKILL.md) | Systematic root-cause debugging (Repro, Localize, Reduce, Bisect). |
+| [systematic-debugging](./skills/systematic-debugging/SKILL.md) | Elite investigative framework for bug resolution (The Iron Law). |
 | [coding-standards-and-simplification](./skills/coding-standards/SKILL.md) | KISS/DRY/YAGNI principles, code smell checks, and simplification process. |
 
 ---

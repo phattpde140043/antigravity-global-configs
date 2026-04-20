@@ -31,7 +31,10 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. U
 | code-generation | generating boilerplate, scaffolding, or repetitive code structures | unrelated tasks outside this scope |
 | code-reviewer | thorough code review before merge; evaluating implementation quality | implementing fixes itself; architecture planning from scratch |
 | coding-standards-and-simplification | Writing new code; reviewing for maintainability; refactoring for clarity (KISS/DRY/YAGNI); simplified logic patterns | framework architecture and layering; API contract/versioning details |
-| context-engineering | Starting new sessions; Switching tasks; agent quality degradation; configuring project rules | unrelated tasks outside this scope |
+| context-engineering | Daily pair-programming; files < 2000 lines; focus on business logic instead of system management | complex systems; large-scale context optimization |
+| brain-context-engineering/context-optimization | optimizing context; reducing token costs; KV-cache stabilization; observation masking | single-file changes; simple tasks |
+| brain-context-engineering/filesystem-context | offloading context to files; scratch pads; plan persistence; multi-agent shared workspaces | short sessions; low-latency requirements |
+| brain-context-engineering/multi-agent-patterns | partitioning complex tasks across multiple agents; coordinating sub-agent workflows | tasks that fit comfortably in a single window |
 | idea-refine | raw concepts or vague ideas; startup concepts; process improvements; feature ideation | implementation-ready requirements; debugging existing code |
 | planning-and-task-breakdown | breaking work into implementable units; estimating scope; parallelizing work; vertical slicing | single-file changes; obvious scope; pre-defined task lists |
 | debugging-and-error-recovery | Systematic triage of test failures, build breaks, or runtime bugs; root-cause analysis | unrelated tasks outside this scope |

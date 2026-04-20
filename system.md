@@ -140,10 +140,10 @@ To ensure consistency and quality, you **MUST** activate and apply the following
 | Phase | Mandatory Core Skills | Domain/Context-Specific Skills |
 | :--- | :--- | :--- |
 | **DEFINE** | `spec-driven-development` | `security-design` (STRIDE), `api-design` |
-| **PLAN** | `implementation-planning` | `backend-architect`, `documentation-and-adrs` |
-| **BUILD** | `test-driven-development` (Iron Law) | `coding-standards`, `backend-security-coder`, `dotnet-patterns` |
-| **VERIFY** | `verification-loop` | `test-engineer`, `systematic-debugging` |
-| **REVIEW** | `code-review-excellence` (Tone & Labels) | `securities-audit`, `code-reviewer`, `code-simplifier` |
+| **PLAN** | `implementation-planning` | `backend-architect`, `brain-context-engineering` |
+| **BUILD** | `test-driven-development` (Iron Law) | `coding-standards`, `backend-security-coder`, `brain-context-engineering` |
+| **VERIFY** | `verification-loop` | `test-engineer`, `systematic-debugging`, `brain-context-engineering` |
+| **REVIEW** | `code-review-excellence` (Tone & Labels) | `securities-audit`, `code-reviewer`, `brain-context-engineering` |
 
 ### 10.1 Strict Enforcement Rules
 - **Non-Skippable**: Even for small tasks, the `BUILD` and `REVIEW` skill requirements are mandatory.
@@ -151,6 +151,43 @@ To ensure consistency and quality, you **MUST** activate and apply the following
 - **Pre-emptive Loading**: You must verify the existence and content of these skills at the start of each phase.
 - **Mandatory Debugging**: For any bug or error resolution, you **MUST** activate `@systematic-debugging` and strictly follow its 4-phase investigative process before proposing any code changes. No exceptions for "simple" or "urgent" fixes.
 - **Demonstration**: Your output must reflect the principles defined in these skills (e.g., applying the Senior Clean Code standards during the BUILD phase).
+
+### 10.2 Context Engineering Trigger Guidelines (Adaptive Selecting)
+
+To optimize focus and reduce token costs, select the appropriate Context skill set based on the task scale:
+
+- **Use `@context-engineering` when**:
+    - Performing daily pair-programming (daily tasks).
+    - Total code/files volume is under 2,000 lines.
+    - Prioritizing rapid business logic focus rather than complex system management.
+    - No requirement for complex persistence or multi-agent mechanisms.
+
+- **Use `@brain-context-engineering` when**:
+    - Working with massive codebases (Monolith) or high complexity (> 2,000 lines).
+    - Need to optimize costs (KV-cache) and latency for long-running sessions.
+    - Implementing multi-agent systems (Multi-agent patterns) or complex task partitioning.
+    - Need to offload temporary data to the filesystem (Scratch pads) to prevent context flooding.
+
+### 10.3 Persistent Memory Management Rules (Strict)
+
+To ensure continuity and discovery, the Agent must adhere to the following memory management rules:
+
+- **Directory Authority**: If they do not exist, the Agent has the authority (and should) proactively initialize directories: `memory/` (long-term), `scratch/` (intermediate/large results), `.context/` (modular guidelines).
+- **Metadata Requirement (English Only)**: Every created context file must contain a YAML Frontmatter header at the beginning of the file to support discovery:
+    ```yaml
+    ---
+    targets: ["path/to/source.ext", "@feature-name"]
+    description: "Brief summary of decisions/context"
+    scope: "Business Logic | Architecture | Security"
+    last_updated: YYYY-MM-DD
+    ---
+    ```
+- **English-Only Artifacts**: All filenames, directories, and content within context files (Metadata + Content) must use **Standard English**.
+- **Pre-Task Discovery**: Before performing any task, the Agent must scan the above directories to find Metadata with `targets` matching the current work scope.
+- **Post-Task Memory Consolidation (Strict)**: After completing any task involving code modifications, the Agent **MUST** update all relevant context files within `memory/` or `.context/` to reflect the updated architectural state, logic, or decisions. Use Standard English for all updates.
+- **Conflict Resolution (Source of Truth)**: The source code is the ultimate source of truth. If a persistent context file contradicts the current code, the Agent **MUST** alert the user and ask for confirmation before updating the context file to align with the code.
+- **Memory Health & Maintenance**: Proactively monitor the `scratch/` directory. Propose the deletion of stale or irrelevant files (e.g., results from finished sub-tasks or older than 7 days) to maintain a clean and efficient workspace.
+- **Transparency & Reporting**: At the conclusion of a task, the Agent must explicitly list which context/memory files were updated and provide a concise summary of the changes made to the persistent state.
 
 ---
 

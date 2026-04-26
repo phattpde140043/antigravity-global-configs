@@ -116,3 +116,18 @@ Exception:
 
 - All assumptions made during unclear requirements MUST be written in the Spec document.
 - You must prompt the user to confirm these assumptions before acting on them.
+
+---
+
+## 16. Strict Architecture & ADR Enforcement (NEW)
+
+- For any new system, feature, or high-impact decision, you MUST use the `architecture-design` skill.
+- You MUST write an Architecture Decision Record (ADR) documenting Context, Decision, Alternatives, Trade-offs, and Risks before implementation.
+- Jumping into code without a documented architectural decision is strictly prohibited.
+
+---
+
+## 17. Strict Performance Optimization (NEW)
+
+- **Measure First Iron Law**: Never optimize performance blindly. You MUST follow the 4-step process (Measure, Identify, Fix, Validate) from the `performance-optimization` skill.
+- Any code introducing an N+1 query, full table scan, missing pagination, or sequential blocking async calls MUST be rejected immediately.

@@ -195,3 +195,51 @@ When activated, return:
 3. layout and motion plan
 4. implementation notes (responsive + accessibility)
 5. final design quality checklist
+
+---
+
+## Design Language: Antigravity / Weightless
+
+Use this design language when the product calls for **spatial depth, immersive dashboards, or premium motion-heavy surfaces**.
+
+### Stack
+- **Animation**: GSAP + ScrollTrigger (scroll-linked motion, staggered entrances)
+- **3D**: React Three Fiber (R3F) or CSS 3D transforms (`rotateX`, `rotateY`, `perspective`)
+- **Styling**: Tailwind CSS (layout) + custom CSS for complex 3D transforms
+
+### Visual Principles
+
+| Principle | Implementation |
+| --- | --- |
+| **Weightlessness** | Cards float with layered soft shadows: `box-shadow: 0 20px 40px rgba(0,0,0,0.05)` |
+| **Spatial Depth** | Z-axis layering via CSS `perspective`. Background deep, foreground pops. |
+| **Glassmorphism** | `backdrop-filter: blur(12px)` + semi-transparent borders + subtle translucency |
+| **Isometric Snap** | Tilt grids: `transform: rotateX(60deg) rotateZ(-45deg)` for dashboard card grids |
+
+### Motion Rules
+
+- **Never instant:** All state changes (hover, focus, active) → minimum `0.3s ease-out`
+- **Scroll entrances:** GSAP ScrollTrigger — elements float in from Y-axis with slight rotation
+- **Staggered load:** Card grids stagger by `0.1s` — never appear all at once
+- **Parallax:** Background elements move slower than foreground elements on scroll
+
+### Performance Constraints (Non-Negotiable)
+
+```css
+/* ✅ Offload to GPU — use for all animated elements */
+.animated-card { will-change: transform; }
+
+/* ❌ NEVER animate continuously */
+/* box-shadow and filter are expensive — animate with opacity trick instead */
+.card:hover { opacity: 0.95; } /* NOT: box-shadow transition on every frame */
+```
+
+- `will-change: transform` on every GSAP-animated element
+- Do NOT continuously animate `box-shadow` or `filter` — animate `opacity` instead
+- Always honor `prefers-reduced-motion: reduce` — disable all GSAP animations for these users:
+
+```javascript
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReduced) { gsap.from('.card', { y: 40, opacity: 0, stagger: 0.1 }); }
+```
+

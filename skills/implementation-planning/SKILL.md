@@ -69,6 +69,26 @@ Before proceeding to Step 1, you **MUST** audit the proposed direction against t
 
 If any pillar is missing, **STOP** and redesign the approach.
 
+### Step 0.3 — BFRI Risk Gate (MANDATORY)
+
+Before writing the plan, score the request using the **Backend Feasibility & Risk Index** (from `@backend-architect`):
+
+```
+BFRI = (Architectural Fit + Testability) − (Complexity + Data Risk + Operational Risk)
+Score each dimension 1–5.
+```
+
+| BFRI | Action Required |
+| --- | --- |
+| **6–10** | Proceed — standard planning |
+| **3–5** | Proceed — mandate explicit tests + monitoring in plan |
+| **0–2** | Flag risk — require refactor or isolation strategy in plan |
+| **< 0** | **STOP** — Redesign before planning. Do not proceed. |
+
+Document the BFRI score and dimension breakdown in the plan header. If BFRI < 0, this plan MUST be rejected.
+
+
+
 ### Step 1 — Task Understanding
 
 - Restate the task clearly
@@ -284,3 +304,82 @@ If the plan:
 - lacks validation or security  
 
 → **MUST** be rejected and redesigned.
+
+---
+
+## Skill Orchestration — Complexity Guardrail
+
+Before selecting and invoking ANY specialized skill, evaluate task complexity:
+
+### Complexity Decision Gate
+
+```
+Is this task simple and contained?
+  Examples: CSS color fix, rename variable, add comment, fix typo, minor config change
+
+  YES → Solve directly. DO NOT invoke specialized skills.
+        Over-engineering wastes tokens and introduces unnecessary complexity.
+
+  NO (multi-domain, multi-step, or architectural impact)
+     → Proceed to skill selection.
+```
+
+### Skill Selection Rules
+
+When task IS complex:
+1. **Identify domains** required (frontend, database, auth, deployment, testing…)
+2. **Select minimal set** of skills — do NOT over-select
+3. **Check for conflicts** — do not combine skills with overlapping, contradictory instructions without a resolution plan
+4. **DO NOT create new skills** — only combine what exists in the current skill set
+
+### Memory-Backed Skill Combinations
+
+After completing a complex multi-skill task, record the successful combination for future reuse:
+
+```javascript
+// Record after success
+memory_write({
+    key: "combination-{domain}-{feature}",
+    type: "skill_combination",
+    content: "For {problem}, using @{skill1} + @{skill2} + @{skill3} works because {rationale}.",
+    tags: ["{domain}", "{feature}"]
+})
+
+// Retrieve at start of similar task
+memory_search({ query: "{domain} {feature}", type: "skill_combination" })
+```
+
+### Anti-Patterns
+- ❌ Invoking 3+ specialized skills for a single-file change
+- ❌ Loading design skills for backend-only tasks
+- ❌ Mixing conflicting skill instructions without explicit resolution strategy
+
+---
+
+## Workflow Routing — Common Multi-Domain Scenarios
+
+When a user request maps to a known scenario, use the corresponding skill combination:
+
+| User Request Type | Workflow | Primary Skills to Combine |
+| --- | --- | --- |
+| Ship a SaaS MVP | `ship-saas-mvp` | `spec-driven-development` + `frontend-design` + `nodejs-backend` / `dotnet-patterns` + `ci-cd-and-automation` |
+| Security audit of web app | `security-audit-web-app` | `securities-audit` + `backend-security-coder` + `security-and-hardening` |
+| Build an AI agent system | `build-ai-agent-system` | `ai-engineer` + `implementation-planning` + `test-driven-development` |
+| E2E / browser automation | `qa-browser-automation` | `e2e-testing` + `test-engineer` |
+| Domain-Driven Design | `design-ddd-core-domain` | `backend-architect` + `distributed-system` + `spec-driven-development` |
+| Legacy modernization | `legacy-migration` | `framework-migration` + `test-driven-development` + `backend-architect` |
+| Performance crisis | `performance-incident` | `performance-optimization` + `backend-architect` + `resilience-patterns` |
+
+### Workflow Execution Contract
+
+For every multi-step workflow:
+1. Confirm objective and scope with user
+2. Announce current step + expected artifact before starting
+3. Produce **one concrete artifact per step** (document, code change, test result)
+4. **Validate artifact before proceeding** to next step — never skip validation
+5. At completion, return: Completed steps · Artifacts produced · Validation evidence · Open risks · Next action
+
+### Workflow Safety Guardrails
+- Never run destructive actions without explicit user approval
+- If a required skill is missing, state the gap and fall back to closest available skill
+- When security testing is involved, always confirm authorization is explicit before proceeding

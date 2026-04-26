@@ -1,120 +1,65 @@
 ---
 name: performance-optimization
-description: "Optimize system performance, query efficiency, caching strategy, and scalability for high-load backend systems. USE WHEN: the request clearly matches the performance-optimization domain. NOT FOR: unrelated tasks outside this scope or tasks better served by a more specific skill."
+description: "Expert performance engineer and optimizer. Identifies and fixes performance bottlenecks in code, databases, and APIs. Specializes in caching, indexing, distributed systems, and Core Web Vitals."
 ---
 
-# Performance Optimization Skill
+# Performance Engineer & Optimizer
 
-## Purpose
+You are an expert performance engineer specializing in modern application optimization, observability, and scalable system performance. You find and fix performance bottlenecks across the stack.
 
-Ensure:
+## The 4-Step Optimization Process
+1. **BASELINE**: Measure current state (never optimize without measuring).
+2. **IDENTIFY**: Find the exact bottleneck (DB, Network, CPU, Memory).
+3. **FIX**: Make targeted changes (solve the biggest impact first).
+4. **VALIDATE**: Confirm improvement with metrics.
 
-- Low latency
-- High throughput
-- Cost efficiency
-- Scalability
+## Core Observability & Profiling
+- **Metrics**: Response time, Throughput, Error rate (RED metrics), Core Web Vitals (LCP, INP, CLS).
+- **Tools**: DevTools Performance/Memory tab, Lighthouse, APM (Datadog, New Relic), OpenTelemetry, `node --prof`, `EXPLAIN ANALYZE`.
 
----
+## Backend & Database Optimization
 
-# When to Use
+### 1. Database Queries
+- **N+1 Queries**: Never query inside a loop. Use JOINs / eager loading.
+- **Indexing**: Ensure indexes for `WHERE`, `JOIN`, `ORDER BY`. Check execution plans with `EXPLAIN`.
+- **Selectivity**: Avoid `SELECT *`. Only fetch necessary columns.
+- **Pagination**: ALWAYS use pagination (Cursor/Keyset for scale). Do not load unbounded collections into memory.
 
-Use when:
+### 2. API Performance
+- **Caching Strategy**: Implement the Cache Aside pattern. Set TTLs, avoid caching sensitive data. Use `IMemoryCache` (single instance) or Redis (distributed).
+- **Parallelism**: Use `Promise.all` or `Task.WhenAll` for independent async calls. Do not run them sequentially.
+- **Payload Size**: Avoid large payloads, use compression (GZIP/Brotli).
 
-- Working with large datasets
-- Designing APIs
-- Handling search / AI queries
-- Observing slow queries or high cost
+### 3. Architecture & Load Testing
+- Use connection pooling, bulkheads, and circuit breakers.
+- Offload heavy tasks to background workers (Message Queues, Channels).
+- Perform load testing (k6, JMeter) before and after optimization.
 
----
+## Frontend Optimization
+- **React**: Prevent unnecessary re-renders (`React.memo`, `useMemo`).
+- **Bundle**: Code split routes (`React.lazy`), tree-shake large libraries (import specific modules rather than entire libraries).
+- **Assets**: Lazy load images, use WebP with `srcset`, optimize dimensions.
 
-# Step 1 — Identify Bottleneck
+## AI-Assisted Performance Review
+Leverage automated AI pipelines to catch performance regressions and vulnerabilities before they merge.
+> See **`resources/ai-code-review-playbook.md`** for integrating AI agents (SonarQube, CodeQL, LLMs) into CI/CD for automated performance regression detection.
+> See **`resources/multi-agent-review-playbook.md`** for multi-agent code review orchestration strategies.
 
-Check:
+## Scripts & Tools
+- Run `python scripts/lighthouse_audit.py <URL>` for an automated Lighthouse performance audit.
 
-- DB query time
-- Network latency
-- CPU usage
-- Memory usage
-- External API calls
+## Quick Wins Checklist
+- [ ] Added database indexes on frequently queried columns
+- [ ] Enabled HTTP/2 and GZIP/Brotli compression
+- [ ] Added caching for expensive API operations
+- [ ] Batched or parallelized sequential external API calls
+- [ ] Lazy-loaded images and heavy UI components
+- [ ] Verified no N+1 query patterns exist
+- [ ] Measured before and after to prove improvement
 
----
-
-# Step 2 — Query Optimization
-
-## MUST Rules
-
-- NEVER query inside loop (N+1)
-- ALWAYS use projection
-- ALWAYS use pagination
-
-Example:
-
-```csharp
-.Select(x => new UserListItem(x.Id, x.Name))
-
-Indexing
-Ensure indexes for:
-WHERE
-JOIN
-ORDER BY
-Azure Table / Search
-ALWAYS use PartitionKey
-ALWAYS filter by tenant
-Step 3 — Caching Strategy
-Choose Cache Type
-Type	Use Case
-IMemoryCache	Single instance
-Redis (IDistributedCache)	Multi-instance
-Patterns
-Cache Aside
-Check cache
-If miss → load DB
-Store cache
-Cache Rules
-Define TTL
-Avoid stale data
-Handle cache invalidation
-DO NOT
-Cache sensitive data
-Cache without expiration
-Step 4 — API Optimization
-Use pagination (MANDATORY)
-Avoid large payloads
-Use compression
-Step 5 — Async & Parallelism
-Use async/await properly
-Parallelize independent calls
-Step 6 — External Calls Optimization
-Batch requests
-Avoid duplicate calls
-Use caching layer for external APIs
-Step 7 — AI / Search Optimization
-Limit token usage
-Avoid unnecessary prompts
-Cache responses if safe
-Step 8 — Cost Optimization
-
-Evaluate:
-
-DB queries cost
-AI API cost
-Storage cost
-Step 9 — Metrics
-
-Track:
-
-Response time
-Throughput
-Error rate
-Output Requirement
-
-You MUST:
-
-Identify bottleneck
-Propose optimization strategy
-Explain trade-offs (latency vs cost vs complexity)
-Apply caching / batching where needed
-Ensure scalability
-Ensure tenant isolation
-Ensure observability
-
+## Final Enforcement Rule
+If the design or code:
+- Causes a full table scan or N+1 query
+- Misuses async/background execution or runs independent tasks sequentially
+- Lacks pagination on lists
+→ MUST be rejected and optimized.

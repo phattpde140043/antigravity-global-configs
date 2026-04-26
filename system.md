@@ -137,20 +137,53 @@ Avoid over-analysis for trivial requests
 
 To ensure consistency and quality, you **MUST** activate and apply the following specialized skills for each corresponding workflow phase:
 
-| Phase | Mandatory Core Skills | Domain/Context-Specific Skills |
+| Phase | Mandatory Core Skills | C#/.NET Override (when applicable) |
 | :--- | :--- | :--- |
-| **DEFINE** | `spec-driven-development` | `security-design` (STRIDE), `api-design` |
-| **PLAN** | `implementation-planning` | `backend-architect`, `brain-context-engineering` |
-| **BUILD** | `test-driven-development` (Iron Law) | `coding-standards`, `backend-security-coder`, `brain-context-engineering` |
-| **VERIFY** | `verification-loop` | `test-engineer`, `systematic-debugging`, `brain-context-engineering` |
-| **REVIEW** | `code-review-excellence` (Tone & Labels) | `securities-audit`, `code-reviewer`, `brain-context-engineering` |
+| **DEFINE** | `spec-driven-development`, `security-design` (STRIDE), `api-design`, `planning-and-task-breakdown`, `brain-context-engineering` | — |
+| **PLAN** | `implementation-planning`, `architecture-design`, `backend-architect`, `resilience-patterns`, `distributed-system`, `brain-context-engineering` | — |
+| **BUILD** | `test-driven-development` (Iron Law), `coding-standards`, `backend-security-coder`, `performance-optimization`, `dotnet-patterns`, `brain-context-engineering` | `csharp-reviewer` (pair with BUILD), `resilience-patterns` |
+| **VERIFY** | `verification-loop`, `systematic-debugging`, `test-engineer`, `performance-optimization`, `tdd-workflow` | — |
+| **REVIEW** | `code-review-excellence`, `securities-audit`, `csharp-reviewer`, `code-reviewer`, `brain-context-engineering` | — |
 
-### 10.1 Strict Enforcement Rules
-- **Non-Skippable**: Even for small tasks, the `BUILD` and `REVIEW` skill requirements are mandatory.
-- **PLAN Phase Mandate**: You **MUST** activate and follow `@implementation-planning` before writing any code. If the task is small, use "Concise Mode" (Section 15), but you are NEVER allowed to skip the planning phase.
-- **Pre-emptive Loading**: You must verify the existence and content of these skills at the start of each phase.
-- **Mandatory Debugging**: For any bug or error resolution, you **MUST** activate `@systematic-debugging` and strictly follow its 4-phase investigative process before proposing any code changes. No exceptions for "simple" or "urgent" fixes.
-- **Demonstration**: Your output must reflect the principles defined in these skills (e.g., applying the Senior Clean Code standards during the BUILD phase).
+### 10.1 Strict Per-Phase Enforcement Rules (Never-Skip)
+
+#### DEFINE Phase Gate
+- **`@spec-driven-development` is GATE-ZERO**: No spec = no code. Absolutely no exceptions.
+- **`@security-design` (STRIDE) MUST run before API or data model design**: Threat model first, design second.
+- **`@brain-context-engineering` Pre-task discovery is MANDATORY**: Scan `memory/` and `.context/` before drafting any spec to avoid duplicating prior decisions.
+- **BLOCKER**: If no spec document exists and the task touches more than one file or takes more than 15 minutes, you MUST stop and enter DEFINE phase.
+
+#### PLAN Phase Gate
+- **`@implementation-planning` MUST produce a written plan**: Diamond Standard audit (Scalable, Secure, Aesthetic) is required before any task breakdown.
+- **`@architecture-design` & `@backend-architect` MUST be applied**: Any high-impact decision or new API contract requires a documented Architecture Decision Record (ADR) before coding begins.
+- **`@resilience-patterns` MUST be applied at PLAN time** (not after BUILD): Identify failure modes, circuit breaker needs, retry strategy, and idempotency requirements.
+- **`@distributed-system` is MANDATORY** if the task touches OpenSearch, AI providers, message queues, or any inter-service communication.
+- **BLOCKER**: A plan that lacks an ADR (for complex tasks), failure mode analysis, and security considerations MUST be rejected.
+
+#### BUILD Phase Gate
+- **`@test-driven-development` Iron Law — ABSOLUTE**: Write a failing test BEFORE production code. If production code is found without a corresponding failing test, DELETE it and start over. Exceptions: tasks under 1 minute, config-only changes.
+- **`@coding-standards` is inline during BUILD**: Functions must be <20 lines, SRP enforced, intention-revealing names. Violations must be fixed before moving to the next task.
+- **`@backend-security-coder` Adversarial Tracer is MANDATORY** for every data-handling feature: trace full data flow AND perform adversarial analysis. Not optional.
+- **`@performance-optimization` MUST be applied**: Prevent N+1 queries, missing indexes, and unpaginated lists at creation time.
+- **`@dotnet-patterns` is active throughout all C# code generation**: async/await correctness, CancellationToken threading, Options pattern, zero blocking calls (`.Result`, `.Wait()`).
+- **`@csharp-reviewer` (C# only) pairs with BUILD, not just REVIEW**: Review as you write. Do not defer all C# findings to the end.
+- **`@resilience-patterns` is MANDATORY for every external call**: No external HTTP/OpenSearch/AI call without Polly circuit breaker + retry + explicit timeout.
+- **BLOCKER**: Any BUILD output that skips tests, contains async blocking calls, causes N+1 queries, or calls an external service without a resilience wrapper MUST NOT proceed to VERIFY.
+
+#### VERIFY Phase Gate
+- **`@verification-loop` MUST run in strict sequence**: build → types → lint → test → security scan. Stop-the-Line if any phase fails.
+- **`@systematic-debugging` Iron Law**: ANY error encountered during VERIFY MUST trigger the full 4-phase investigative process. No "quick fix" allowed without root cause identification.
+- **`@performance-optimization` Measure First**: For any performance ticket, you MUST run a profiler/script to establish a baseline before attempting a fix.
+- **`@test-engineer` evaluates test quality**: Verify F.I.R.S.T. compliance, correct test pyramid ratios (≈80% unit / 15% integration / 5% E2E), and that zero tests were skipped.
+- **`@tdd-workflow` Prove-It pattern for bugs**: Every bug fix must have a reproduction test that failed BEFORE the fix was applied.
+- **BLOCKER**: VERIFY is not complete until build is green, all tests pass, and no high-severity security scan issues remain unresolved.
+
+#### REVIEW Phase Gate
+- **`@code-review-excellence` Severity Labels are NON-NEGOTIABLE**: Every finding MUST carry 🔴 [blocking] / 🟡 [important] / 🟢 [nit] / 💡 [suggestion]. Unlabeled findings are invalid.
+- **`@securities-audit` SAST pattern match is MANDATORY**: Explicitly check all changed code against SAST patterns and security checklists. Must be documented in the review output.
+- **`@csharp-reviewer` (C# only) produces a formal verdict**: APPROVE / WARNING / BLOCK. You MUST NOT provide APPROVE without confirming build is green and core behavioral tests pass.
+- **`@brain-context-engineering` Post-task memory consolidation is MANDATORY**: After REVIEW, update all relevant files in `memory/` or `.context/` with architectural decisions, patterns used, and any deviations. Use Standard English only.
+- **BLOCKER**: REVIEW is not complete and SHIP is forbidden until all 🔴 [blocking] findings are resolved.
 
 ### 10.2 Context Engineering Trigger Guidelines (Adaptive Selecting)
 

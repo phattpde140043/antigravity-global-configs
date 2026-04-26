@@ -335,9 +335,10 @@ If the design:
 
 # Architecture Decision Record (ADR)
 
-Every major decision MUST include:
+Every major decision MUST include an ADR.
+> **See `resources/adr-playbook.md`** for comprehensive templates (MADR, Lightweight, Y-Statement, RFC) and ADR lifecycle management rules.
 
-## ADR Template
+## Basic ADR Template
 
 - Context
 - Decision
@@ -357,6 +358,32 @@ Alternatives:
 Trade-offs:
 - Shared index: cheaper but risk leakage
 - Per-tenant: safer but higher cost
+
+---
+
+# Architecture Pattern Selection
+
+> **See `resources/architecture-patterns-playbook.md`** for detailed implementations of Clean Architecture, Hexagonal Architecture, and Domain-Driven Design (DDD).
+
+Before selecting a pattern, use the **3 Questions**:
+1. **Problem Solved**: What SPECIFIC problem does this pattern solve?
+2. **Simpler Alternative**: Is there a simpler solution?
+3. **Deferred Complexity**: Can we add this LATER when needed?
+
+## Pattern Decision Tree
+
+- **Data Access Complexity**
+  - **HIGH** (complex queries, heavy domain rules) → Repository Pattern + Unit of Work
+  - **LOW** (simple CRUD) → ORM directly (Simpler = Better)
+- **Business Rules Complexity**
+  - **HIGH** (domain logic varies by context) → Domain-Driven Design
+  - **LOW** (mostly CRUD) → Transaction Script pattern
+- **Independent Scaling Needed?**
+  - **YES** + Clear boundaries + Large team → Microservices
+  - **NO** → Modular Monolith (extract later if needed)
+- **Real-time Requirements?**
+  - **HIGH** (immediate updates) → Event-Driven Architecture / Message Queues
+  - **LOW** (eventual consistency ok) → Synchronous REST/GraphQL
 
 # Capacity Planning (REQUIRED for large systems)
 

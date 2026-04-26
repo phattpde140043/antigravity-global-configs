@@ -57,13 +57,17 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. U
 | frontend-design | building a landing page, dashboard, or app shell from scratch; upgrading bland UI | framework-specific state/data architecture; backend/API concerns |
 | frontend-patterns | building React components and feature modules; deciding state management approach | high-concept visual direction; backend/API contract design |
 | frontend-slides | creating a talk deck, pitch deck, or internal presentation; converting ppt to HTML | broad frontend app architecture; content distribution strategy |
+| framework-migration | modernizing legacy systems (Strangler Fig); migrating frameworks (React→Vue, REST→GraphQL); upgrading major dependencies (breaking changes, semver batching); language version upgrades (Python 2→3); SQL→NoSQL migration | greenfield development; minor bug fixes; infrastructure-only changes |
 | implementation-planning | Writing new code; Modifying existing logic | unrelated tasks outside this scope |
+
 | investor-materials | creating or revising a pitch deck; writing one-pagers and investor memos | investor outreach messaging; social/media content distribution |
 | investor-outreach | writing cold outreach to investors; drafting warm intro requests | building core fundraising assets; voice profiling methodology |
 | market-research | researching a market, category, company, or technology trend; building TAM/SAM/SOM estimates | framework/API documentation lookup; purely technical implementation |
 | mcp-server-patterns | creating a new MCP server; adding or updating tools/resources/prompts | product-specific business logic; generic API design unrelated to MCP |
 | nextjs-turbopack | developing or debugging Next.js 16+ applications; diagnosing slow dev startup or HMR | framework API semantics; general frontend architecture decisions |
+| nodejs-backend | building or reviewing Node.js/Express/TypeScript microservices; Prisma data access; Zod validation; Sentry observability; Express middleware; background jobs | C#/.NET services (use dotnet-patterns); React/Next.js frontend (use frontend-patterns); pure infrastructure |
 | performance-optimization | profiling slow endpoints or queries; optimizing throughput, latency, or memory usage | architecture redesign; feature development |
+
 | pr-review | reviewing pull requests for correctness, style, and risk before merge | implementing fixes; architecture planning |
 | product-capability | PRD/roadmap note exists but implementation constraints are vague; feature crosses multiple services | unrelated tasks outside this scope |
 | resilience-patterns | adding retry logic, circuit breakers, timeouts, or fallback strategies | unrelated tasks outside this scope |

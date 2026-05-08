@@ -149,11 +149,11 @@ To ensure consistency and quality, you **MUST** activate and apply the following
 
 | Phase | Mandatory Core Skills | C#/.NET Override (when applicable) |
 | :--- | :--- | :--- |
-| **DEFINE** | `spec-driven-development`, `security-design` (STRIDE), `api-design`, `planning-and-task-breakdown`, `brain-context-engineering` | — |
-| **PLAN** | `implementation-planning`, `architecture-design`, `backend-architect`, `resilience-patterns`, `distributed-system`, `brain-context-engineering` | — |
-| **BUILD** | `test-driven-development` (Iron Law), `coding-standards`, `backend-security-coder`, `performance-optimization`, `dotnet-patterns`, `brain-context-engineering` | `csharp-reviewer` (pair with BUILD), `resilience-patterns` |
+| **DEFINE** | `spec-driven-development`, `security-design` (STRIDE), `api-design`, `planning-and-task-breakdown`, `business-strategy`, `brain-context-engineering`, `ai-ml-architect` | — |
+| **PLAN** | `implementation-planning`, `architecture-design`, `backend-architect`, `resilience-patterns`, `distributed-system`, `business-strategy`, `brain-context-engineering`, `ai-ml-architect` | — |
+| **BUILD** | `test-driven-development` (Iron Law), `coding-standards`, `backend-security-coder`, `performance-optimization`, `dotnet-patterns`, `frontend-design`, `brain-context-engineering`, `ai-ml-architect` | `csharp-reviewer` (pair with BUILD), `resilience-patterns` |
 | **VERIFY** | `verification-loop`, `systematic-debugging`, `test-engineer`, `performance-optimization`, `tdd-workflow` | — |
-| **REVIEW** | `code-review-excellence`, `securities-audit`, `csharp-reviewer`, `code-reviewer`, `brain-context-engineering` | — |
+| **REVIEW** | `code-review-excellence`, `securities-audit`, `csharp-reviewer`, `code-reviewer`, `frontend-design`, `brain-context-engineering` | — |
 
 ### 10.1 Strict Per-Phase Enforcement Rules (Never-Skip)
 
@@ -211,7 +211,9 @@ To ensure consistency and quality, you **MUST** activate and apply the following
     ```
 - **English-Only Artifacts**: All filenames, directories, and content within context files (Metadata + Content) must use **Standard English**.
 - **Pre-Task Discovery**: Before starting any task, the Agent **MUST** scan Metadata directories (`memory/`, `.context/`) and the global knowledge directory at `~/.gemini/antigravity/knowledge/{project-name}/`.
-- **Context Availability Rule**: If no project context is found in the Knowledge Base, the Agent **MUST** ask the User: *"I don't see any context for this project in the knowledge base. Would you like me to perform a scan to ingest the project context?"*
+- **Context Discovery Protocol**: If no project context is found in the Knowledge Base, the Agent **MUST** ask the User: *"I don't see any context for this project in the knowledge base. Would you like me to perform a scan to ingest the project context?"*
+- **Technical Change Tracking (MANDATORY)**: The Agent **MUST** follow the protocol in `backend-architect/references/change-tracking.md`. Every significant task must be tracked via the `planned -> in_progress -> implemented -> tested -> deployed` state machine.
+- **Session Handoff (Strict)**: At the end of every session or task, the Agent **MUST** update `memory/handoff.json` with a structured summary to ensure continuity for the next session.
 - **Post-Task Memory Consolidation (Strict)**: After completing any task involving code modifications, the Agent **MUST** update all relevant context files within `memory/` or `.context/` to reflect the updated architectural state, logic, or decisions. Use Standard English for all updates.
 - **Conflict Resolution (Source of Truth)**: The source code is the ultimate source of truth. If a persistent context file contradicts the current code, the Agent **MUST** alert the user and ask for confirmation before updating the context file to align with the code.
 - **Memory Health & Maintenance**: Proactively monitor the `scratch/` directory. Propose the deletion of stale or irrelevant files (e.g., results from finished sub-tasks or older than 7 days) to maintain a clean and efficient workspace.

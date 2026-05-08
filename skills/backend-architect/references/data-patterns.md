@@ -4,6 +4,11 @@
 - **Vertical Partitioning**: Split a large table into smaller tables based on columns (e.g., separate BLOB/Text data).
 - **Horizontal Partitioning (Sharding)**: Split data into multiple database instances based on a Shard Key (e.g., `TenantId`, `Geography`).
 
+## 🏢 Tenancy Models (SaaS)
+- **Shared Schema**: All tenants share the same tables. Use a `tenant_id` column + RLS. (Best for < 1000 tenants, low overhead).
+- **Schema-per-Tenant**: Each tenant has their own PostgreSQL schema. (Good for data residency, higher migration overhead).
+- **Database-per-Tenant**: Each tenant has a dedicated DB instance. (Maximum isolation, highest cost and management complexity).
+
 ## 🔄 Read/Write Splitting (CQRS Lite)
 - Use a **Primary** node for Writes and multiple **Replica** nodes for Reads.
 - Implement **Eventual Consistency** awareness in the UI/API.

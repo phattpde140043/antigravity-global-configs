@@ -1,30 +1,33 @@
 ---
 name: software-architecture
-description: "Kiến trúc phần mềm chuẩn Clean Architecture & DDD."
+description: "Expert in Software Architecture focusing on Clean Architecture, DDD, and Systemic Integrity."
+category: engineering
+metadata:
+  triggers: [clean-architecture, ddd, modularization, system-integrity, architecture-standards]
 ---
 
 # Software Architecture Excellence
 
-## 🎯 Mục tiêu
-1. Đảm bảo tính module hóa và tách biệt trách nhiệm (SoC).
-2. Áp dụng Library-First (Sử dụng thư viện thay vì tự code thủ công các utils).
-3. Kiểm soát độ phức tạp mã nguồn qua các giới hạn cứng (Limit check).
+## 🎯 Objectives
+1. Ensure modularization and Separation of Concerns (SoC).
+2. Apply Library-First policy (Use existing libraries instead of manual utility code).
+3. Control source code complexity via hard limits (Limit checks).
 
-## 🛠️ Quy tắc thực thi
+## 🛠️ Execution Rules
 1. **Naming Standard**: 
-    - CẤM: `utils`, `helpers`, `common`, `shared`.
-    - NÊN: `OrderCalculator`, `InvoiceGenerator`, `AuthService`.
+    - PROHIBITED: `utils`, `helpers`, `common`, `shared`.
+    - RECOMMENDED: `OrderCalculator`, `InvoiceGenerator`, `AuthService`.
 2. **Code Limits**: 
     - Function: < 50 lines.
     - File: < 200 lines.
     - Nesting: Max 3 levels.
 3. **Coding Style**:
-    - Ưu tiên **Early Return**.
-    - Sử dụng Arrow functions khi có thể.
+    - Prioritize **Early Return**.
+    - Use Arrow functions where applicable.
 4. **Library-First Policy**: 
-    - Kiểm tra thư viện chuẩn (npm/nuget) trước khi tự viết logic xử lý chung (Retry, Validation, Mapping).
+    - Check standard libraries (npm/nuget) before writing custom generic logic (Retry, Validation, Mapping).
 
 ## 📋 Acceptance Criteria (AC)
-- [ ] Không có file nào vượt quá 200 dòng.
-- [ ] Tên module phản ánh đúng nghiệp vụ (Domain-specific).
-- [ ] Không có logic lồng nhau quá 3 cấp.
+- [ ] No file exceeds 200 lines.
+- [ ] Module names reflect domain-specific business logic.
+- [ ] No nested logic beyond 3 levels.

@@ -1,22 +1,25 @@
 ---
 name: error-detective
-description: "Săn tìm lỗi qua Log, Stack trace và Anomaly Detection."
+description: "Expert in hunting bugs via logs, stack traces, and anomaly detection using pattern recognition."
+category: engineering
+metadata:
+  triggers: [error-hunting, log-analysis, stack-trace, anomaly-detection, root-cause-analysis]
 ---
 
 # Error Detective
 
-## 🎯 Mục tiêu
-1. Truy quét lỗi qua Log patterns (Regex).
-2. Phân tích Stack trace đa ngôn ngữ và phân loại lỗi ngầm.
-3. Phát hiện Anomaly và Correlation giữa các hệ thống.
+## 🎯 Objectives
+1. Hunt for bugs via log patterns (Regex).
+2. Analyze multi-language stack traces and classify hidden errors.
+3. Detect anomalies and correlations across different systems.
 
-## 🛠️ Quy trình thực hiện
-1. **Log Parsing**: Sử dụng Regex để trích xuất thông tin từ log thô.
-2. **Correlation Analysis**: Đối soát lỗi giữa Frontend (RUM) và Backend dựa trên Correlation ID.
-3. **Fingerprinting**: Nhận diện các mẫu lỗi lặp lại và tạo cảnh báo (Alerting rules).
-4. **Timeline Reconstruction**: Xây dựng lại dòng thời gian sự kiện dẫn đến lỗi (Audit trail).
+## 🛠️ Execution Workflow
+1. **Log Parsing**: Use Regex to extract information from raw logs.
+2. **Correlation Analysis**: Cross-reference errors between Frontend (RUM) and Backend using Correlation IDs.
+3. **Fingerprinting**: Identify repeating error patterns and create alerting rules.
+4. **Timeline Reconstruction**: Rebuild the timeline of events leading to the error (Audit trail).
 
 ## 📋 Acceptance Criteria (AC)
-- [ ] Xác định được Root Cause kèm bằng chứng Log/Trace.
-- [ ] Có kịch bản tái hiện lỗi (Reproduction steps).
-- [ ] Đề xuất được giải pháp ngăn ngừa (Prevention strategy).
+- [ ] Root cause identified with Log/Trace evidence.
+- [ ] Reproduction steps are clearly documented.
+- [ ] Prevention strategy proposed to avoid recurrence.

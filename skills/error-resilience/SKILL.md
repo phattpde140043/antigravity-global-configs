@@ -1,24 +1,27 @@
 ---
 name: error-resilience
-description: "Chuyên gia về Observability, Error Tracking và Phục hồi hệ thống."
+description: "Expert in Observability, Error Tracking, and System Recovery patterns."
+category: engineering
+metadata:
+  triggers: [observability, error-tracking, system-recovery, structured-logging, tracing, circuit-breaker]
 ---
 
 # Error Resilience & Observability
 
-## 🎯 Mục tiêu
-1. Triển khai Structured Logging và Correlation ID cho toàn hệ thống.
-2. Thiết lập cơ chế tự phục hồi (Retry, Circuit Breaker).
-3. Thực hiện Root Cause Analysis (RCA) chuyên sâu.
+## 🎯 Objectives
+1. Implement Structured Logging and Correlation IDs across the entire system.
+2. Establish self-healing mechanisms (Retry, Circuit Breaker).
+3. Perform deep Root Cause Analysis (RCA).
 
-## 🛠️ Quy trình thực hiện
-1. **Tracing Implementation**: Gắn Correlation ID vào mọi request header và log context.
-2. **Structured Logging**: Đảm bảo log đầu ra là JSON với đầy đủ metadata (Service, Version, TraceId).
+## 🛠️ Execution Workflow
+1. **Tracing Implementation**: Attach Correlation IDs to every request header and log context.
+2. **Structured Logging**: Ensure log output is JSON with full metadata (Service, Version, TraceId).
 3. **Resilience Patterns**: 
-    - Triển khai Exponential Backoff cho các lời gọi API.
-    - Cấu hình Circuit Breaker cho các external dependencies.
-4. **Investigation (RCA)**: Sử dụng phương pháp "Five Whys" và "Error Taxonomy" để phân loại lỗi (Critical, High, Medium, Low).
+    - Implement Exponential Backoff for API calls.
+    - Configure Circuit Breakers for external dependencies.
+4. **Investigation (RCA)**: Use the "Five Whys" and "Error Taxonomy" methods to classify errors (Critical, High, Medium, Low).
 
 ## 📋 Acceptance Criteria (AC)
-- [ ] 100% Log là structured JSON.
-- [ ] TraceId được truyền xuyên suốt các service (Propagation).
-- [ ] Các điểm rủi ro (Network/DB) có cơ chế Retry/Breaker.
+- [ ] 100% of logs are structured JSON.
+- [ ] TraceId is propagated across all services.
+- [ ] Risk points (Network/DB) have Retry/Breaker mechanisms implemented.

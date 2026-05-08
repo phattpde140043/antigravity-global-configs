@@ -45,6 +45,14 @@ Agents MUST NOT bypass the process for any reason.
 - **Context Availability Rule**: If no project context is found in the Knowledge Base, the Agent **MUST** ask the User: *"I don't see any context for this project in the knowledge base. Would you like me to perform a scan to ingest the project context?"*
 - **Scope**: Map architecture & **Mini-Threat Modeling (STRIDE)** to identify high-risk areas.
 
+## 🛡️ The Zero-Context Isolation Protocol (Anti-Bias)
+To ensure the highest architectural integrity and avoid "Confirmation Bias," the Review Council (Phases 6-11) must operate under strict isolation:
+
+1. **Independent Refutation**: Each reviewer (Gates, Jobs, Altman, etc.) performs their critique **autonomously**. They MUST NOT see the critiques of other phases until the final consolidation.
+2. **Output-Only Visibility**: Reviewers only see the **Target Artifacts** (Code/Design). They are strictly prohibited from viewing the `PLAN`, reasoning, or conversation history that led to the implementation.
+3. **Red-Teaming Mindset**: Each reviewer starts with the assumption that the implementation is **critically flawed**. Their job is not to "approve," but to "refute."
+4. **No Consensus Bias**: Do not attempt to harmonize critiques during the process. Conflicting feedback is a signal of healthy architectural tension.
+
 #### Phase 1: Architectural Excellence (`@backend-architect`)
 - **Diamond Standard**: Domain Naming, Library-First policy, DDD Compliance.
 
@@ -60,7 +68,32 @@ Agents MUST NOT bypass the process for any reason.
 
 #### Phase 5: Verification & Fix Audit (`@verification-loop`, `@securities-audit`)
 - **Scope**: Root Cause verification & Regression checking.
-- **AC**: Build: PASS, Tests: 100% PASS.
+- **External Audit (Post-Merge)**: For serious launches, run `npx commitshow audit .` to identify deployment-specific gaps (RLS, Webhooks, Idempotency).
+- **AC**: Build: PASS, Tests: 100% PASS, commit.show Score > 80.
+
+#### Phase 6: Strategic Critique (`@strategic-critique-gates`)
+- **Scope**: Out-of-the-flow systemic refutation. Challenge scalability, chokepoints, and 10-year viability.
+- **Goal**: Identify hidden technical debt and "blind spots."
+
+#### Phase 7: Product & Design Critique (`@product-critique-jobs`)
+- **Scope**: Visceral, uncompromising review of simplicity, UX flows, and "soul."
+- **Goal**: Ensure the experience is "magical." Reject mediocrity.
+
+#### Phase 8: Hyper-Growth & Iteration Critique (`@hyper-growth-critique-altman`)
+- **Scope**: High-velocity review of user value and learning speed.
+- **Goal**: Maximize "Aha!" moments.
+
+#### Phase 9: Value & Durability Critique (`@value-durability-critique-buffett`)
+- **Scope**: Disciplined, defense-first review of moats, simplicity, and safety.
+- **Goal**: Ensure long-term durability and a clear "Margin of Safety."
+
+#### Phase 10: Scientific Rigor & Objective-Driven Critique (`@scientific-rigor-critique-lecun`)
+- **Scope**: Grounded, scientific refutation of hype and probabilistic guessing.
+- **Goal**: Ensure the implementation follows World Models and Objective-Driven logic.
+
+#### Phase 11: Clean Craftsmanship & SOLID Critique (`@clean-craftsmanship-critique-bob`)
+- **Scope**: Professional review of code health, structure, and SOLID integrity.
+- **Goal**: Ensure the code is maintainable, clean, and follows Clean Architecture.
 
 ---
 

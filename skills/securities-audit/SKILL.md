@@ -12,6 +12,8 @@ Proactive security validation and threat-centric auditing. Ensure systems are se
 - **[API Security](references/api-security.md)**: JWT security, Rate Limiting, and Fuzz Testing.
 - **[Threat Modeling](references/threat-modeling.md)**: STRIDE, PASTA, and Risk Scoring analysis.
 - **[Memory Security](references/memory-security.md)**: Zeroization rules and RAM data security.
+- **[Secrets Infrastructure](references/secrets-infrastructure.md)**: Vault, Cloud Managers, and CI/CD secret safety.
+- **[External Audit](references/commitshow-audit.md)**: commit.show post-deployment audit tool.
 - **[Multi-Tenant Safety](references/multi-tenant-safety.md)**: Golden rules for customer data isolation.
 - **[SAST Patterns](references/sast-patterns.md)**: Security violation code patterns (SQLi, XSS, SSRF).
 

@@ -1,28 +1,31 @@
 ---
 name: vibe-code-auditor
-description: "Kiểm định code AI/Prototype, phát hiện technical debt và chấm điểm Readiness."
+description: "Expert in auditing AI-generated/prototype code, detecting technical debt, and scoring Production Readiness."
+category: quality
+metadata:
+  triggers: [code-audit, ai-slop, technical-debt, production-readiness, hallucination-check]
 ---
 
 # Vibe Code Auditor
 
-## 🎯 Mục tiêu
-1. Phát hiện code "vibe" (thiếu cấu trúc), code ảo (hallucination).
-2. Kiểm tra độ bền (Robustness): bare except, missing timeouts.
-3. Chấm điểm Production Readiness (0-100).
+## 🎯 Objectives
+1. Detect "Vibe code" (unstructured), and AI hallucinations.
+2. Check for Robustness: bare exceptions, missing timeouts.
+3. Score Production Readiness (0-100).
 
-## 🛠️ Quy trình thực hiện
+## 🛠️ Execution Workflow
 1. **Pattern Recognition**: 
-    - Tìm `eval()`, `exec()`, bare `except:`.
-    - Tìm N+1 query, unbounded loops.
-2. **Hallucination Check**: Xác thực các thư viện và API (đảm bảo không gọi method ảo).
+    - Search for `eval()`, `exec()`, and bare `except:`.
+    - Detect N+1 queries and unbounded loops.
+2. **Hallucination Check**: Validate libraries and APIs (ensure no calls to non-existent methods).
 3. **Readiness Scoring**:
-    - Start: 100đ.
-    - Critical: -15đ.
-    - High: -8đ.
-    - Medium: -3đ.
-    - Pervasive patterns: -5đ.
+    - Starting Score: 100 points.
+    - Critical Issue: -15 points.
+    - High Severity: -8 points.
+    - Medium Severity: -3 points.
+    - Pervasive patterns: -5 points.
 
 ## 📋 Acceptance Criteria (AC)
-- [ ] Báo cáo có chỉ số Production Readiness Score.
-- [ ] Không còn "AI Slop" (comment thừa, placeholder).
-- [ ] Mọi lời gọi API/Thư viện đều tồn tại thực tế.
+- [ ] Report includes a Production Readiness Score.
+- [ ] No "AI Slop" (redundant comments, placeholders) remains.
+- [ ] All API/Library calls are verified to exist in reality.

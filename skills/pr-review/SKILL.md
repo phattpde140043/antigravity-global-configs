@@ -199,11 +199,11 @@ List improvements that are not critical but recommended.
 
 ## 12. Plan Completion Audit (Strict)
 
-**Bắt buộc đối soát với `implementation_plan.md`:**
-- [DONE]: Tính năng đã được triển khai khớp kế hoạch.
-- [PARTIAL]: Đã làm một phần nhưng còn thiếu (liệt kê lý do).
-- [NOT DONE]: Chưa triển khai bước nào trong kế hoạch (liệt kê lý do).
-- **Verdict**: Chốt trạng thái hoàn tất nhiệm vụ.
+**Mandatory audit against `implementation_plan.md`:**
+- [DONE]: Feature implemented as planned.
+- [PARTIAL]: Partially implemented (list reasons).
+- [NOT DONE]: No implementation steps taken (list reasons).
+- **Verdict**: Final status of task completion.
 
 ---
 

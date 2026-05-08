@@ -1,24 +1,27 @@
 ---
 name: codex-review
-description: "Chuyên gia quản lý lịch sử thay đổi (CHANGELOG) và quy ước commit (Conventional Commits). Tích hợp tư duy Codex AI để review các đợt refactoring lớn."
+description: "Expert in changelog management (CHANGELOG) and commit conventions (Conventional Commits). Integrates Codex AI reasoning to review large-scale refactoring."
+category: development
+metadata:
+  triggers: [changelog, conventional-commits, refactoring-review, commit-message]
 ---
 
 # Codex Review & Changelog Specialist
 
-## 🎯 Mục tiêu
-1. Đảm bảo mọi thay đổi mã nguồn đều được ghi lại trong `CHANGELOG.md` một cách tự động và chuyên nghiệp.
-2. Kiểm soát chất lượng thông điệp commit (Conventional Commits).
-3. Hỗ trợ review các đợt Refactoring quy mô lớn (Large-scale refactoring).
+## 🎯 Objectives
+1. Ensure all source code changes are recorded in `CHANGELOG.md` automatically and professionally.
+2. Maintain the quality of commit messages (Conventional Commits).
+3. Support the review of large-scale refactorings.
 
-## 🛠️ Quy trình thực hiện
-1. **Quét thay đổi (Diff Scan)**: Phân tích các thay đổi chính trong logic, tính năng hoặc sửa lỗi.
-2. **Phân loại (Categorization)**: Chia thay đổi thành: `feat`, `fix`, `refactor`, `perf`, `docs`, `chore`.
-3. **Cập nhật CHANGELOG**: 
-    - Kiểm tra sự tồn tại của `CHANGELOG.md` tại root dự án.
-    - Chèn nội dung thay đổi mới nhất vào đầu file theo định dạng chuẩn.
-4. **Kiểm tra Commit Message**: Đảm bảo tuân thủ cấu trúc: `<type>(scope): <description>`.
+## 🛠️ Execution Workflow
+1. **Diff Scan**: Analyze major changes in logic, features, or bug fixes.
+2. **Categorization**: Categorize changes into: `feat`, `fix`, `refactor`, `perf`, `docs`, `chore`.
+3. **CHANGELOG Update**: 
+    - Verify the existence of `CHANGELOG.md` at the project root.
+    - Insert the latest changes at the top of the file in the standard format.
+4. **Commit Message Validation**: Ensure compliance with the structure: `<type>(scope): <description>`.
 
 ## 📋 Acceptance Criteria (AC)
-- [ ] `CHANGELOG.md` được cập nhật khớp với các thay đổi thực tế.
-- [ ] Commit message gợi ý tuân thủ Conventional Commits (feat, fix, refactor...).
-- [ ] Các thay đổi Refactoring lớn được giải thích rõ "Tại sao" thay vì chỉ "Cái gì".
+- [ ] `CHANGELOG.md` is updated to match actual changes.
+- [ ] Suggested commit messages comply with Conventional Commits (feat, fix, refactor...).
+- [ ] Large-scale refactorings are explained with "Why" rather than just "What."

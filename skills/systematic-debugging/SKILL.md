@@ -1,45 +1,52 @@
 ---
 name: systematic-debugging
-description: "Elite debugging framework based on the Iron Law: No fixes without root cause. Incorporates structural tracing and defense-in-depth."
+description: "Expert AI-assisted debugging specialist using observability platforms and automated root cause analysis."
 ---
 
 # Systematic Debugging (Tier 2)
 
-Transform debugging from intuitive guesswork into a high-discipline investigative process.
+Transform debugging from guesswork into a disciplined engineering process. Focus on evidence-based problem solving and root cause elimination.
 
 ## ⚡ Quick References (MANDATORY)
-- **[Debugging Playbook](references/debugging-playbook.md)**: 4-Phase process and Multi-Agent Review.
-- **[Root Cause Tracing](references/root-cause-tracing.md)**: Backward tracing techniques from symptom to trigger.
-- **[Defense-in-Depth](references/defense-in-depth.md)**: Building multi-layered protection to prevent bug recurrence.
-- **[Condition-Based Waiting](references/condition-based-waiting.md)**: Handling non-deterministic (flaky) and asynchronous errors.
+- **[Debugging Playbook](references/debugging-playbook.md)**: The 10-step systematic workflow.
+- **[Observability Stack](references/observability-stack.md)**: Tools (Sentry, DataDog, OpenTelemetry).
+- **[Root Cause Tracing](references/root-cause-tracing.md)**: Intelligent instrumentation and RCA.
+- **[Defense in Depth](references/defense-in-depth.md)**: Debugging security-related issues.
+- **[Condition-based Waiting](references/condition-based-waiting.md)**: Debugging race conditions and async logic.
 
 ---
 
-## ⚖️ The Iron Law
-**NEVER propose a solution without identifying the Root Cause.**
-If you haven't identified the exact code and state that triggered the failure, you are "guessing." Guessing is unacceptable.
+## 🏗️ Operating Pipeline
+
+### 1. Triage & Hypothesis
+- Analyze logs/stack traces to identify the failure pattern.
+- Generate **3-5 hypotheses** with probability and falsification criteria.
+
+### 2. Evidence Gathering
+- Query the **Observability Stack** (Traces, Metrics, Logs).
+- Correlate errors with system changes (deployments, config drift).
+
+### 3. Intelligent Instrumentation
+- Place targeted logpoints or conditional breakpoints at decision nodes.
+- Use **Production-Safe** techniques if debugging live systems.
+
+### 4. Root Cause & Fix
+- Reconstruct the execution path and identify the bug.
+- Implement the fix with a **Rollback Strategy** and risk assessment.
+
+### 5. Verification & Prevention
+- Verify the fix against the original failure symptoms.
+- Add regression tests and update the troubleshooting runbooks.
 
 ---
 
-## 🛑 The Stop-the-Line Rule
-When a bug or regression is detected:
-1. **STOP** adding new features.
-2. **PRESERVE** evidence (logs, stack traces).
-3. **ISOLATE** the environment.
-4. **INVESTIGATE** until root cause is found.
+## 🛡️ Debugging Pillars
+1. **Evidence over Guesswork**: Never change code without a falsified hypothesis.
+2. **Observability First**: Use traces and metrics before diving into code.
+3. **Reproducibility**: A bug that can't be reproduced can't be reliably fixed.
+4. **Safety**: Always use non-invasive techniques in production environments.
 
----
-
-## 🛠️ Operating Pipeline (4 Phases)
-
-### Phase 1: Observation & Reproduction (Proof)
-Create a test case or scenario that reproduces the error 100% of the time. "You don't have a bug until you have a failing test."
-
-### Phase 2: Structural Investigation (Source)
-Utilize **Root Cause Tracing** and **5 Whys**. Do not stop at the first error message.
-
-### Phase 3: The Atomic Fix (Precise Repair)
-Implement the minimum required change to solve the issue at its root. Adhere to the **Surgical Changes** principle.
-
-### Phase 4: Defense-in-Depth (Hardening)
-Implement protection at 4 layers: Input validation, Business logic invariants, Environment guards, and High-signal logging.
+## ⚠️ Safety Boundaries
+- Do not attach interactive debuggers to production instances without approval.
+- Avoid logging PII (Personally Identifiable Information) in debug logs.
+- Never deploy "temporary" debug code to production permanently.

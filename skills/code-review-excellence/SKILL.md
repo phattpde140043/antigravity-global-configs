@@ -36,6 +36,9 @@ Instead of stating "this is wrong," ask a question to encourage thinking:
 2. **High-Level Review**: Check architecture, design consistency, and scaling concerns.
 3. **Line-by-Line Review**: Check logic, security, performance, and naming.
 4. **Summary & Verdict**: Provide a clear summary with a final verdict (APPROVE / REQUEST CHANGES).
+5. **AI Slop & Prototype Scan**: Phát hiện code thừa, comment rác của AI, các biến placeholder (`temp`, `test`) và code prototype chưa hoàn thiện.
+6. **Production Readiness Scoring**: Chấm điểm hệ thống (0-100) dựa trên: Bảo mật, Hiệu năng, Resilience và Clean Code.
+7. **Auto-Changelog & Commits**: Tự động tạo CHANGELOG.md và kiểm tra Conventional Commits (feat, fix, docs).
 
 ## Handling Disagreements
 When an author disagrees with your feedback:
@@ -54,3 +57,6 @@ When an author disagrees with your feedback:
 - [ ] Are all blocking issues clearly labeled with 🔴?
 - [ ] Did I offer to pair if the logic is too complex?
 - [ ] Is the tone mentoring and constructive?
+- [ ] **AI Slop Scan**: Đã xóa hết placeholder và code thừa chưa?
+- [ ] **Readiness Score**: Điểm sẵn sàng có đạt > 85/100 không?
+- [ ] **Conventional Commits**: Commit message có đúng chuẩn không?

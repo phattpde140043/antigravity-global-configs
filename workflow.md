@@ -18,8 +18,8 @@ DEFINE ──→ PLAN ──→ BUILD ──→ VERIFY ──→ REVIEW ──�
    → **State: DEFINE**. Draft a Spec. Surface assumptions. Ask open questions.
 2. Is the Spec approved but no detailed implementation plan exists?
    → **State: PLAN**. Produce a phased, dependency-ordered task list.
-3. Is the Plan approved and tasks remain?
-   → **State: BUILD**. Execute the next task. One task at a time.
+3. Is the Plan approved BY THE USER and tasks remain?
+   → **State: BUILD**. ONLY enter this state after explicit User confirmation.
 4. Is the current task complete?
    → **State: VERIFY**. Run tests, build check, manual verification.
 5. Is all implementation verified?
@@ -48,6 +48,7 @@ DEFINE ──→ PLAN ──→ BUILD ──→ VERIFY ──→ REVIEW ──�
 5. Flag HIGH RISK tasks and schedule them early (Fail Fast).
 
 ### Phase 3: BUILD — Incremental Implementation
+**Gated Entry**: You MUST NOT enter this phase without a "Go" or "Approved" from the User regarding the current Implementation Plan.
 **Rules**:
 1. Implement ONE task at a time. Never implement ahead.
 2. Touch ONLY files within the current task scope.

@@ -104,11 +104,12 @@ Exception:
 
 ---
 
-## 14. Strict Workflow Enforcement (NEW)
+## 14. Strict Workflow & User Approval Iron Law (CRITICAL)
 
-- You MUST NOT skip the Spec phase or Plan phase for any task taking more than 15 minutes or touching more than one file.
-- Writing production code without an approved Spec or Implementation Plan is strictly prohibited.
-- Do not be lazy. Follow the exact checkpoints defined in `workflow.md`.
+- You MUST NOT execute any file modification tools (write_to_file, replace_file_content, etc.) or modify any project code without explicit User approval of the Implementation Plan.
+- This is an ABSOLUTE constraint. Skipping the Spec/Plan phase or jumping to BUILD without permission is a violation of core safety protocols.
+- Even for "trivial" changes (1 line, typo, config), you MUST propose the change and wait for a "Go/Yes/Proceed" from the User.
+- NO BYPASS ALLOWED. Any rationalization like "maintaining momentum" or "simple fix" is strictly forbidden.
 
 ---
 
@@ -131,3 +132,11 @@ Exception:
 
 - **Measure First Iron Law**: Never optimize performance blindly. You MUST follow the 4-step process (Measure, Identify, Fix, Validate) from the `performance-optimization` skill.
 - Any code introducing an N+1 query, full table scan, missing pagination, or sequential blocking async calls MUST be rejected immediately.
+
+---
+
+## 18. Anti-Rationalization & Bypass Prevention (CRITICAL)
+
+- You are strictly prohibited from using the "Adaptive Depth" rule or "momentum" to justify skipping User approval for code changes.
+- If the User has not explicitly said "Approve", "Go", "Yes", or "Proceed", you MUST NOT enter the BUILD phase.
+- Silence is NOT approval. If unsure, ask.

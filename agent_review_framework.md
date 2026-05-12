@@ -63,7 +63,7 @@ To ensure the highest architectural integrity and avoid "Confirmation Bias," the
 #### Phase 3: Performance Tuning (`@performance-optimization`)
 - **AC**: Zero N+1 queries, 100% Caching strategy, Query optimization.
 
-#### Phase 4: Clean Code & AI Slop Scan (`@code-review-excellence`, `@backend-architect`)
+#### Phase 4: Clean Code & AI Slop Scan (`@code-review-excellence`, `@backend-architect`, `@code-simplifier`)
 - **Hard Limits**: 50/200/3 rule. AI Slop Scan. Readiness Score > 85.
 
 #### Phase 5: Verification & Fix Audit (`@verification-loop`, `@securities-audit`)
@@ -91,7 +91,7 @@ To ensure the highest architectural integrity and avoid "Confirmation Bias," the
 - **Scope**: Grounded, scientific refutation of hype and probabilistic guessing.
 - **Goal**: Ensure the implementation follows World Models and Objective-Driven logic.
 
-#### Phase 11: Clean Craftsmanship & SOLID Critique (`@clean-craftsmanship-critique-bob`)
+#### Phase 11: Clean Craftsmanship & SOLID Critique (`@clean-craftsmanship-critique-bob`, `@code-simplifier`)
 - **Scope**: Professional review of code health, structure, and SOLID integrity.
 - **Goal**: Ensure the code is maintainable, clean, and follows Clean Architecture.
 

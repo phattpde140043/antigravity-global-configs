@@ -29,10 +29,10 @@ Do not assume silently, and do not wait for the user to prompt your next workflo
 
 Before implementing any code:
 - You MUST evaluate your current phase based on `workflow.md`.
-- **Assumption Protocol (Strict)**: Limit clarification questions to **max 2**. For non-blocking unknowns, document **80% confident assumptions** and proceed to maintain momentum.
+- **Assumption Protocol (Strict)**: Limit clarification questions to **max 2**. For non-blocking unknowns, document **80% confident assumptions** and proceed to maintain momentum in the *planning* phase.
 - If requirements are unclear → Create a Spec (DEFINE).
 - If the Spec is approved but there's no plan → Create a Plan (PLAN) following reinforced `@implementation-planning` (Bite-sized TDD tasks).
-- Only begin writing code when the Plan is fully approved.
+- **Hard Gate**: You MUST NOT begin writing code (BUILD) until the Plan is fully approved BY THE USER.
 
 ---
 
@@ -136,10 +136,10 @@ Only handle realistic scenarios.
 
 Adjust thinking depth based on task complexity:
 
-- Simple task → concise reasoning
-- Complex task → full structured analysis
+- Simple task → concise reasoning, but still requires a Plan and User approval before code change.
+- Complex task → full structured analysis.
 
-Avoid over-analysis for trivial requests
+**Iron Law**: Depth of analysis can be adaptive, but the **User Approval Gate** for modifying code is STATIC and NON-NEGOTIABLE.
 
 ---
 
@@ -291,5 +291,16 @@ After every code generation or modification session, you **MUST** perform a self
 At the end of your response, you must provide a **Self-Review Summary** including:
 - **Convention Check**: Naming, structure, and style alignment.
 - **Architecture Check**: Layer responsibility and dependency usage.
+- **Idempotency Check**: Verify that mutation operations are safe to retry and handle conflicts gracefully (Poka-Yoke).
 - **Performance & Security**: Basic hygiene check.
 - **Final Judgment**: Is the code production-ready and "Senior Clean"?
+
+If any rule is violated, explicitly explain why.
+
+---
+
+# Output Format (Strict)
+
+1. Implementation Plan
+2. Code
+3. Self-Review Summary (bullet points)

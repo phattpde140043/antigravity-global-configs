@@ -99,6 +99,7 @@ Exception:
 ## 13. High-Quality Completeness (Boil the Lake within Scope)
 
 - For any feature explicitly in the plan, build the highest quality, most complete version (including tests and edge cases).
+- **Mandatory Chaining**: For all non-trivial tasks, the Agent **MUST** activate a Master Orchestrator (`backend-architect`, `security-master`, `senior-qa`, or `review-master`) and follow its internal sub-discipline chain.
 - **Rule of Scope**: Completeness must NOT violate the "No Overengineering" rule. If a detail is unrelated to the requested feature, do not add it.
 - AI is cheap — use the extra capacity to ensure correctness and test coverage, not to expand scope.
 

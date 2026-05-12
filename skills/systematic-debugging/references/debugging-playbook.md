@@ -12,12 +12,19 @@ Transform debugging from guesswork into a disciplined engineering process. Use t
 ### 2. Observability Data Collection
 - Gather logs (ELK/Loki), Traces (Jaeger/HoneyComb), and Metrics (Prometheus/DataDog).
 - Correlate error spikes with deployment timelines or resource exhaustion.
+- **Layered Evidence Gathering**: In multi-component systems, log what enters/exits each component boundary (Workflow → Script → API → DB) to pinpoint the exact failing layer.
 
 ### 3. Hypothesis Falsification
 - For each hypothesis, define **falsification criteria**.
 - Design controlled experiments to prove or disprove the hypothesis.
 
-### 4. Strategy Selection
+### 4. The 3-Fix Rule (Architectural Pivot)
+- If **3 distinct fix attempts** have failed to resolve the issue, STOP.
+- Do not attempt a 4th fix.
+- This pattern indicates an **Architectural Flaw** (e.g., wrong pattern, deep coupling, invalid assumptions) rather than a simple bug.
+- Question the fundamentals and discuss with the team before proceeding.
+
+### 5. Strategy Selection
 - **Interactive**: For local reproduction (VS Code Debugger).
 - **Observability-Driven**: For production (Trace analysis).
 - **Time-Travel**: For complex state (rr, Redux DevTools).

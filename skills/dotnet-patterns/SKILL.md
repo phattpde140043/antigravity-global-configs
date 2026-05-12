@@ -80,6 +80,24 @@ Delegation:
 - throw exceptions for exceptional flows, not routine validation outcomes
 - preserve context in logs while returning safe client-facing errors
 
+### Result Pattern Implementation
+
+```csharp
+public record Result<T>(bool IsSuccess, T? Value, string? Error = null, string? ErrorCode = null)
+{
+    public static Result<T> Success(T value) => new(true, value);
+    public static Result<T> Failure(string error, string? code = null) => new(false, default, error, code);
+}
+```
+
+## Clean Architecture Structure
+
+Organize projects by responsibility:
+- **Domain**: Entities, Interfaces, Exceptions, ValueObjects (No dependencies).
+- **Application**: Use cases, DTOs, Validators, Interfaces.
+- **Infrastructure**: Data access (EF/Dapper), Caching, External APIs.
+- **Api**: Controllers, MinimalAPI, Middleware, Program.cs.
+
 ## EF Core and Data Access Patterns
 
 - use AsNoTracking for read-only queries

@@ -31,6 +31,23 @@ DEFINE ──→ PLAN ──→ BUILD ──→ VERIFY ──→ REVIEW ──�
 
 ## 2. Phase Details
 
+### 🔵 Phase 4 — VERIFY (The Proof)
+- **Primary Conductor**: `@senior-qa`
+- **Objective**: Proof of correctness. Every feature must have a corresponding test.
+- **Rules**:
+    - Use `tdd-workflow` for logic.
+    - Use `e2e-testing` (via `@senior-qa`) for user flows.
+    - **No fixed timeouts**.
+- **AC**: Build PASS + Tests PASS (Smoke & Regression).
+
+### 🟣 Phase 5 — REVIEW (The Audit)
+- **Primary Conductor**: `@architect`
+- **Objective**: Structural integrity and standard compliance.
+- **Rules**:
+    - Use `self-review` (via `@architect`) to audit code against `rules.md`.
+    - Validate performance, security, and conventions.
+    - **No "AI Slop"**: Remove redundant code, placeholders, and TODOs.
+
 ### Phase 1: DEFINE — The Spec
 **When to activate**: The request touches more than one file, requirements are vague, architectural choices must be made, or the task takes >15 mins.
 **Rules**:

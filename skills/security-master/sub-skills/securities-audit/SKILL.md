@@ -30,6 +30,12 @@ Proactive security validation and threat-centric auditing. Ensure systems are se
 - Audit secrets management and sensitive data handling.
 - Review resilience patterns (Retry/Circuit Breaker) for security impact.
 
-### 3. Mitigation & Verification
+### 3. Modern Security Heuristics (CRITICAL)
+- **Trace Data Flow**: Systematically follow data from entry points (UI/API) through middleware to final storage, checking for "security bypasses" where privileged logic (e.g., Admin SDKs) ignores standard database security rules.
+- **Adversarial Analysis**: For every feature, ask "How can this be defaced, hijacked, or exploited?" specifically looking for IDOR on global resources.
+- **Middleware Validation**: Verify that auth/authz "choke points" are actually executing and correctly configured (e.g., correct file naming, exports, and matchers).
+- **SSRF Protection**: Implement IP pinning and DNS resolution validation to prevent DNS rebinding attacks on internal endpoints.
+
+### 4. Mitigation & Verification
 - Propose detective, preventive, and corrective controls.
 - Generate security assessment reports in `docs/assessment/`.

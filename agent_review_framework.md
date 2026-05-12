@@ -40,7 +40,7 @@ Agents MUST NOT bypass the process for any reason.
 
 ## 🔴 Level 2: Deep System Audit (DSA)
 
-#### Phase 0: Context Discovery & Threat Triage (`@backend-architect`, `@securities-audit`)
+#### Phase 0: Context Discovery & Threat Triage (`@backend-architect`, `@security-master`)
 - **Context Discovery (CRITICAL)**: Before starting any task, the Agent **MUST** check the `knowledge/` directory (e.g., `~/.gemini/antigravity/knowledge/`) to read project context (Briefings, ADRs, Filesystem context).
 - **Context Availability Rule**: If no project context is found in the Knowledge Base, the Agent **MUST** ask the User: *"I don't see any context for this project in the knowledge base. Would you like me to perform a scan to ingest the project context?"*
 - **Scope**: Map architecture & **Mini-Threat Modeling (STRIDE)** to identify high-risk areas.
@@ -63,10 +63,10 @@ To ensure the highest architectural integrity and avoid "Confirmation Bias," the
 #### Phase 3: Performance Tuning (`@performance-optimization`)
 - **AC**: Zero N+1 queries, 100% Caching strategy, Query optimization.
 
-#### Phase 4: Clean Code & AI Slop Scan (`@code-review-excellence`, `@backend-architect`, `@code-simplifier`)
+#### Phase 4: Clean Code & AI Slop Scan (`@code-simplifier`)
 - **Hard Limits**: 50/200/3 rule. AI Slop Scan. Readiness Score > 85.
 
-#### Phase 5: Verification & Fix Audit (`@verification-loop`, `@securities-audit`)
+#### Phase 5: Verification & Fix Audit (`@senior-qa`, `@review-master`)
 - **Scope**: Root Cause verification & Regression checking.
 - **External Audit (Post-Merge)**: For serious launches, run `npx commitshow audit .` to identify deployment-specific gaps (RLS, Webhooks, Idempotency).
 - **AC**: Build: PASS, Tests: 100% PASS, commit.show Score > 80.

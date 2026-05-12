@@ -155,6 +155,14 @@ Choose intentionally:
 - profile before and after optimization
 - treat perceived performance (skeletons/progressive reveal) as product concern
 
+## Vercel Performance Rules (Next.js)
+
+1. **Eliminate Waterfalls**: Start promises early, await late. Use `Promise.all()` for independent fetches.
+2. **Bundle Size**: Avoid barrel files. Use `next/dynamic` for heavy components. Load analytics after hydration.
+3. **Server-Side**: Use `React.cache()` for request deduplication. Minimize data passed to client components.
+4. **Re-render Optimization**: Use functional `setState` for stable callbacks. Pass functions to `useState` for expensive initial states.
+5. **Rendering**: Use `content-visibility` for long lists. Animate wrapper divs, not SVG elements.
+
 ---
 
 ## Routing and Navigation

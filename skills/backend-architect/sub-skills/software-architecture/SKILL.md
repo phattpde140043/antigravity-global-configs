@@ -26,6 +26,12 @@ metadata:
     - Use Arrow functions where applicable.
 4. **Library-First Policy**: 
     - Check standard libraries (npm/nuget) before writing custom generic logic (Retry, Validation, Mapping).
+    - **Justification for Custom Code**: Custom code is only allowed if:
+        - Specific business logic is unique to the domain.
+        - Performance-critical paths require extreme optimization.
+        - Security-sensitive code requires absolute control.
+        - Existing libraries would introduce excessive dependency bloat for trivial tasks.
+        - Thorough evaluation (min. 3 libraries) shows no fit for requirements.
 
 ## 📋 Acceptance Criteria (AC)
 - [ ] No file exceeds 200 lines.

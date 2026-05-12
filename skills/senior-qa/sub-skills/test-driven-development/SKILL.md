@@ -351,8 +351,16 @@ Write code before the test? Delete it. Start over. This ensures the test actuall
 - **Meaningful**: Tests must demonstrate desired API behavior and domain requirements, not just implementation details. Coverage % is secondary to behavior verification.
 - **Readable Assertions**: Use **FluentAssertions** (`result.Should().BeEquivalentTo(expected)`) to make the intent of the test obvious and provide descriptive failure messages.
 
-## Verification Checklist
+## When Stuck
 
+| Problem | Solution |
+| :--- | :--- |
+| Don't know how to test | Write wished-for API first. Write assertion first. |
+| Test too complicated | Design is too complicated. Simplify interface / Use DI. |
+| Must mock everything | Code is too coupled. Use Dependency Injection. |
+| Test setup is huge | Extract helpers. Still complex? Simplify the design. |
+
+## Verification Checklist
 - [ ] Did I watch the test fail first?
 - [ ] Is the failure message clear and correct?
 - [ ] Did I write the *minimal* code to pass?

@@ -13,7 +13,7 @@ To ensure the **OSP Search AI** ecosystem remains stable, secure, and performant
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **L1** | Unit/Component | Logic, UI components. | Every Commit | Jest / Pytest / xUnit | `tdd-workflow` / `frontend-unit-testing` / `python-unit-testing` |
 | **L2** | Integration | Service-to-service, API. | Every PR | Playwright / Postman | `nodejs-backend` / `test-engineer` |
-| **L3** | E2E / UI | User flows, Isolation. | Daily / Merge | Playwright | `e2e-testing` / `browser-automation` / `test-generator` |
+| **L3** | E2E / UI | User flows, Isolation. | Daily / Merge | Playwright | 🔬 Specialized Verification Logic (`@senior-qa`, `@senior-qa/sub-skills/e2e-testing`) / `browser-automation` / `test-generator` |
 | **L4** | Security | IDOR, XSS, RCE. | Weekly | OWASP ZAP | `securities-audit` / `penetration-testing` |
 | **L5** | Performance | Latency, Load. | Bi-weekly | k6 / JMeter | `performance-optimization` |
 
@@ -26,7 +26,7 @@ To ensure the **OSP Search AI** ecosystem remains stable, secure, and performant
 - **Linting**: Static analysis (`coding-standards`).
 - **Unit Tests**: Logic and UI components (`tdd-workflow`, `frontend-unit-testing`, `python-unit-testing`).
 - **Test Generation**: Automated drafting of test skeletons (`test-generator`).
-- **Plan Verification**: Ensure test coverage in `implementation-planning` or `test-engineer`.
+- **Plan Verification**: Ensure test coverage in #### Gate 3: Behavioral Validation (`@senior-qa`, `@senior-qa/sub-skills/test-engineer`).
 
 ### 🟡 Stage 2: The Pull Request Gate (CI)
 *Goal: Validate integration and prevent regressions in shared branches.*

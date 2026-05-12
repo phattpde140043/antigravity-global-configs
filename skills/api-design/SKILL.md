@@ -109,6 +109,37 @@ Trust internal code. Validate at system edges where external input enters (API h
 
 ---
 
+## FastAPI/Pydantic Patterns (Standard)
+
+```python
+class PaginatedResponse(BaseModel, Generic[T]):
+    items: List[T]
+    total: int
+    page: int
+    page_size: int
+
+    @property
+    def pages(self) -> int:
+        return (self.total + self.page_size - 1) // self.page_size
+```
+
+## GraphQL N+1 Prevention (DataLoader)
+
+Always use **DataLoaders** for relationship resolution to batch database queries.
+
+```python
+class UserLoader(DataLoader):
+    async def batch_load_fn(self, user_ids: List[str]) -> List[Optional[User]]:
+        users = await fetch_users_by_ids(user_ids)
+        user_map = {u.id: u for u in users}
+        return [user_map.get(uid) for uid in user_ids]
+
+# Resolver usage
+@user_type.field("orders")
+async def resolve_orders(user, info):
+    return await info.context["loaders"]["orders"].load(user.id)
+```
+
 # Pagination Patterns
 
 ## Offset-Based (Simple)

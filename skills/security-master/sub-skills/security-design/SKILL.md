@@ -11,14 +11,12 @@ Build security into the system from the start rather than bolting it on later.
 
 For every new feature or architectural change, identify threats using the STRIDE categories:
 
-| Category | Security Property | Definition |
-| :--- | :--- | :--- |
-| **S**poofing | Authenticity | Pretending to be something or someone else. |
-| **T**ampering | Integrity | Modifying data or code. |
-| **R**epudiation | Non-repudiability | Claiming you didn't do something. |
-| **I**nformation Disclosure | Confidentiality | Exposing data to unauthorized parties. |
-| **D**enial of Service | Availability | Exhausting resources to crash the system. |
 | **E**levation of Privilege | Authorization | Gaining higher access level than intended. |
+
+## 2. Advanced Methodologies
+- **PASTA (Process for Attack Simulation and Threat Analysis)**: Use this for risk-centric modeling (Define Objectives -> Define Technical Scope -> Decompose App -> Attack Simulation -> Risk Analysis).
+- **Attack Trees**: Visualize attack paths to critical assets (e.g., "Compromise Database" as root node).
+- **Risk Scoring**: Use DREAD or CVSS to prioritize threats based on Impact and Exploitability.
 
 ---
 

@@ -14,6 +14,8 @@ The central authority and dispatcher for all security-related activities. This m
 
 ## 🧭 High-Level Strategy
 - **Defense-in-Depth**: Layered security across Design, Code, and Infrastructure.
+- **Threat Modeling**: Master **STRIDE** and **Attack Tree Construction** to visualize and prioritize attack vectors.
+- **API Security Mastery**: Implement dedicated **API Security Testing** (OWASP API Top 10) for all service-to-service interactions.
 - **Fail-Closed**: Default system state is always secure/denied.
 - **Audit-Ready**: Every change must produce a security assessment report.
 

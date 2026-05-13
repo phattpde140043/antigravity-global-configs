@@ -62,6 +62,14 @@ This Orchestrator uses the **[Agent Review Framework](file:///Users/macos/.antig
 
 ---
 
+## 🧪 Testing Strategy
+- **Shift-Left**: Integrate testing into the earliest phases of development.
+- **Web3 QA**: Implement Mainnet Forking, Account Impersonation, and Fuzzing (Foundry/Hardhat) for Smart Contracts.
+- **Security & A11y**: Mandatory WCAG audits and vulnerability scanning in every release cycle.
+- **Automated Fixing**: Use automated patterns to identify and remediate flaky or failing tests.
+
+---
+
 ## 📈 Quality Metrics (DORA)
 - **Flake Rate**: < 1%.
 - **Coverage**: 80%+ on critical paths.

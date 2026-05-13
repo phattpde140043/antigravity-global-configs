@@ -15,8 +15,12 @@ The visual and interaction lead. This master skill coordinates the creation of b
 
 ## 🧭 Design Strategy
 - **Rich Aesthetics**: WOW the user with premium design (glassmorphism, gradients, micro-animations).
-- **Accessibility-First**: Ensure inclusive design through ARIA and semantic HTML.
-- **Dynamic Interaction**: Use hover effects and transitions to make the interface feel alive.
+- **Framework Excellence**: Master **Angular** (state management, migration, UI patterns) and **Next.js** for enterprise web.
+- **Mobile Mastery**: Implement high-end mobile UIs using **Android Jetpack Compose** and **Apple HIG** standards.
+- **Immersive Experiences**: Create **3D Web Experiences** using **Three.js** and **Anime.js** for high-end visual impact.
+- **Accessibility-First (A11y)**: Prioritize contrast (4.5:1), focus states, and aria-labels as non-negotiable.
+- **Performance Excellence**: Optimize for Core Web Vitals (LCP < 2.5s, FID < 100ms, CLS < 0.1).
+- **Visual Validation**: Systematically check for layout shifts, brand consistency, and professional polish.
 
 ---
 

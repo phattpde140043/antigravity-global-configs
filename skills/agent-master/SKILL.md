@@ -11,6 +11,12 @@ metadata:
 
 The operational lead for agent efficiency and reliability. This master skill coordinates the core loops that allow an agent to function effectively within a workspace. Expert in autonomous agent coordination, multi-agent systems, and specialized tool orchestration.
 
+## 🧭 Agentic Strategy
+- **Computer Use (Visual Agents)**: Implement the **Perception-Reasoning-Action** loop for direct computer interaction (mouse/keyboard) within sandboxed environments (Docker/Xvfb).
+- **Parallel Workspace Orchestration**: Configure isolated coding environments (ports, Redis DBs, secrets) for parallel agent execution (Conductor pattern).
+- **Contextual Intelligence**: Master **Context Window Management**, **Context Restoration** (save/restore state), and **Contextual Chunking** for high-precision memory.
+- **Autonomous Loop**: Follow the **Think-Decide-Act-Observe** cycle for self-correcting task execution.
+
 ## 🧭 Intent Discovery (Vague Requests)
 When a user is unsure where to start, use these **Funnel Questions** to identify the best Master Discipline:
 1. **Area**: Is this about Coding, Security, AI, DevOps, or Planning?

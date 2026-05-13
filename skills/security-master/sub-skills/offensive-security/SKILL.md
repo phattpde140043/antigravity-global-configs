@@ -7,6 +7,14 @@ description: "Expert in offensive security testing and penetration testing. Focu
 
 Master the techniques of professional security assessment and vulnerability exploitation.
 
+## 🚀 Offensive Techniques
+- **XSS & Injection**: Exploit stored, reflected, and DOM-based vectors. Bypass WAFs using encoding/obfuscation.
+- **Network Forensics (Wireshark)**:
+    - **Capture & Filter**: Use display filters to isolate suspicious traffic (e.g., `tcp.flags.syn == 1`).
+    - **Malware Analysis**: Identify Command & Control (C2) beaconing and unusual DNS queries.
+    - **Stream Reconstruction**: Follow TCP/HTTP streams to exfiltrate plaintext credentials.
+- **Windows Privilege Escalation**: Identify misconfigured services, vulnerable kernel drivers, and weak file permissions to gain System access.
+
 ## 🏗️ Attack Vectors
 - **Stored XSS**: Identify inputs that persist (Comments, Profiles) to target other users.
 - **Reflected XSS**: Find parameters reflected in responses (Search, Errors) for phishing/session hijacking.

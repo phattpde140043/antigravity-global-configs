@@ -46,13 +46,23 @@ Delegation:
 
 ## Immutability and Modeling
 
-- prefer record/readonly/value-like models where mutation is not required
-- use init-only properties for request/DTO models when possible
-- make mutability explicit and justified
-- **Modern Features**: 
-    - Use **Pattern Matching** (switch expressions, property patterns) for clean conditional logic.
-    - Use `required` properties and `raw string literals` for safer and more readable DTOs.
-    - Use **Target-typed new** (`List<string> list = new();`) for brevity when the type is obvious.
+- Prefer `record`, `readonly struct`, or value-like models where mutation is not required.
+- Use **Primary Constructors** (C# 12+) to simplify dependency injection and initialization.
+- Use `init`-only properties for request/DTO models when possible.
+- Use `required` properties and `raw string literals` for safer and more readable DTOs.
+- Use **Target-typed new** (`List<string> list = new();`) for brevity when the type is obvious.
+
+## 🚀 Modern C# (12/13) & .NET 8/9
+- **Pattern Matching**: Leverage switch expressions and property patterns for clean conditional logic.
+- **Result Pattern**: Avoid exception-driven flow control by returning `Result<T>` records containing success/failure state.
+- **Async Efficiency**: Use `ValueTask` for hot paths and `IAsyncEnumerable` for streaming large datasets.
+- **Span & Memory**: Use `ReadOnlySpan<T>` and `Memory<T>` for zero-allocation memory manipulation.
+
+## 🏗️ Architectural Patterns
+- **Clean Architecture**: Isolate the Domain from Infrastructure and Application concerns.
+- **Vertical Slice Architecture**: Group code by features rather than technical layers.
+- **CQRS**: Separate read and write concerns using MediatR or custom dispatchers.
+- **Repository & Unit of Work**: Abstract data access while maintaining transactional integrity.
 
 ## Dependency Injection and Boundaries
 

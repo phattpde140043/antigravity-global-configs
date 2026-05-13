@@ -27,18 +27,30 @@ When performing testing tasks, you **MUST** chain to the following sub-skills:
 ### 1. E2E Automation & UI Testing
 - For **Playwright**, POM, and Flaky Mitigation:
   👉 **[E2E Testing Excellence (Playwright)](sub-skills/e2e-testing/SKILL.md)**
+- For **Browser Automation** and Low-Level Interaction:
+  👉 **[Browser Automation](sub-skills/browser-automation/SKILL.md)**
+- For **DevTools Debugging** and Browser Analysis:
+  👉 **[Browser Testing with DevTools](sub-skills/browser-testing-with-devtools/SKILL.md)**
 
 ### 2. Test Strategy & Design
 - For **Test Writing**, Coverage Analysis, and Scenarios:
   👉 **[Test Engineer (Strategy)](sub-skills/test-engineer/SKILL.md)**
 - For **Identifying Red Flags** and Common Pitfalls:
   👉 **[Testing Anti-Patterns](sub-skills/testing-anti-patterns/SKILL.md)**
+- For **Verification Loops** and Systematic Validation:
+  👉 **[Verification Loop](sub-skills/verification-loop/SKILL.md)**
 
 ### 3. TDD & Unit Testing
 - For **Red-Green-Refactor** cycles and Python/Backend logic:
   👉 **[TDD Workflow](sub-skills/tdd-workflow/SKILL.md)**
 - For **Testing Patterns** and specific logic validation:
   👉 **[Test Driven Development](sub-skills/test-driven-development/SKILL.md)**
+
+### 4. Advanced Evaluation
+- For **Evaluation Harnesses** and Model Scoring:
+  👉 **[Eval Harness](sub-skills/eval-harness/SKILL.md)**
+- For **Backtesting Frameworks** and Historical Validation:
+  👉 **[Backtesting Frameworks](sub-skills/backtesting-frameworks/SKILL.md)**
 
 ---
 

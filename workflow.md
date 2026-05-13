@@ -35,17 +35,17 @@ DEFINE ──→ PLAN ──→ BUILD ──→ VERIFY ──→ REVIEW ──�
 - **Primary Conductor**: `@senior-qa`
 - **Objective**: Proof of correctness. Every feature must have a corresponding test.
 - **Rules**:
-    - Use `tdd-workflow` for logic.
-    - Use `e2e-testing` (via `@senior-qa`) for user flows.
+    - Use `tdd-workflow` (under `@senior-qa`) for logic.
+    - Use `e2e-testing` (under `@senior-qa`) for user flows.
     - **No fixed timeouts**.
 - **AC**: Build PASS + Tests PASS (Smoke & Regression).
 
 ### 🟣 Phase 5 — REVIEW (The Audit)
-- **Primary Conductor**: `@architect`
+- **Primary Conductor**: `@review-master`
 - **Objective**: Structural integrity and standard compliance.
 - **Rules**:
-    - Use `self-review` (via `@architect`) to audit code against `rules.md`.
-    - Validate performance, security, and conventions.
+    - Use specialized reviewers (under `@review-master`) to audit code against `rules.md`.
+    - Validate performance (under `@backend-architect`), security (under `@security-master`), and conventions.
     - **No "AI Slop"**: Remove redundant code, placeholders, and TODOs.
 
 ### Phase 1: DEFINE — The Spec

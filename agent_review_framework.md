@@ -56,14 +56,14 @@ To ensure the highest architectural integrity and avoid "Confirmation Bias," the
 #### Phase 1: Architectural Excellence (`@backend-architect`)
 - **Diamond Standard**: Domain Naming, Library-First policy, DDD Compliance.
 
-#### Phase 2: Deep Security & Mitigation Mapping (`@securities-audit`)
+#### Phase 2: Deep Security & Mitigation Mapping (`@security-master`)
 - **Scope**: **STRIDE** analysis, **Blast Radius** analysis, **Control Mapping** (Preventive/Detective/Corrective).
 - **AC**: Security-by-Design reaching **Defense-in-Depth** standards.
 
-#### Phase 3: Performance Tuning (`@performance-optimization`)
+#### Phase 3: Performance Tuning (`@backend-architect`)
 - **AC**: Zero N+1 queries, 100% Caching strategy, Query optimization.
 
-#### Phase 4: Clean Code & AI Slop Scan (`@code-simplifier`)
+#### Phase 4: Clean Code & AI Slop Scan (`@agent-master`)
 - **Hard Limits**: 50/200/3 rule. AI Slop Scan. Readiness Score > 85.
 
 #### Phase 5: Verification & Fix Audit (`@senior-qa`, `@review-master`)

@@ -16,28 +16,33 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. O
 
 | Master Skill | Use When | Not For |
 |:---|:---|:---|
-| **backend-architect** | Designing scalable systems, microservices, complex refactoring, and enforcing architectural standards (50/200/3). | Line-by-line simple bug fixes; non-architectural UI changes. |
-| **security-master** | Any security-sensitive task: Threat Modeling (STRIDE), Secure Coding, Pentesting, or Infrastructure Hardening. | Non-security logic; pure UI/UX styling. |
-| **senior-qa** | Designing test strategies, writing E2E (Playwright), Unit tests (Pytest/Jest), TDD cycles, and investigating flaky tests. | Implementing production features (unless TDD); non-testing tasks. |
-| **review-master** | Performing code audits, PR reviews, Readiness scoring (>85), and ensuring "AI Slop" removal. | Initial implementation; architecture planning from scratch. |
+| **backend-architect** | System design, microservices, complex refactoring, and architectural standards (50/200/3). | Simple bug fixes; UI styling. |
+| **security-master** | Security audits, threat modeling (STRIDE), secure coding, and regulatory compliance. | Pure UI/UX; non-security logic. |
+| **senior-qa** | Test strategy, E2E (Playwright), Unit tests, TDD cycles, and flaky test investigation. | Production features (unless TDD). |
+| **review-master** | Code audits, PR reviews, readiness scoring (>85), and context analysis. | Initial architecture planning. |
+| **ai-master** | ML architecture, data pipelines, advanced search (Exa), and deep research. | Simple CRUD logic; UI design. |
+| **agent-master** | Core operations, systematic debugging, context engineering, and planning. | Domain-specific business logic. |
+| **product-master** | Business strategy, product discovery, investor materials, and brand voice. | Deep technical implementation. |
+| **ux-master** | Frontend design, UI patterns, accessibility (a11y), and presentations. | Backend infra; security audits. |
+| **content-master** | Technical writing, ADRs, documentation lookup, and coding standards. | Code implementation. |
+| **infrastructure-master** | Cloud IaC, AWS CDK, and production infrastructure hardening. | Application-level business logic. |
 
 ---
 
-## 🛠️ Specialized Skills Map
+## 🛠️ Specialized Skills Map (Delegated by Masters)
 
-| Skill | Use When | Not For |
+| Skill | Master Discipline | Use When |
 |:---|:---|:---|
-| a11y-architect | designing or reviewing UI components/pages; building design systems | backend security or infrastructure |
-| agent-introspection-debugging | Maximum tool call or loop-limit failures; Repeated retries | unrelated tasks |
-| api-design | Designing new API endpoints; defining type contracts | implementation logic |
-| browser-testing-with-devtools | Building/debugging UI; visual verification; performance profiling | backend-only changes; CLI tools |
-| ci-cd-and-automation | Setting up pipelines; automated quality gates; deployment strategies | local debugging only |
-| build-error-resolver | build fails; TypeScript/type checker errors block progress | architecture redesign |
-| code-explorer | before implementing features in unfamiliar areas | final architecture arbitration |
-| documentation-and-adrs | Recording architectural decisions; writing public API docs | throwaway prototypes |
-| performance-optimization | profiling slow endpoints; optimizing throughput/latency | feature development |
-| framework-migration | modernizing legacy systems; upgrading major dependencies | minor bug fixes |
-| verification-loop | after a feature or significant change; before opening a PR | writing test suites from scratch |
+| `api-design` | **backend-architect** | Designing new API endpoints and type contracts. |
+| `performance-optimization` | **backend-architect** | Profiling slow endpoints and optimizing throughput. |
+| `regulatory-compliance` | **security-master** | GDPR, SOC2, HIPAA, and industry-standard audits. |
+| `browser-automation` | **senior-qa** | Low-level browser interaction and automation scripts. |
+| `workspace-surface-audit` | **review-master** | Mapping codebase exposure and context discovery. |
+| `exa-search` | **ai-master** | High-fidelity web search and neural discovery. |
+| `systematic-debugging` | **agent-master** | Root cause analysis and step-by-step resolution. |
+| `implementation-planning` | **agent-master** | Creating phased, dependency-ordered task lists. |
+| `frontend-design` | **ux-master** | Building premium, high-aesthetic UI systems. |
+| `documentation-and-adrs` | **content-master** | Recording critical architectural decisions. |
 
 ---
 

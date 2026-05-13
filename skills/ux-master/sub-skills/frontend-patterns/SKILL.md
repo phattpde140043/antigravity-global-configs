@@ -79,6 +79,16 @@ Use for cohesive UI families (Tabs, Dropdown, Menu, Accordion) where shared stat
 
 Wrap unstable or high-risk UI islands to prevent full app crashes.
 
+## 🚀 State Management (Zustand)
+- **Separation**: Split State from Actions for better readability and testing.
+- **Selectors**: Use individual selectors (e.g., `useStore(s => s.item)`) to prevent unnecessary re-renders.
+- **Middleware**: Use `subscribeWithSelector` for reacting to state changes outside the React lifecycle.
+
+## 🛡️ Schema Validation (Zod)
+- **Safe Parsing**: Always use `.safeParse()` to handle validation errors gracefully without crashing.
+- **Type Inference**: Use `z.infer<typeof schema>` to keep types and schemas in sync.
+- **Transformations**: Use `.transform()` to clean and normalize data during validation.
+
 ---
 
 ## State Management Patterns

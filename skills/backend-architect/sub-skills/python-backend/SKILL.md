@@ -19,6 +19,12 @@ Master high-performance, async-first API development with modern Python patterns
 - Use `BackgroundTasks` for lightweight post-request processing.
 - Use `CancellationToken` patterns (via Request State) where supported.
 
+## ⚡ Performance & Optimization
+- **Profiling**: Use `cProfile` and `viztracer` to identify CPU bottlenecks. Use `memory_profiler` for memory leaks.
+- **Async Efficiency**: Use `anyio.to_thread.run_sync` for CPU-bound tasks to avoid blocking the event loop.
+- **Data Validation**: Leverage **Pydantic v2** for ultra-fast serialization and strict type validation.
+- **Concurrency**: Use `asyncio.gather` for parallel I/O operations with proper error handling.
+
 ## 🏗️ Architecture Best Practices
 - **Dependency Injection**: Use FastAPI's `Depends` for clean, testable code.
 - **Annotated Types**: Use `Annotated` for clear dependency definitions.

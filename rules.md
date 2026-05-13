@@ -99,7 +99,7 @@ Exception:
 ## 13. High-Quality Completeness (Boil the Lake within Scope)
 
 - For any feature explicitly in the plan, build the highest quality, most complete version (including tests and edge cases).
-- **Mandatory Chaining**: For all non-trivial tasks, the Agent **MUST** activate a Master Orchestrator (`backend-architect`, `security-master`, `senior-qa`, or `review-master`) and follow its internal sub-discipline chain.
+- **Mandatory Chaining**: For all non-trivial tasks, the Agent **MUST** activate a Master Orchestrator (e.g., `backend-architect`, `security-master`, `senior-qa`, `review-master`, `ai-master`, `agent-master`, `product-master`, `ux-master`, `content-master`, or `infrastructure-master`) and follow its internal sub-discipline chain.
 - **Rule of Scope**: Completeness must NOT violate the "No Overengineering" rule. If a detail is unrelated to the requested feature, do not add it.
 - AI is cheap — use the extra capacity to ensure correctness and test coverage, not to expand scope.
 
@@ -131,7 +131,7 @@ Exception:
 
 ## 17. Strict Performance Optimization (NEW)
 
-- **Measure First Iron Law**: Never optimize performance blindly. You MUST follow the 4-step process (Measure, Identify, Fix, Validate) from the `performance-optimization` skill.
+- **Measure First Iron Law**: Never optimize performance blindly. You MUST follow the 4-step process (Measure, Identify, Fix, Validate) from the `performance-optimization` sub-skill (under `@backend-architect`).
 - Any code introducing an N+1 query, full table scan, missing pagination, or sequential blocking async calls MUST be rejected immediately.
 
 ---

@@ -8,43 +8,48 @@ These configurations encode the workflows, quality gates, and best practices tha
 
 ## 🏗️ Master Orchestrators (The Brains)
 
-The system uses a **Conductor-Musician** pattern. These 4 Master Skills orchestrate specialized sub-disciplines.
+The system uses a **Conductor-Musician** pattern. These 10 Master Skills orchestrate specialized sub-disciplines to ensure high-fidelity results.
 
 | Master Skill | Responsibility |
 |:---|:---|
-| [backend-architect](./skills/backend-architect/SKILL.md) | **System Lead**. Microservices, Scalability, and Clean Architecture standards. |
-| [security-master](./skills/security-master/SKILL.md) | **Security Lead**. Threat Modeling, Secure Coding, Pentesting, and Hardening. |
-| [senior-qa](./skills/senior-qa/SKILL.md) | **Quality Lead**. E2E (Playwright), Unit Testing, TDD, and Flaky Mitigation. |
-| [review-master](./skills/review-master/SKILL.md) | **Audit Lead**. Readiness Scoring (>85), AI Slop Scan, and PR Excellence. |
+| [**backend-architect**](./skills/backend-architect/SKILL.md) | **System Lead**. Microservices, Scalability, and Clean Architecture standards. |
+| [**security-master**](./skills/security-master/SKILL.md) | **Security Lead**. Threat Modeling, Secure Coding, Pentesting, and Hardening. |
+| [**senior-qa**](./skills/senior-qa/SKILL.md) | **Quality Lead**. E2E (Playwright), Unit Testing, TDD, and Flaky Mitigation. |
+| [**review-master**](./skills/review-master/SKILL.md) | **Audit Lead**. Readiness Scoring (>85), AI Slop Scan, and PR Excellence. |
+| [**ai-master**](./skills/ai-master/SKILL.md) | **AI & Data Lead**. ML Architecture, Data Engineering, Search, and Research. |
+| [**agent-master**](./skills/agent-master/SKILL.md) | **Agent Lead**. Core Operations, Debugging, Planning, and Context Engineering. |
+| [**product-master**](./skills/product-master/SKILL.md) | **Product Lead**. Business Strategy, Market Research, and Stakeholder Comms. |
+| [**ux-master**](./skills/ux-master/SKILL.md) | **UX Lead**. Frontend Design, UI Patterns, and Accessibility. |
+| [**content-master**](./skills/content-master/SKILL.md) | **Content Lead**. Technical Writing, Documentation, and Standards. |
+| [**infrastructure-master**](./skills/infrastructure-master/SKILL.md) | **Infra Lead**. Cloud IaC, AWS CDK, and Production Hardening. |
 
 ---
 
 ## 🛠️ Specialized Sub-Disciplines (The Musicians)
 
-The Master Skills delegate deep-dive tasks to these specialized skills located in their respective `sub-skills/` directories.
+Master Skills delegate deep-dive tasks to specialized sub-skills.
 
-### 🛡️ Security Cluster
-- [Backend Security Coder](./skills/security-master/sub-skills/backend-security-coder/SKILL.md)
-- [Infrastructure Security](./skills/security-master/sub-skills/infrastructure-security/SKILL.md)
-- [Penetration Testing](./skills/security-master/sub-skills/penetration-testing/SKILL.md)
+### 🏗️ Architect & Backend Cluster
+- [Software Architecture](./skills/backend-architect/sub-skills/software-architecture/SKILL.md)
+- [Architecture Design](./skills/backend-architect/sub-skills/architecture-design/SKILL.md)
+- [API Design](./skills/backend-architect/sub-skills/api-design/SKILL.md)
+- [Performance Optimization](./skills/backend-architect/sub-skills/performance-optimization/SKILL.md)
+
+### 🛡️ Security & Compliance Cluster
 - [Security Design & STRIDE](./skills/security-master/sub-skills/security-design/SKILL.md)
+- [Backend Security Coder](./skills/security-master/sub-skills/backend-security-coder/SKILL.md)
+- [Regulatory Compliance](./skills/security-master/sub-skills/regulatory-compliance/SKILL.md)
 
 ### ✅ QA & Testing Cluster
 - [E2E Testing Excellence](./skills/senior-qa/sub-skills/e2e-testing/SKILL.md)
 - [TDD Workflow](./skills/senior-qa/sub-skills/tdd-workflow/SKILL.md)
-- [Test Engineer Strategy](./skills/senior-qa/sub-skills/test-engineer/SKILL.md)
-- [Testing Anti-Patterns](./skills/senior-qa/sub-skills/testing-anti-patterns/SKILL.md)
+- [Verification Loop](./skills/senior-qa/sub-skills/verification-loop/SKILL.md)
 
-### 🔍 Review & Audit Cluster
-- [Code Review Excellence](./skills/review-master/sub-skills/code-review-excellence/SKILL.md)
-- [C# Reviewer](./skills/review-master/sub-skills/csharp-reviewer/SKILL.md)
-- [Vibe Code Auditor](./skills/review-master/sub-skills/vibe-code-auditor/SKILL.md)
-- [PR Review Template](./skills/review-master/sub-skills/pr-review/SKILL.md)
-
-### 📐 Architecture Cluster
-- [Software Architecture](./skills/backend-architect/sub-skills/software-architecture/SKILL.md)
-- [Architecture Design](./skills/backend-architect/sub-skills/architecture-design/SKILL.md)
-- [Code Architect](./skills/backend-architect/sub-skills/code-architect/SKILL.md)
+### 🧠 Agent Ops & Debugging Cluster
+- [Systematic Debugging](./skills/agent-master/sub-skills/systematic-debugging/SKILL.md)
+- [Implementation Planning](./skills/agent-master/sub-skills/implementation-planning/SKILL.md)
+- [Context Engineering](./skills/agent-master/sub-skills/context-engineering/SKILL.md)
+- [Code Generation](./skills/agent-master/sub-skills/code-generation/SKILL.md)
 
 ---
 

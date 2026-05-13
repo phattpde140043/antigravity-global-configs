@@ -41,6 +41,14 @@ When performing reviews, you **MUST** chain to the following sub-skills:
 - For **Codex-style** and **Differential** deep-dives:
   👉 **[Codex Review](sub-skills/codex-review/SKILL.md)** & **[Differential Review](sub-skills/differential-review/SKILL.md)**
 
+### 4. Context & Surface Analysis
+- For **Workspace Surface Audits** and Exposure Mapping:
+  👉 **[Workspace Surface Audit](sub-skills/workspace-surface-audit/SKILL.md)**
+- For **Comment Analysis** and Documentation Drift:
+  👉 **[Comment Analyzer](sub-skills/comment-analyzer/SKILL.md)**
+- For **Conversation Analysis** and Decision Tracking:
+  👉 **[Conversation Analyzer](sub-skills/conversation-analyzer/SKILL.md)**
+
 ---
 
 ## 🛡️ Review Council Protocol

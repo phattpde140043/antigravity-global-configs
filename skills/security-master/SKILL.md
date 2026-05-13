@@ -30,18 +30,24 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[Security Architecture & Design](sub-skills/security-design/SKILL.md)**
 
 ### 2. Secure Coding & Implementation (BUILD Phase)
+- For **SAST Rules** and Semgrep Detections:
+  👉 **[SAST Engineering](sub-skills/sast-engineering/SKILL.md)**
 - For **Backend Security** and Data Handling: 
   👉 **[Backend Security Coder](sub-skills/backend-security-coder/SKILL.md)**
 - For **Review Checklists** and Injection prevention: 
   👉 **[Security Review (Checklist)](sub-skills/security-review/SKILL.md)**
 
 ### 3. Offensive Security & Pentesting
-- For **Scanning, Exploitation, and PoC**: 
+- For **Scanning, Exploitation, and Hardening**: 
   👉 **[Penetration Testing Methodology](sub-skills/penetration-testing/SKILL.md)**
 
 ### 4. Cloud & Infrastructure
 - For **AWS Hardening** and **SCA (Supply Chain)**: 
   👉 **[Infrastructure Security Reference](sub-skills/infrastructure-security/SKILL.md)**
+
+### 5. Compliance & Governance
+- For **Regulatory Compliance** (GDPR, SOC2, HIPAA, etc.):
+  👉 **[Regulatory Compliance](sub-skills/regulatory-compliance/SKILL.md)**
 
 ---
 

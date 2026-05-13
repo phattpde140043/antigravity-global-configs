@@ -9,13 +9,13 @@ To ensure the **OSP Search AI** ecosystem remains stable, secure, and performant
 
 ## 2. Test Taxonomy (The Pyramid)
 
-| Level | Type | Scope | Frequency | Tooling | Required Skill |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **L1** | Unit/Component | Logic, UI components. | Every Commit | Jest / Pytest / xUnit | `tdd-workflow` / `frontend-unit-testing` / `python-unit-testing` |
-| **L2** | Integration | Service-to-service, API. | Every PR | Playwright / Postman | `nodejs-backend` / `test-engineer` |
-| **L3** | E2E / UI | User flows, Isolation. | Daily / Merge | Playwright | 🔬 Specialized Verification Logic (`@senior-qa`, `@senior-qa/sub-skills/e2e-testing`) / `browser-automation` / `test-generator` |
-| **L4** | Security | IDOR, XSS, RCE. | Weekly | OWASP ZAP | `securities-audit` / `penetration-testing` |
-| **L5** | Performance | Latency, Load. | Bi-weekly | k6 / JMeter | `performance-optimization` |
+| Level | Type | Scope | Tooling | Required Master Discipline |
+| :--- | :--- | :--- | :--- | :--- |
+| **L1** | Unit/Component | Logic, UI components. | Pytest / Vitest | `@senior-qa` (TDD) |
+| **L2** | Integration | Service-to-service, API. | Playwright | `@senior-qa` (Test Engineer) |
+| **L3** | E2E / UI | User flows, Isolation. | Playwright | `@senior-qa` (E2E Excellence) |
+| **L4** | Security | IDOR, XSS, RCE. | OWASP ZAP | `@security-master` (Pentesting) |
+| **L5** | Performance | Latency, Load. | k6 / JMeter | `@backend-architect` (Perf Optimization) |
 
 ---
 
@@ -23,30 +23,28 @@ To ensure the **OSP Search AI** ecosystem remains stable, secure, and performant
 
 ### 🟢 Stage 1: The Local Gate (Pre-Commit)
 *Goal: Catch simple errors before they reach the cloud.*
-- **Linting**: Static analysis (`coding-standards`).
-- **Unit Tests**: Logic and UI components (`tdd-workflow`, `frontend-unit-testing`, `python-unit-testing`).
-- **Test Generation**: Automated drafting of test skeletons (`test-generator`).
-- **Plan Verification**: Ensure test coverage in #### Gate 3: Behavioral Validation (`@senior-qa`, `@senior-qa/sub-skills/test-engineer`).
+- **Linting**: Static analysis (`@agent-master`).
+- **Unit Tests**: Logic and UI components (`@senior-qa`).
+- **Test Generation**: Automated drafting of test skeletons (`@agent-master`).
 
 ### 🟡 Stage 2: The Pull Request Gate (CI)
 *Goal: Validate integration and prevent regressions in shared branches.*
-- **Build Verification**: Compile in clean environment (`build-error-resolver`).
-- **Smoke E2E**: Critical user journeys (`browser-automation`).
-- **Security Audit**: Dependency scans (`securities-audit`).
-- **PR Integrity**: Automated code review (`pr-review`).
+- **Build Verification**: Compile in clean environment (`@agent-master`).
+- **Smoke E2E**: Critical user journeys (`@senior-qa`).
+- **Security Audit**: Dependency scans (`@security-master`).
+- **PR Integrity**: Automated code review (`@review-master`).
 
 ### 🔴 Stage 3: The Deep Regression (Nightly/Scheduled)
 *Goal: Comprehensive coverage without slowing down development.*
-- **Full E2E Suite**: All 100+ scenarios (`e2e-testing`, `test-engineer`).
-- **Multi-Tenant Isolation (ISO)**: Cross-tenant data checks (`security-and-hardening`).
-- **Visual Regression**: UI consistency checks.
-- **Anti-Pattern Scan**: Detect brittle tests (`testing-anti-patterns`).
+- **Full E2E Suite**: All 100+ scenarios (`@senior-qa`).
+- **Multi-Tenant Isolation (ISO)**: Cross-tenant data checks (`@security-master`).
+- **Anti-Pattern Scan**: Detect brittle tests (`@senior-qa`).
 
 ### 🟣 Stage 4: The Release Gate (Pre-Production)
 *Goal: Final sign-off for deployment.*
-- **Performance Baseline**: P99 latency checks (`performance-optimization`).
-- **Resilience Testing**: Chaos engineering light (`resilience-patterns`).
-- **Compliance Audit**: Regulatory checks (`regulatory-compliance`).
+- **Performance Baseline**: P99 latency checks (`@backend-architect`).
+- **Resilience Testing**: Chaos engineering light (`@backend-architect`).
+- **Compliance Audit**: Regulatory checks (`@security-master`).
 
 ---
 
@@ -60,56 +58,47 @@ Automation tests **MUST** validate isolation for every new feature:
 ---
 
 ## 5. Reporting & Observability
-- **Dashboards**: Allure HTML reports hosted on CI artifacts or dedicated S3/GCS buckets.
-- **Notifications**: 
-  - 🔴 **FAIL**: Immediate Slack/Teams alert to `#eng-alerts`.
-  - 🟢 **PASS**: Summary report to `#eng-status`.
-- **Traces**: Playwright traces, videos, and console logs attached to failed E2E tests for 1-click debugging.
+- **Dashboards**: Allure HTML reports hosted on CI artifacts.
+- **Notifications**: Slack/Teams alert to `#eng-alerts`.
+- **Traces**: Playwright traces and videos for 1-click debugging.
 
 ---
 
 ## 6. Flaky Test Management
 Flaky tests are the "broken windows" of automation.
-1. **Detection**: If a test fails once but passes on retry (auto-retry count = 2), it is marked as **FLAKY**.
-2. **Quarantine**: Flaky tests are moved to a `quarantine/` folder or tagged `@flaky`. They still run but do not block the pipeline.
-3. **SLA**: Flaky tests must be investigated and fixed or deleted within **72 hours**.
+1. **Detection**: Marked as **FLAKY** if passing only on retry.
+2. **Quarantine**: Moved to `quarantine/` folder; do not block the pipeline.
+3. **SLA**: Must be fixed or deleted within **72 hours**.
 
 ---
 
 ## 7. Ownership & Maintenance
-- **QA/SDET**: Maintains the framework, runners, and infrastructure.
-- **Backend/Frontend Developers**: Write tests for new features as part of the "Definition of Done".
-- **Agent**: Assists in generating test boilerplate, documenting scenarios, and fixing failures identified by TAP.
+- **QA/SDET**: Maintains the framework and infrastructure.
+- **Developers**: Write tests for new features (Definition of Done).
+- **Agent**: Assists in generating test boilerplate and fixing failures.
 
 ---
 
 ## 8. Agent-Assisted Automation Flow
-While this pipeline is independent of task-level verification, the **Agent** plays a critical role in its maintenance:
-
-1. **Test Generation**: When implementing a new feature, the Agent MUST create a corresponding test case in the automation suite using the `templates/test_case.md` template.
-2. **Impact Analysis**: For every change, the Agent must evaluate if existing automation tests in the pipeline need updating.
-3. **Failure Resolution**: If the TAP (Stage 3/4) fails, the Agent can be tasked to diagnose and fix the regression using the `DEBUGGING Mode` (Level 4).
-
-> [!IMPORTANT]
-> **Task Verification** (Phase 4) is for *correctness of the current change*.
-> **Automation Pipeline** (TAP) is for *integrity of the entire system*.
-> Do not confuse the two. Every feature must have BOTH.
+1. **Test Generation**: Create corresponding test cases in the automation suite.
+2. **Impact Analysis**: Evaluate if existing tests need updating.
+3. **Failure Resolution**: Diagnose and fix regressions using `@agent-master`.
 
 ---
 
 ## 9. Troubleshooting & Debugging Skills
-When the pipeline fails, the following skills must be strictly applied for resolution:
+When the pipeline fails, the following Master Disciplines must be applied:
 
-| Scenario | Strict Skill Application |
+| Scenario | Master Discipline |
 | :--- | :--- |
-| **Pipeline Failure** | `systematic-debugging` / `testing-workflow` |
-| **Flaky Test** | `testing-anti-patterns` / `e2e-testing` (flake-fixing) |
-| **Build Error** | `build-error-resolver` |
-| **Security Leak** | `security-auditor` / `securities-audit` |
-| **Fix Cleanup** | `code-simplifier` (reduce noise after emergency fix) |
-| **Resilience Drop** | `resilience-patterns` |
+| **Pipeline Failure** | `@agent-master` (Systematic Debugging) |
+| **Flaky Test** | `@senior-qa` (Testing Anti-Patterns) |
+| **Build Error** | `@agent-master` (Build Error Resolver) |
+| **Security Leak** | `@security-master` (Security Audit) |
+| **Fix Cleanup** | `@agent-master` (Code Simplifier) |
+| **Resilience Drop** | `@backend-architect` (Resilience Patterns) |
 
 ---
 
 ## 10. Verification Loop
-Every fix applied to a TAP failure must be verified using the `verification-loop` skill, ensuring the fix is permanent and doesn't introduce secondary regressions.
+Every fix must be verified using the `@senior-qa` (Verification Loop) sub-skill, ensuring the fix is permanent and doesn't introduce secondary regressions.

@@ -16,27 +16,47 @@ Transform debugging from guesswork into a disciplined engineering process. Focus
 
 ---
 
-## 🏗️ Operating Pipeline
+## 🏛️ The Iron Law
 
-### 1. Triage & Hypothesis
-- Analyze logs/stack traces to identify the failure pattern.
-- Generate **3-5 hypotheses** with probability and falsification criteria.
+> **NO FIXES WITHOUT ROOT CAUSE INVESTIGATION FIRST**
+> 
+> If you haven't completed the investigation phase and identified the exact line/state causing the issue, you cannot propose a fix. Symptom fixes are a failure of the process.
 
-### 2. Evidence Gathering
-- Query the **Observability Stack** (Traces, Metrics, Logs).
-- Correlate errors with system changes (deployments, config drift).
+---
 
-### 3. Intelligent Instrumentation
-- Place targeted logpoints or conditional breakpoints at decision nodes.
-- Use **Production-Safe** techniques if debugging live systems.
+## 🏗️ The Operating Pipeline
 
-### 4. Root Cause & Fix
-- Reconstruct the execution path and identify the bug.
-- Implement the fix with a **Rollback Strategy** and risk assessment.
+You MUST complete each phase before proceeding to the next.
 
-### 5. Verification & Prevention
-- Verify the fix against the original failure symptoms.
-- Add regression tests and update the troubleshooting runbooks.
+### Phase 1: Investigation & Evidence Gathering
+*Before attempting ANY fix, you must gather facts.*
+
+1. **Triage & Hypothesis**: Analyze logs/stack traces. Generate **3-5 initial hypotheses** with falsification criteria.
+2. **Reproduce Consistently**: Determine the exact steps to trigger the bug. If not reproducible, you cannot verify the fix.
+3. **Evidence Gathering**: Query the **Observability Stack** (Traces, Metrics, Logs).
+4. **Intelligent Instrumentation**: Place targeted logpoints. Trace bad values backward from the crash point to their origin. Fix at the source, not the symptom.
+
+### Phase 2: Pattern Analysis
+*Understand the system context before touching code.*
+
+1. **Find Working Examples**: Locate similar code that works. What is the difference?
+2. **Compare Against References**: Read reference implementations COMPLETELY. Don't skim.
+3. **Understand Dependencies**: Identify what settings, config, or environmental assumptions this code makes.
+
+### Phase 3: Hypothesis & Minimal Testing
+*Use the scientific method.*
+
+1. **Form Single Hypothesis**: State clearly: "I think X is the root cause because Y."
+2. **Test Minimally**: Make the **SMALLEST** possible change to test the hypothesis (one variable at a time).
+3. **Verify**: If the change doesn't work, **REVERT IT** immediately. Do not stack failed fixes.
+
+### Phase 4: Implementation & Prevention
+*Fix the root cause and ensure it never returns.*
+
+1. **Create Failing Test Case**: Automated test (TDD) that fails without the fix and passes with it.
+2. **Implement Single Fix**: Address the root cause. No "while I'm here" refactoring.
+3. **Verification**: Ensure no other tests are broken and the symptom is fully resolved.
+4. **Architectural Questioning**: If 3+ fixes have failed, **STOP**. This indicates an architectural flaw, not a simple bug. Discuss with your human partner.
 
 ---
 

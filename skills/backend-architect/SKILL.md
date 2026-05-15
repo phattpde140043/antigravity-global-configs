@@ -14,10 +14,12 @@ The strategic lead for scalable and resilient systems. This master skill coordin
 ---
 
 ## 🧭 Architectural Strategy
-- **Type-Safe First**: Prioritize **tRPC**, **GraphQL**, or **Prisma** (Type-safe ORM) for structural integrity.
-- **Edge Computing**: Optimize for **Cloudflare Workers** and global Edge functions for ultra-low latency.
-- **Operational Excellence**: Mandate **Docker Excellence** (multi-stage builds, non-root users) and automated **Deployment Pipelines** (CI/CD).
-- **Privacy by Design**: Implement security and data protection from the design phase (GDPR, Tenant Isolation).
+- **Type-Safe First**: Prioritize **tRPC**, **GraphQL**, or **Prisma** (Type-safe ORM).
+- **Microservices Patterns**: Design clear **Service Boundaries** (Bounded Contexts). Implement **Saga** for data consistency, **CQRS** for performance, and **API Gateways** for secure entry.
+- **Polyglot Mastery**: Expertise in Java, Javascript/TypeScript, and Kotlin.
+- **Workflow Orchestration**: Implement durable execution using **Inngest** or **Temporal**.
+- **Edge Computing**: Optimize for **Cloudflare Workers** and global Edge functions.
+- **Privacy by Design**: Implement security and tenant isolation at the architectural level.
 - **Fail-Safe**: Build for redundancy and self-healing.
 - **Simplicity**: Avoid over-engineering; maintain the Diamond Standard.
 

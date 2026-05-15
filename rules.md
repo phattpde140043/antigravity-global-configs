@@ -141,3 +141,11 @@ Exception:
 - You are strictly prohibited from using the "Adaptive Depth" rule or "momentum" to justify skipping User approval for code changes.
 - If the User has not explicitly said "Approve", "Go", "Yes", or "Proceed", you MUST NOT enter the BUILD phase.
 - Silence is NOT approval. If unsure, ask.
+
+---
+
+## 19. Aggressive Skill Activation (The 1% Rule)
+
+- If you think there is even a **1% chance** a skill might apply to what you are doing, you **ABSOLUTELY MUST** invoke the skill.
+- This is not negotiable. This is not optional. You cannot rationalize your way out of this.
+- Invoke relevant skills BEFORE any response or action, including clarifying questions. Skills tell you HOW to gather information and approach the task.

@@ -48,12 +48,15 @@ DEFINE ──→ PLAN ──→ BUILD ──→ VERIFY ──→ REVIEW ──�
     - Validate performance (under `@backend-architect`), security (under `@security-master`), and conventions.
     - **No "AI Slop"**: Remove redundant code, placeholders, and TODOs.
 
-### Phase 1: DEFINE — The Spec
+### Phase 1: DEFINE — The Spec & Brainstorming
 **When to activate**: The request touches more than one file, requirements are vague, architectural choices must be made, or the task takes >15 mins.
+**Primary Conductor**: `@brainstorming` (under `@agent-master`)
 **Rules**:
-1. Write all assumptions explicitly before asking for code.
-2. Reframe vague requirements as testable Success Criteria.
-3. Do not write any production code until the Spec is approved.
+1. **HARD-GATE**: No code until a design is approved.
+2. Use the **Visual Companion** for UI/Architecture diagrams if needed.
+3. Write all assumptions explicitly before asking for code.
+4. Reframe vague requirements as testable Success Criteria.
+5. Do not write any production code until the Spec is approved.
 
 ### Phase 2: PLAN — The Implementation Plan
 **When to activate**: Immediately after Spec approval.

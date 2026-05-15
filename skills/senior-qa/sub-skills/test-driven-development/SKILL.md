@@ -292,25 +292,30 @@ describe('TaskService.completeTask', () => {
 describe('TaskService', () => { ... });
 ```
 
-## Common Rationalizations
+## 🧠 Rationalization Prevention
 
-| Rationalization | Reality |
-|---|---|
-| "I'll write tests after the code works" | You won't. And tests written after the fact test implementation, not behavior. |
-| "This is too simple to test" | Simple code gets complicated. The test documents the expected behavior. |
-| "Tests slow me down" | Tests slow you down now. They speed you up every time you change the code later. |
-| "I tested it manually" | Manual testing doesn't persist. Tomorrow's change might break it with no way to know. |
-| "The code is self-explanatory" | Tests ARE the specification. They document what the code should do, not what it does. |
-| "It's just a prototype" | Prototypes become production code. Tests from day one prevent the "test debt" crisis. |
+Agents are smart and will find loopholes to skip TDD under pressure (time, complexity, sunk cost). You MUST identify these thoughts and counter them immediately.
 
-## Red Flags
+| Excuse | Reality |
+| :--- | :--- |
+| "Too simple to test" | Simple code breaks too. A test takes 30 seconds. |
+| "I'll test after" | Tests passing immediately prove nothing. You never saw them catch the bug. |
+| "Tests after achieve same goals" | Tests-after = "What does this do?". Tests-first = "What should this do?". |
+| "Already manually tested" | Ad-hoc != systematic. No record, can't re-run on next change. |
+| "Deleting X hours is wasteful" | Sunk cost fallacy. Keeping unverified code is technical debt. |
+| "Keep as reference, write tests first" | You'll adapt it. That's testing after. Delete means delete. |
+| "TDD will slow me down" | TDD is faster than debugging. Pragmatic = test-first. |
+| "Spirit over ritual" | Ritual ensures discipline. Shortcuts = debugging in production. |
 
-- Writing code without any corresponding tests
-- Tests that pass on the first run (they may not be testing what you think)
-- "All tests pass" but no tests were actually run
-- Bug fixes without reproduction tests
-- Test names that don't describe the expected behavior
-- Skipping tests to make the suite pass
+## 🚩 Red Flags - STOP and Start Over
+
+If you find yourself doing any of these, **DELETE THE CODE** and start over with a failing test:
+- Writing production code before a test exists.
+- Implementation passes on the first run.
+- "Adapting" existing code while writing a test.
+- "Keeping code as reference" in another tab/file while doing TDD.
+- "I already manually verified it, so the test is just a formality."
+- "The design is too complex for TDD" (This means the design is bad).
 
 ## Verification
 

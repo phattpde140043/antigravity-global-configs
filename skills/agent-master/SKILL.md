@@ -36,6 +36,8 @@ When a user is unsure where to start, use these **Funnel Questions** to identify
 When performing core agent tasks, you **MUST** chain to the following sub-skills:
 
 ### 1. Planning & Execution
+- For **Brainstorming & Design** (HARD-GATE, Visual Companion):
+  👉 **[Brainstorming](sub-skills/brainstorming/SKILL.md)**
 - For **Implementation Planning**:
   👉 **[Implementation Planning](sub-skills/implementation-planning/SKILL.md)**
 - For **Task Breakdown** and Management:
@@ -68,9 +70,7 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
 ### 4. Infrastructure & Context
 - For **CI/CD and Automation**:
   👉 **[CI/CD and Automation](sub-skills/ci-cd-and-automation/SKILL.md)**
-- For **Context Engineering**:
-  👉 **[Context Engineering](sub-skills/context-engineering/SKILL.md)**
-- For **Brain Context**:
+- For **Unified Context Engineering** (Brain Context Chain):
   👉 **[Brain Context Engineering](sub-skills/brain-context-engineering/SKILL.md)**
 - For **Migrations**:
   👉 **[Deprecation and Migration](sub-skills/deprecation-and-migration/SKILL.md)**

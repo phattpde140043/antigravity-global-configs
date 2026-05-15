@@ -15,6 +15,7 @@ The technical lead for intelligent systems. This master skill coordinates data p
 
 ## 🧭 Intelligence Strategy
 - **Data-Centric**: Quality data is the foundation of effective AI.
+- **Representations over Tokens**: Focus on learning data structure and world models (JEPA/EBM), not just sequence prediction.
 - **Efficient Inference**: Optimize for latency and cost.
 - **Deep Context**: Leverage search and research to ground AI responses.
 
@@ -25,7 +26,7 @@ The technical lead for intelligent systems. This master skill coordinates data p
 When performing AI or data-related tasks, you **MUST** chain to the following sub-skills:
 
 ### 1. Architecture & Modeling
-- For **AI/ML Architecture** and Design:
+- For **Advanced AI/ML Architecture** (JEPA, EBM, LeCun Review):
   👉 **[AI/ML Architect](sub-skills/ai-ml-architect/SKILL.md)**
 - For **Media Generation** (Fal.ai):
   👉 **[Fal AI Media](sub-skills/fal-ai-media/SKILL.md)**

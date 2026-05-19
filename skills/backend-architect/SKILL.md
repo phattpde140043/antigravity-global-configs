@@ -80,6 +80,28 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Sankhya BI Dashboards](sub-skills/sankhya-dashboard/SKILL.md)**
 - For **Advanced Scala Programming** (functional patterns, Scala 3, Cats, ZIO pipelines):
   👉 **[Scala Pro](sub-skills/scala-pro/SKILL.md)**
+- For **Pakistan Payment Gateways Integration** (JazzCash, EasyPaisa, local banking APIs):
+  👉 **[Pakistan Payments](sub-skills/pakistan-payments/SKILL.md)**
+- For **General Payment Gateway Integrations** (Stripe, Braintree, custom gateways, webhooks):
+  👉 **[Payment Integration](sub-skills/payment-integration/SKILL.md)**
+- For **PayPal Gateway Integrations** (Express Checkout, PayPal SDK, webhook idempotency):
+  👉 **[PayPal Integration](sub-skills/paypal-integration/SKILL.md)**
+- For **Plaid Banking API Integrations** (Plaid Link, bank transactions, balance synchronization):
+  👉 **[Plaid Fintech](sub-skills/plaid-fintech/SKILL.md)**
+- For **Advanced PHP Development** (Laravel architecture, modern OOP patterns, security standards):
+  👉 **[PHP Pro](sub-skills/php-pro/SKILL.md)**
+- For **PostgreSQL Query Performance Tuning** (query plans, connection pooling, complex indexes, VACUUM tuning):
+  👉 **[Postgres Best Practices](sub-skills/postgres-best-practices/SKILL.md)**
+- For **PostgreSQL Database Design & Schemas** (DDL, triggers, JSONB data types, views):
+  👉 **[PostgreSQL Development](sub-skills/postgresql/SKILL.md)**
+- For **Apache Spark Performance Optimization** (partitioning tuning, shuffle reduction, caching policies, memory management):
+  👉 **[Spark Optimization](sub-skills/spark-optimization/SKILL.md)**
+- For **SQL Query Optimization Patterns** (index design, query plans analysis, connection optimization, CTE optimization):
+  👉 **[SQL Optimization](sub-skills/sql-optimization/SKILL.md)**
+- For **Advanced Relational SQL Programming** (complex CTEs, window functions, relational database algebra):
+  👉 **[SQL Pro](sub-skills/sql-pro/SKILL.md)**
+- For **PostgreSQL Lock Mechanisms & Concurrency** (row locking, claiming tasks, deadlock avoidance, transactional isolation):
+  👉 **[Claimable Postgres Locks](sub-skills/claimable-postgres/SKILL.md)**
 
 ### 3. API & Communication
 - For **REST/GraphQL API Design**:
@@ -94,6 +116,14 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Resilience Patterns](sub-skills/resilience-patterns/SKILL.md)** | **[Error Resilience](sub-skills/error-resilience/SKILL.md)**
 - For **Performance Optimization** and Bottleneck Analysis:
   👉 **[Performance Optimization](sub-skills/performance-optimization/SKILL.md)**
+- For **Performance Engineering Principles** (systems-level modeling, capacity planning, queuing theory):
+  👉 **[Performance Engineering](sub-skills/performance-engineering/SKILL.md)**
+- For **Bottleneck Resolution & Optimization Strategies** (CPU, memory, disk, network bounds resolution):
+  👉 **[Performance Optimizer](sub-skills/performance-optimizer/SKILL.md)**
+- For **Systems Profiling & Trace Analysis** (Flame graphs, eBPF, perf, dynamic memory tracing):
+  👉 **[Performance Profiling](sub-skills/performance-profiling/SKILL.md)**
+- For **Microsecond System Speed Optimization** (low latency, caching topologies, high-speed serialization, memory-aligned buffers):
+  👉 **[Speed Optimization](sub-skills/performance-optimization/speed/SKILL.md)**
 - For **Durable Execution** (Temporal, etc.):
   👉 **[Durable Execution](sub-skills/durable-execution/SKILL.md)**
 - For **Framework Migrations**:

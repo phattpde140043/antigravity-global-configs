@@ -48,6 +48,8 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[Broken Authentication Remediation](sub-skills/broken-authentication/SKILL.md)**
 - For **Static Application Security Testing (SAST) Rule Configuration** (Semgrep rules, security linters, SonarQube filters):
   👉 **[SAST Configuration](sub-skills/sast-configuration/SKILL.md)**
+- For **PCI DSS Payment Security Compliance** (cardholder data protection, network hardening, PCI compliance audits):
+  👉 **[PCI Compliance](sub-skills/pci-compliance/SKILL.md)**
 
 ### 3. Offensive Security & Pentesting
 - For **Scanning, Exploitation, and Hardening**: 
@@ -64,6 +66,18 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[Burp Suite Testing](sub-skills/burp-suite-testing/SKILL.md)**
 - For **Burp Suite Project XML Parsing & Remediation** (vulnerability parsing, reporting automation):
   👉 **[Burpsuite Project Parser](sub-skills/burpsuite-project-parser/SKILL.md)**
+- For **Penetration Testing Standard Checklists** (systematic security assessment checklists, scoping protocols):
+  👉 **[Pentest Checklist](sub-skills/pentest-checklist/SKILL.md)**
+- For **Offensive Pentesting CLI Commands Cheatsheet** (Nmap, Metasploit, hydra command cheatsheets):
+  👉 **[Pentest Commands](sub-skills/pentest-commands/SKILL.md)**
+- For **EVM Smart Contract Security Audits** (Solidity vulnerability patterns, reentrancy attacks, access control checks):
+  👉 **[Solidity Security](sub-skills/solidity-security/SKILL.md)**
+- For **SQL Injection (SQLi) Vulnerability Testing** (payloads formulation, bypass techniques, manual validation):
+  👉 **[SQL Injection Testing](sub-skills/sql-injection-testing/SKILL.md)**
+- For **SQLmap Automated Database Penetesting** (sqlmap command parameters, DBMS takeover, hash cracking):
+  👉 **[SQLmap Database Pentesting](sub-skills/sqlmap-database-pentesting/SKILL.md)**
+- For **SSH Protocol Penetration Testing & Auditing** (SSH keys leakage, weak ciphers checking, brute-force validation):
+  👉 **[SSH Penetration Testing](sub-skills/ssh-penetration-testing/SKILL.md)**
 
 ### 4. Cloud & Infrastructure
 - For **AWS Hardening** and **SCA (Supply Chain)**: 

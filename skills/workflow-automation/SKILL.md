@@ -47,3 +47,13 @@ Streamline processes by connecting tools and automating repetitive tasks.
   👉 **[Sales Automator](sub-skills/sales-automator/SKILL.md)**
 - For **Salesforce Outbound & Integration Automation** (Salesforce Process Builder, Salesforce Flows via Rube MCP):
   👉 **[Salesforce Automation](sub-skills/salesforce-automation/SKILL.md)**
+- For **PagerDuty Incident Management Automation** (incident creation, on-call schedules, alert routing via Rube MCP):
+  👉 **[PagerDuty Automation](sub-skills/pagerduty-automation/SKILL.md)**
+- For **Pipedrive Sales CRM Automation** (deals, pipelines, organizations via Rube MCP):
+  👉 **[Pipedrive Automation](sub-skills/pipedrive-automation/SKILL.md)**
+- For **Square Point of Sale (POS) & Payment Automation** (transactions, checkout links, inventory updates via Rube MCP):
+  👉 **[Square Automation](sub-skills/square-automation/SKILL.md)**
+- For **Canva Automated Design & Media Generation** (design template retrieval, image generation, social asset creation via Rube MCP):
+  👉 **[Canva Automation](sub-skills/canva-automation/SKILL.md)**
+- For **Changelog Generating & Releases Automation** (git commit logs summaries, product changelogs, automated Slack notifications via Rube MCP):
+  👉 **[Changelog Automation](sub-skills/changelog-automation/SKILL.md)**

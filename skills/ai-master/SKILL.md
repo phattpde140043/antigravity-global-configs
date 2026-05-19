@@ -48,6 +48,18 @@ When performing AI or data-related tasks, you **MUST** chain to the following su
   👉 **[Biopython Data Science](sub-skills/biopython/SKILL.md)**
 - For **Single-Cell Genomes & Transcriptomics Data Science** (Scanpy single-cell RNA-sequencing, PCA/UMAP embeddings):
   👉 **[Scanpy Genomics](sub-skills/scanpy/SKILL.md)**
+- For **Interactive Data Visualization & Plotly Charts** (Plotly figures, dynamic HTML graph dashboards):
+  👉 **[Plotly Visualizations](sub-skills/plotly/SKILL.md)**
+- For **High-Performance DataFrame Engineering** (Polars expressions, lazy evaluation, Rust-backed fast parsing):
+  👉 **[Polars DataFrames](sub-skills/polars/SKILL.md)**
+- For **Stability AI Diffusion Media Generation** (Stable Diffusion text-to-image API, image editing, dynamic parameters):
+  👉 **[Stability AI Media](sub-skills/stability-ai/SKILL.md)**
+- For **Statistical & Time-Series Modeling** (Python Statsmodels stats, regression models, time-series forecasting):
+  👉 **[Statsmodels Analysis](sub-skills/statsmodels/SKILL.md)**
+- For **Domain-Specific AI Health Assisting** (medical information extraction, symptoms tracking, wellness metrics):
+  👉 **[Claude Ally Health](sub-skills/claude-ally-health/SKILL.md)**
+- For **Visualizing Complex Data via D3.js** (Claude D3 graph orchestration, interactive SVG data bindings):
+  👉 **[Claude D3.js Visualizations](sub-skills/claude-d3js/SKILL.md)**
 
 ### 3. Deep Analysis
 - For **Exhaustive Research** and Technical Deep Dives:

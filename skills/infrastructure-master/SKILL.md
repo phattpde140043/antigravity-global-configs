@@ -40,6 +40,10 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
 
 - For **Reviewing Cicd Pipelines** (Reviewing CI/CD pipelines and pipeline security):
   👉 **[Reviewing Cicd Pipelines](sub-skills/reviewing-cicd-pipelines/SKILL.md)**
+- For **Generic CI/CD Workflow & Automation** (standard YAML syntax, runner selection, trigger patterns):
+  👉 **[CI/CD Workflow Automation](sub-skills/cicd-automation-workflow-automate/SKILL.md)**
+- For **CircleCI Pipelines & Workflows** (caching strategies, runner configurations, parallelism, custom build triggers):
+  👉 **[CircleCI Automation](sub-skills/circleci-automation/SKILL.md)**
 - For **AWS Cost Cleanup** (automated cleanup of unused AWS resources):
   👉 **[AWS Cost Cleanup](sub-skills/aws-cost-cleanup/SKILL.md)**
 - For **AWS Cost Optimization** (Cost Explorer analytics, rightsizing recommendations):
@@ -60,6 +64,8 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
   👉 **[Bash Scripting Basics](sub-skills/bash-scripting/SKILL.md)**
 - For **BusyBox on Windows Shell Parity** (GNU utility emulation, Windows bash environments):
   👉 **[BusyBox Windows Emulation](sub-skills/busybox-on-windows/SKILL.md)**
+- For **POSIX Standard Shell Scripting & Portability** (cross-platform compatibility, standard utility options, strict sh compatibility):
+  👉 **[POSIX Shell Pro](sub-skills/posix-shell-pro/SKILL.md)**
 
 ---
 

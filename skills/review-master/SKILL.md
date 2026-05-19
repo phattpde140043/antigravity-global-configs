@@ -42,6 +42,12 @@ When performing reviews, you **MUST** chain to the following sub-skills. Navigat
   👉 **[Vibe Code Auditor](sub-skills/vibe-code-auditor/SKILL.md)**
 - For **Classic Software Engineering Code Review** (DRY/duplication, APOSD complexity, Clean Code naming, Release It stability, DDIA data consistency):
   👉 **[Brooks Lint](sub-skills/brooks-lint/SKILL.md)**
+- For **AI Performance Gated Auditing** (automated evaluation of latency budgets, connection pool sizing, N+1 query checks):
+  👉 **[Performance AI Auditor](sub-skills/performance-testing-review/ai-review/SKILL.md)**
+- For **Multi-Agent Performance Gating Reviews** (split-opinion consensus, profiling review gates, adversarial performance auditing):
+  👉 **[Performance Multi-Agent Auditor](sub-skills/performance-testing-review/multi-agent-review/SKILL.md)**
+- For **Clarvia Agent Experience Optimization (AEO) Quality Gates** (scoring MCP servers, evaluating tool agent-readiness):
+  👉 **[Clarvia AEO Auditor](sub-skills/clarvia-aeo-check/SKILL.md)**
 
 ### 3. Workflow & Artifact Management
 - For **PR/Diff-based Review** and Summary Templates:

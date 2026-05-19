@@ -43,6 +43,10 @@ When performing testing tasks, you **MUST** chain to the following sub-skills. N
   👉 **[Building E2E Tests](sub-skills/building-e2e-tests/SKILL.md)**
 - For **Playwright Automated Screenshots & Visual Verification** (screenshot capture, element isolation, visual diffing):
   👉 **[Playwright Screenshots](sub-skills/screenshots/SKILL.md)**
+- For **Java-Based E2E Playwright Automation** (Playwright Java Page Object Models, Maven test integrations):
+  👉 **[Playwright Java E2E](sub-skills/playwright-java/SKILL.md)**
+- For **Advanced TS/JS Playwright Frameworks** (fixture configurations, custom selectors, trace viewer inspections):
+  👉 **[Playwright TS/JS E2E](sub-skills/playwright-ts-js/SKILL.md)**
 
 ### 2. Test Strategy & Design
 - For **Test Writing**, Coverage Analysis, and Scenarios:

@@ -31,3 +31,9 @@ Expertise in designing, optimizing, and executing quantum algorithms on simulato
 - [ ] Are iterative algorithms wrapped in a Runtime Session?
 - [ ] Has the circuit been validated on a local simulator first?
 - [ ] Are optimization levels (e.g., level 3) applied for production runs?
+
+---
+
+## 🔗 Quantum Framework Sub-Skills
+- For **Google Cirq Quantum Simulation** (designing Google Sycamore circuits, gate decomposition, NumPy-backed simulators):
+  👉 **[Cirq Quantum Engineering](sub-skills/cirq/SKILL.md)**

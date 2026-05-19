@@ -31,6 +31,8 @@ Navigate the sub-skills in the sequential order defined below to ensure structur
   👉 **[Business Analyst](sub-skills/business-analyst/SKILL.md)**
 - For **Sales Enablement Strategy & Sales Pipeline Optimization** (sales strategy, sales pitch coaching, pipeline tracking):
   👉 **[Sales Enablement](sub-skills/sales-enablement/SKILL.md)**
+- For **Carrier Relationship Management & Logistics** (shipper/carrier alignment, logistics KPIs, contract routing pipelines):
+  👉 **[Carrier Relationship Management](sub-skills/carrier-relationship-management/SKILL.md)**
 
 ## 🏗️ Product Delivery & Launch
 - **PRD Excellence**: Write clear Product Requirements Documents covering: Problem → Solution → Success Metrics → Out of Scope.
@@ -44,6 +46,32 @@ Navigate the sub-skills in the sequential order defined below to ensure structur
   👉 **[Analytics Tracking](sub-skills/analytics-tracking/SKILL.md)**
 - For **SaaS MVP Bootstrap & Launch Strategy** (Indie Hacker build-in-public, rapid validation, solo-founder tech stack):
   👉 **[SaaS MVP Launcher](sub-skills/saas-mvp-launcher/SKILL.md)**
+- For **Landing Page Conversion Rate Optimization (CRO)** (A/B testing, user intent matching, messaging hierarchy):
+  👉 **[Landing Page CRO](sub-skills/page-cro/SKILL.md)**
+- For **Paid Advertising Strategy** (Google Ads structure, Meta ad creatives, custom conversion tracking):
+  👉 **[Paid Ads Strategy](sub-skills/paid-ads/SKILL.md)**
+- For **Paywall Pricing & Upgrade Optimization** (pricing tiers, user onboarding monetization loops):
+  👉 **[Paywall Upgrade CRO](sub-skills/paywall-upgrade-cro/SKILL.md)**
+- For **Overlay & Popup Sign-up Optimization** (exit intent triggers, conversion value propositions):
+  👉 **[Popup CRO](sub-skills/popup-cro/SKILL.md)**
+- For **Social Proof Architecture & Trust Optimization** (customer testimonials, trust badges, real-time activity indicators, trust psychology):
+  👉 **[Social Proof Architect](sub-skills/social-proof-architect/SKILL.md)**
+- For **SaaS Churn Prevention & Retention Optimization** (churn analysis, customer engagement loops, email activation sequences):
+  👉 **[Churn Prevention](sub-skills/churn-prevention/SKILL.md)**
+
+### 🚀 Startup Strategy & Financial Modeling
+- For **High-Level Startup Business Analysis** (startup lifecycle strategy, funding pitch decks, product-market-fit benchmarks):
+  👉 **[Startup Analyst](sub-skills/startup-analyst/SKILL.md)**
+- For **Startup Business Case Formulation** (competitive advantage, strategic rationale, ROI metrics):
+  👉 **[Startup Business Case](sub-skills/startup-business-analyst/business-case/SKILL.md)**
+- For **Startup Financial Projections** (revenue modeling, CAC/LTV models, headcount planning, runway estimation):
+  👉 **[Startup Financial Projections](sub-skills/startup-business-analyst/financial-projections/SKILL.md)**
+- For **Startup Market Opportunity Sizing** (TAM, SAM, SOM analysis, market entry strategies):
+  👉 **[Startup Market Opportunity](sub-skills/startup-business-analyst/market-opportunity/SKILL.md)**
+- For **Advanced Startup Financial Modeling** (pro forma financial statements, cap tables, valuation matrices):
+  👉 **[Startup Financial Modeling](sub-skills/startup-financial-modeling/SKILL.md)**
+- For **Startup Core Metrics Frameworks** (AARRR funnel metrics, North Star definition, cohort retention dashboards):
+  👉 **[Startup Metrics Framework](sub-skills/startup-metrics-framework/SKILL.md)**
 
 ---
 

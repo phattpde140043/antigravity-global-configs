@@ -45,10 +45,18 @@ When performing UX or frontend tasks, you **MUST** chain to the following sub-sk
   👉 **[Anime.js Animations](sub-skills/animejs-animation/SKILL.md)**
 - For **Advanced Smooth Scrolling & Parallax Experiences** (GSAP ScrollTrigger, scroll-driven interactive experiences):
   👉 **[Scroll Experience Design](sub-skills/scroll-experience/SKILL.md)**
+- For **3D Web Spline Integration** (interactive 3D canvas embeddings, spline scenes loading, responsive 3D triggers):
+  👉 **[Spline 3D Integration](sub-skills/spline-3d/SKILL.md)**
+- For **2D/WebGL HTML Canvas Interactivity** (HTML Canvas API, coordinate mapping, drawing optimized matrices):
+  👉 **[Canvas Design](sub-skills/canvas-design/SKILL.md)**
+- For **Modern Floating Chat Widgets** (UI layout for chats, floating actions, responsive drawer wrappers):
+  👉 **[Chat Widget](sub-skills/chat-widget/SKILL.md)**
 - For **Opinionated UI Baselines & Standards** (Tailwind CSS guidelines, accessibility, motion rules):
   👉 **[Baseline UI Standards](sub-skills/baseline-ui/SKILL.md)**
 - For **Browser Extension Interfaces & Architecture** (Chrome extension APIs, popup/options page design, background workers):
   👉 **[Browser Extension Builder](sub-skills/browser-extension-builder/SKILL.md)**
+- For **Advanced Chrome Extension Development** (manifest V3 specifications, message passing, sandbox isolation):
+  👉 **[Chrome Extension Developer](sub-skills/chrome-extension-developer/SKILL.md)**
 - For **Native Mobile HIG & Layout Architectures** (Android Jetpack Compose, Apple SwiftUI standards):
   👉 **[Building Native UI](sub-skills/building-native-ui/SKILL.md)**
 - For **HTML/CSS to SVG Image Generation Engines** (Satori, Vercel OG image generation styling):

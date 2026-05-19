@@ -70,12 +70,44 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Blueprint Construction Planning](sub-skills/blueprint/SKILL.md)**
 - For **Phased Major Feature Development & Tracking** (research, implementation plans, PROGRESS log, phased delivery):
   👉 **[Phased Feature Build](sub-skills/build/SKILL.md)**
+- For **Parallel Multi-Agent Coordination** (split-merge orchestrations, task delegation, map-reduce agent grids):
+  👉 **[Parallel Agents](sub-skills/parallel-agents/SKILL.md)**
+- For **Dynamic Personal Tool Building** (on-the-fly execution extensions, custom self-enrichment scripts):
+  👉 **[Personal Tool Builder](sub-skills/personal-tool-builder/SKILL.md)**
+- For **Multi-Session Cold-Start Plan Writing** (structured outlines, scope isolation, validation milestones):
+  👉 **[Plan Writing](sub-skills/plan-writing/SKILL.md)**
+- For **Gen-3 Multi-File Discovery & Planning** (scanning files, AST context maps, comprehensive implementation plan gates):
+  👉 **[Planning With Files](sub-skills/planning-with-files/SKILL.md)**
+- For **Social Media Automated Orchestrator** (coordinates multi-channel posting, schedules pipelines, updates analytics):
+  👉 **[Social Orchestrator](sub-skills/social-orchestrator/SKILL.md)**
+- For **Automated Spec & Diagram Updater** (keeps architectural specifications and system diagrams synced dynamically):
+  👉 **[Speckit Updater](sub-skills/speckit-updater/SKILL.md)**
+- For **Squirrel 8-Phase Full-Cycle Developer** (auto-detects project maturity, greenfield setup, reproduction loops, TDD):
+  👉 **[Squirrel Developer](sub-skills/squirrel/SKILL.md)**
+
+### 🤖 Claude & LLM Orchestration
+- For **Clarity Gate Precision Intent Audits** (prompt intent filtering, target alignment verification):
+  👉 **[Clarity Gate](sub-skills/clarity-gate/SKILL.md)**
+- For **Claude API Direct Client Integration** (token usage metrics, system prompt boundaries, tool-calling structures):
+  👉 **[Claude API Integration](sub-skills/claude-api/SKILL.md)**
+- For **Claude Code Expert CLI Workflows** (advanced CLI commands, server-side caching optimizations):
+  👉 **[Claude Code Expert](sub-skills/claude-code-expert/SKILL.md)**
+- For **Claude Code Setup & Guides** (environment settings, standard configuration tutorials):
+  👉 **[Claude Code Guide](sub-skills/claude-code-guide/SKILL.md)**
+- For **Claude Chrome Extension Troubleshooting** (DOM injection limits, message bus latency resolution):
+  👉 **[Claude Chrome Troubleshooting](sub-skills/claude-in-chrome-troubleshooting/SKILL.md)**
+- For **Claude API Performance Monitoring** (token volume tracking, execution latency logging):
+  👉 **[Claude API Monitor](sub-skills/claude-monitor/SKILL.md)**
+- For **Claude Console Safety & Settings Auditing** (temperature configuration, safety filters audit):
+  👉 **[Claude Settings Auditor](sub-skills/claude-settings-audit/SKILL.md)**
 
 ### 2. Debugging & Error Handling
 - For **Systematic Debugging**:
   👉 **[Systematic Debugging](sub-skills/systematic-debugging/SKILL.md)**
 - For **Evidence-Based Bug Hunting & Diagnosis** (reproduction, root cause tracing, regression prevention):
   👉 **[Bug Hunter](sub-skills/bug-hunter/SKILL.md)**
+- For **Multi-Phase Gated Debugging Loops** (repro scripts, evidence-first logs, verification verification):
+  👉 **[Phase Gated Debugging](sub-skills/phase-gated-debugging/SKILL.md)**
 - For **Error Analysis**:
   👉 **[Error Detective](sub-skills/error-detective/SKILL.md)**
 - For **Build Failures**:
@@ -102,6 +134,8 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Bill Gates](sub-skills/ai-expert-personas/bill-gates/SKILL.md)**
 - For **Sam Altman Persona Simulation** (strategic hypergrowth scaling, extreme product market fit, fundraising, AGI timelines):
   👉 **[Sam Altman](sub-skills/ai-expert-personas/sam-altman/SKILL.md)**
+- For **Steve Jobs Persona Simulation** (premium aesthetic obsessive, product presentation showmanship, reality distortion field):
+  👉 **[Steve Jobs](sub-skills/ai-expert-personas/steve-jobs/SKILL.md)**
 
 ### 4. Infrastructure & Context
 - For **CI/CD and Automation**:
@@ -112,6 +146,8 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Deprecation and Migration](sub-skills/deprecation-and-migration/SKILL.md)**
 - For **Wallet-based Agentic Micropayments Routing** (paying for image generation, Grok live X/Twitter search, GPT second opinions):
   👉 **[BlockRun Micropayments Wallet](sub-skills/blockrun/SKILL.md)**
+- For **Pipecat Voice AI Real-Time Agents** (WebRTC voice pipelines, speech-to-text-to-speech low latency streams):
+  👉 **[Pipecat Voice Agents](sub-skills/pipecat-friday-agent/SKILL.md)**
 
 - For **Handoff** (Session handoff and state consolidation):
   👉 **[Handoff](sub-skills/handoff/SKILL.md)**

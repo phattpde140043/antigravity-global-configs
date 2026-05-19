@@ -1,0 +1,12 @@
+[
+  {
+    "id": "tc_cqrs_pattern_01",
+    "assertions": [
+      {
+        "target": "architecture",
+        "criteria": "Must demonstrate clean separation of concerns and use asynchronous calls where applicable.",
+        "grade": "mandatory"
+      }
+    ]
+  }
+]

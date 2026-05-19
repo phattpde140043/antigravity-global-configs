@@ -1,0 +1,14 @@
+[
+  {
+    "id": "tc_dist_system_01",
+    "category": "resilient_messaging",
+    "description": "Evaluate ability to design safe state-publishing contracts to avoid dual-writes.",
+    "prompt": "Design a billing service flow that updates the database and publishes a message to a queue. Explain why publishing directly inside a SQL transaction is unsafe and show the outbox pattern schema."
+  },
+  {
+    "id": "tc_dist_system_02",
+    "category": "idempotent_consumer",
+    "description": "Evaluate ability to handle duplicate message deliveries in distributed environments.",
+    "prompt": "Explain what happens when a message broker delivers a message twice (at-least-once delivery guarantee). Show how you would implement an idempotent message consumer using an idempotency key."
+  }
+]

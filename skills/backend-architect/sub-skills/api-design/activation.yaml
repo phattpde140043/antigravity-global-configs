@@ -1,0 +1,18 @@
+---
+skill_name: api-and-interface-design
+domain: backend-architecture
+priority: 90
+trigger_conditions:
+  file_patterns:
+    - "**/routes/**"
+    - "**/controllers/**"
+  query_keywords:
+    - "api design"
+    - "pagination"
+    - "cursor paging"
+    - "rate limit"
+conflict_resolutions:
+  override: []
+  delegate_before:
+    - "security-design" # Phải chạy threat modeling trước khi thiết kế API contract
+---

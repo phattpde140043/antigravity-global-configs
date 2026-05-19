@@ -1,0 +1,67 @@
+[
+  {
+    "id": "tc_api_design_01",
+    "assertions": [
+      {
+        "target": "url_convention",
+        "criteria": "URL must be versioned plural noun and use kebab-case: e.g., `/api/v1/user-notifications` or `/api/v1/notifications`.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "pagination_strategy",
+        "criteria": "Must recommend cursor-based pagination (`cursor` + `limit`) due to the high volume of notifications (10M+). Must explicitly reject offset-based page scanning.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "envelope_structure",
+        "criteria": "Response must wrap results inside an object containing `data` array and `meta` page context, rather than raw arrays.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "tenant_isolation",
+        "criteria": "Must explicitly state that `tenantId` is resolved via JWT/Token context at Controller level and passed down, never trusted from client query string/payload.",
+        "grade": "mandatory"
+      }
+    ]
+  },
+  {
+    "id": "tc_api_design_02",
+    "assertions": [
+      {
+        "target": "http_method",
+        "criteria": "Must identify that POST method for raw retrieval violates REST standards, correcting it to `GET`.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "naming_convention",
+        "criteria": "Must correct the URL to `/api/v1/users/{id}/tasks` or `/api/v1/tasks` (plural, kebab-case, versioned, no verb like `get_user_tasks`).",
+        "grade": "mandatory"
+      },
+      {
+        "target": "pagination_protection",
+        "criteria": "Must explicitly call out that `limit=all` is a Denial of Service vulnerability and enforce strict max page size limits.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "response_envelope",
+        "criteria": "Must transform the raw array response into a structured envelope: `{ data: Task[], meta: PaginationMeta }`.",
+        "grade": "mandatory"
+      }
+    ]
+  },
+  {
+    "id": "tc_api_design_03",
+    "assertions": [
+      {
+        "target": "discriminated_union",
+        "criteria": "Must use TypeScript discriminated union utilizing literal status field (type: 'pending' | 'succeeded' | 'failed') rather than optional properties in a single flat interface.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "state_safety",
+        "criteria": "Must ensure transactionId and paymentMethod are syntactically unavailable/guaranteed present only when status is 'succeeded'. Must do same for errorCode on 'failed'.",
+        "grade": "mandatory"
+      }
+    ]
+  }
+]

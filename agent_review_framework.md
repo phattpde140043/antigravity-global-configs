@@ -95,6 +95,12 @@ To ensure the highest architectural integrity and avoid "Confirmation Bias," the
 - **Scope**: Professional review of code health, structure, and SOLID integrity.
 - **Goal**: Ensure the code is maintainable, clean, and follows Clean Architecture.
 
+## 🔄 PHASE 12: AGENT SELF-CRITIQUE (MANDATORY BEFORE SHIP)
+Sau khi thực thi bất kỳ kỹ năng nào, Agent bắt buộc phải tự trả lời 3 câu hỏi sau vào nhật ký ẩn (thought process):
+1. Tôi có vi phạm bất kỳ điều khoản nào trong [EXECUTION CONTRACT] của kỹ năng vừa dùng không?
+2. Có bước nào trong checklist bị bỏ qua do hạn chế token không?
+3. Đầu ra đã khớp 100% với [OUTPUT EXPECTATION] chưa?
+
 ---
 
 ## 🛠️ Feedback & Reporting Rules (FULL AUTOMATION)

@@ -1,0 +1,19 @@
+---
+skill_name: distributed-system
+domain: backend-architecture
+priority: 90
+trigger_conditions:
+  file_patterns:
+    - "**/consumers/**"
+    - "**/events/**"
+    - "**/messages/**"
+  query_keywords:
+    - "distributed transaction"
+    - "saga pattern"
+    - "outbox pattern"
+    - "event-driven"
+    - "cqrs"
+conflict_resolutions:
+  override: []
+  delegate_before: []
+---

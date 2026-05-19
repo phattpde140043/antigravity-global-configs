@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tc_perf_opt_01",
+    "assertions": [
+      {
+        "target": "concurrent_aggregation",
+        "criteria": "Must eliminate sequential awaits and aggregate using `Promise.all` (JS/TS) or `Task.WhenAll` (C#).",
+        "grade": "mandatory"
+      },
+      {
+        "target": "latency_bounds",
+        "criteria": "Must mathematically state that expected latency drops from the sum of all tasks to the duration of the single slowest task.",
+        "grade": "mandatory"
+      }
+    ]
+  },
+  {
+    "id": "tc_perf_opt_02",
+    "assertions": [
+      {
+        "target": "caching_pattern",
+        "criteria": "Must correctly implement the Cache-Aside pattern (Check cache -> Serve on hit -> Miss -> Query DB -> Store cache -> Serve).",
+        "grade": "mandatory"
+      },
+      {
+        "target": "caching_resilience",
+        "criteria": "Must define a reasonable Time To Live (TTL) on cached content and discuss stampede prevention (e.g. mutex locking, backfill workers).",
+        "grade": "mandatory"
+      }
+    ]
+  }
+]

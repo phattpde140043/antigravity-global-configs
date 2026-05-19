@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tc_dist_system_01",
+    "assertions": [
+      {
+        "target": "outbox_design",
+        "criteria": "Must explicitly identify the dual-write anti-pattern and recommend the Transactional Outbox pattern.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "transactional_safety",
+        "criteria": "Must show writing to an 'Outbox' table and the 'State' table within the exact same DB transaction boundary.",
+        "grade": "mandatory"
+      }
+    ]
+  },
+  {
+    "id": "tc_dist_system_02",
+    "assertions": [
+      {
+        "target": "idempotency_store",
+        "criteria": "Must enforce storing and checking processed message IDs using a persistent store (database table or Redis caching layer).",
+        "grade": "mandatory"
+      },
+      {
+        "target": "race_condition_mitigation",
+        "criteria": "Must address unique constraint violations or locking logic to prevent concurrent duplicate deliveries from executing in parallel.",
+        "grade": "mandatory"
+      }
+    ]
+  }
+]

@@ -5,6 +5,22 @@ description: "Expert in Command Query Responsibility Segregation (CQRS). Focuses
 
 # CQRS Implementation Pattern
 
+> [!IMPORTANT]
+> ### 📜 EXECUTION CONTRACT (MANDATORY BEHAVIORS)
+> 1. ALWAYS prioritize production-ready best practices for cqrs-pattern.
+> 2. NEVER introduce raw, unvalidated patterns under cqrs-pattern context.
+> 3. ALWAYS write clean, self-documenting code with comprehensive error bounds.
+
+---
+## ⚡ ACTIVATION TRIGGERS
+### 1. Input Signals (Kích hoạt khi phát hiện)
+- **Files changed/created:** `**/sub-skills/cqrs-pattern/**`
+- **Keywords in prompt:** `cqrs pattern`
+### 2. Output Expectation (Đầu ra bắt buộc)
+- Domain-optimized implementation following clean multi-layer standards.
+
+---
+
 Master the separation of concerns between state-changing operations (Commands) and data-retrieval operations (Queries).
 
 ## 🏗️ Core Architecture

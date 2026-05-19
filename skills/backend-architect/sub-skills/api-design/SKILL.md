@@ -3,50 +3,30 @@ name: api-and-interface-design
 description: "Guides stable API and interface design. Use when designing REST/GraphQL endpoints, resource naming, pagination, versioning, or defining type contracts between modules/frontend-backend. Includes pagination, filtering, and rate limiting patterns."
 ---
 
-# API and Interface Design
+# 🛰️ API and Interface Design
+> [!IMPORTANT]
+> ### 📜 EXECUTION CONTRACT (MANDATORY BEHAVIORS)
+> 1. ALWAYS validate incoming payloads at system edges using Zod/Pydantic schemas.
+> 2. NEVER return raw array databases directly; always wrap collections in a `{ data: [], meta: {} }` envelope.
+> 3. ALWAYS assign a rate-limiting tier to any new endpoint created.
 
-## Purpose
-
-Provide concrete implementation patterns and architectural principles for API and interface design. Good interfaces make the right thing easy and the wrong thing hard. This applies to REST APIs, module boundaries, component props, and any surface where one piece of code talks to another.
+---
+## ⚡ ACTIVATION TRIGGERS
+### 1. Input Signals (Kích hoạt khi phát hiện)
+- **Files changed/created:** `src/routes/*`, `src/controllers/*`, `*Controller.cs`, `*Handler.py`
+- **Keywords in prompt:** `endpoint`, `pagination`, `REST`, `GraphQL`, `request payload`, `API latency`
+### 2. Output Expectation (Đầu ra bắt buộc)
+- A type-safe API schema interface.
+- Complete API Design Checklist validation report.
 
 ---
 
-# When to Activate
+## 🧭 Purpose & Principles
 
-- Designing new API endpoints or resource URLs
-- Defining module boundaries or contracts between teams
-- Creating component prop interfaces
-- Implementing pagination (choosing offset vs cursor)
-- Adding filtering, sorting, or search to list endpoints
-- Planning API versioning or deprecation
-- Reviewing API contract consistency
-
----
-
-# Scope Boundaries
-
-**This skill covers:**
-- Resource URL naming patterns
-- Pagination implementation (offset vs cursor)
-- Filtering, sorting, sparse fieldsets conventions
-- Collection response envelope (`meta`, `links`)
-- Versioning lifecycle and deprecation strategy
-- Rate limiting headers and tier design
-
-**Already covered elsewhere (do NOT duplicate):**
-- Status code table → `Search-sensei.instructions.md`
-- Error response format → `Search-sensei.instructions.md`
-- Swagger documentation rules → `Search-sensei.instructions.md`
-- DTO-first design → `Search-sensei.instructions.md`
-- Input validation → `Search-sensei.instructions.md` + `engineering-guardrails`
-- Authentication/authorization → `engineering-guardrails` + `aspnetcore-framework-playbook`
-- Rate limiting mandate → `engineering-guardrails`
-- Security headers → `engineering-guardrails`
-# Core Principles
+Good interfaces make the right thing easy and the wrong thing hard. This applies to REST APIs, module boundaries, component props, and any surface where one piece of code talks to another.
 
 ### Hyrum's Law
 > With a sufficient number of users of an API, all observable behaviors of your system will be depended on by somebody, regardless of what you promise in the contract.
-
 - **Be intentional about what you expose.** Every observable behavior is a potential commitment.
 - **Don't leak implementation details.** If users can observe it, they will depend on it.
 - **Tests are not enough.** Even with perfect contract tests, "safe" changes can break real users who depend on undocumented behavior.
@@ -59,10 +39,9 @@ Define the interface before implementing it. The contract is the spec — implem
 
 ---
 
-# Resource URL Design (REST)
+## 🏗️ Resource URL Design (REST)
 
-## Naming Rules
-
+### Naming Rules
 ```
 # Resources: plural, lowercase, kebab-case nouns
 /api/v1/users
@@ -78,8 +57,7 @@ POST /api/v1/orders/{id}/cancel
 POST /api/v1/auth/refresh
 ```
 
-## Anti-Patterns
-
+### ❌ Anti-Patterns (Behavioral & Naming Code)
 ```
 ❌ /api/v1/getUsers              → verb in URL
 ❌ /api/v1/user                  → singular (use plural)
@@ -89,7 +67,7 @@ POST /api/v1/auth/refresh
 
 ---
 
-# HTTP Method Semantics
+## 🚦 HTTP Method Semantics
 
 | Method | Idempotent | Safe | Use For |
 |--------|-----------|------|---------|
@@ -99,18 +77,16 @@ POST /api/v1/auth/refresh
 | PATCH | Yes/No | No | Partial update |
 | DELETE | Yes | No | Remove a resource |
 *PATCH can be made idempotent with proper implementation.
+
 ---
 
-# Boundary Validation
+## 🛡️ Boundary Validation
 
 Trust internal code. Validate at system edges where external input enters (API handlers, form submissions, external service responses).
 
 > **Third-party API responses are untrusted data.** Validate their shape and content before using them. A compromised or misbehaving external service can return unexpected types or malicious content.
 
----
-
-## FastAPI/Pydantic Patterns (Standard)
-
+### FastAPI/Pydantic Patterns (Standard)
 ```python
 class PaginatedResponse(BaseModel, Generic[T]):
     items: List[T]
@@ -123,10 +99,8 @@ class PaginatedResponse(BaseModel, Generic[T]):
         return (self.total + self.page_size - 1) // self.page_size
 ```
 
-## GraphQL N+1 Prevention (DataLoader)
-
+### GraphQL N+1 Prevention (DataLoader)
 Always use **DataLoaders** for relationship resolution to batch database queries.
-
 ```python
 class UserLoader(DataLoader):
     async def batch_load_fn(self, user_ids: List[str]) -> List[Optional[User]]:
@@ -140,9 +114,11 @@ async def resolve_orders(user, info):
     return await info.context["loaders"]["orders"].load(user.id)
 ```
 
-# Pagination Patterns
+---
 
-## Offset-Based (Simple)
+## 📄 Pagination Patterns
+
+### Offset-Based (Simple)
 `GET /api/v1/users?page=2&pageSize=20`
 
 ```csharp
@@ -158,16 +134,10 @@ public async Task<PagedResponse<T>> GetPagedAsync(int page, int pageSize)
     return new PagedResponse<T>(data, totalCount, page, pageSize);
 }
 ```
+*   **Pros**: Easiest to implement; supports "Jump to Page N" functionality; stateless on the server.
+*   **Cons**: **Performance**: O(N) complexity for database scan (becomes very slow at high page numbers); **Inconsistency**: If items are added/deleted while paging, items can be skipped or appear twice.
 
-- **Pros**: 
-    - Easiest to implement.
-    - Supports "Jump to Page N" functionality.
-    - Stateless on the server.
-- **Cons**: 
-    - **Performance**: O(N) complexity for database scan (becomes very slow at high page numbers).
-    - **Inconsistency**: If items are added/deleted while paging, items can be skipped or appear twice.
-
-## Cursor-Based (Scalable)
+### Cursor-Based (Scalable)
 `GET /api/v1/users?cursor=eyJpZCI6MTIzfQ&limit=20`
 
 ```csharp
@@ -191,25 +161,20 @@ public async Task<PagedResponse<T>> GetCursorPagedAsync(string? cursor, int limi
     return new PagedResponse<T>(data, TotalCount: -1, Cursor: nextCursor);
 }
 ```
+*   **Pros**: **Performance**: O(1) or O(log N) with proper indexing. Scalable to millions of records; **Consistency**: Guaranteed unique results even with concurrent inserts/deletes.
+*   **Cons**: Harder to implement; does not support "Jump to Page N" (forward/backward navigation only).
 
-- **Pros**: 
-    - **Performance**: O(1) or O(log N) with proper indexing. Scalable to millions of records.
-    - **Consistency**: Guaranteed unique results even with concurrent inserts/deletes.
-- **Cons**: 
-    - Harder to implement.
-    - Does not support "Jump to Page N" (forward/backward navigation only).
-
-## When to Use Which
-
+### When to Use Which
 | Use Case | Type | Reason |
 |----------|------|--------|
 | Admin dashboards, small datasets (<10K) | Offset | Users expect page numbers |
 | Infinite scroll, feeds, large datasets | Cursor | Performance at scale |
 | Search results | Offset | Users expect page numbers |
 | Audit logs, event streams | Cursor | Append-only, high volume |
+
 ---
 
-# Collection Response Envelope
+## ✉️ Collection Response Envelope
 
 Always return collections within a top-level object to allow for metadata expansion without breaking the contract.
 
@@ -231,17 +196,16 @@ Always return collections within a top-level object to allow for metadata expans
 
 ---
 
-# Filtering, Sorting, and Search
+## 🔍 Filtering, Sorting, and Search
 
-- **Filtering**: Use query parameters matching the field name or a structured filter object.
-  - `GET /api/v1/tasks?status=completed&priority=high`
-- **Sorting**: Use a `sort` parameter with `+` (asc) or `-` (desc) prefixes.
-  - `GET /api/v1/tasks?sort=-createdAt,+title`
-- **Search**: Use a `q` or `search` parameter for full-text search.
-  - `GET /api/v1/tasks?q=antigravity`
+*   **Filtering**: Use query parameters matching the field name or a structured filter object.
+    *   `GET /api/v1/tasks?status=completed&priority=high`
+*   **Sorting**: Use a `sort` parameter with `+` (asc) or `-` (desc) prefixes.
+    *   `GET /api/v1/tasks?sort=-createdAt,+title`
+*   **Search**: Use a `q` or `search` parameter for full-text search.
+    *   `GET /api/v1/tasks?q=antigravity`
 
-## Filtering Conventions
-
+### Filtering Conventions
 ```
 # Simple equality
 GET /api/v1/orders?status=active&customerId=abc-123
@@ -275,25 +239,19 @@ public async Task<ActionResult> GetOrdersAsync([FromQuery] OrderFilterRequest fi
 }
 ```
 
-## Sorting Convention
-
+### Sorting & Search Conventions
 ```
 # Single field (prefix - for descending)
 GET /api/v1/products?sort=-createdAt
 
 # Multiple fields (comma-separated)
 GET /api/v1/products?sort=-featured,price,-createdAt
-```
 
-## Full-Text Search
-
-```
 # Use 'q' parameter for search
 GET /api/v1/products?q=wireless+headphones
 ```
 
-## Sparse Fieldsets
-
+### Sparse Fieldsets
 ```
 # Return only specified fields (reduces payload)
 GET /api/v1/users?fields=id,name,email
@@ -301,31 +259,29 @@ GET /api/v1/users?fields=id,name,email
 
 ---
 
-# Versioning Strategy
+## 📈 Versioning Strategy
 
-## URL Path Versioning (Preferred)
-
+### URL Path Versioning (Preferred)
 ```
 /api/v1/users
 /api/v2/users
 ```
 
-## Lifecycle Rules
-
-1. **Start with v1** — don't version until you need to
-2. **Maximum 2 active versions** — current + previous
+### Lifecycle Rules
+1. **Start with v1** — don't version until you need to.
+2. **Maximum 2 active versions** — current + previous.
 3. **Non-breaking changes** (no new version needed):
-   - Adding new fields to responses
-   - Adding new optional query parameters
-   - Adding new endpoints
+    *   Adding new fields to responses.
+    *   Adding new optional query parameters.
+    *   Adding new endpoints.
 4. **Breaking changes** (require new version):
-   - Removing or renaming fields
-   - Changing field types
-   - Changing URL structure
-   - Changing authentication method
+    *   Removing or renaming fields.
+    *   Changing field types.
+    *   Changing URL structure.
+    *   Changing authentication method.
 5. **Deprecation**:
-   - Add `Sunset` header: `Sunset: Sat, 01 Jul 2026 00:00:00 GMT`
-   - Return `410 Gone` after sunset date
+    *   Add `Sunset` header: `Sunset: Sat, 01 Jul 2026 00:00:00 GMT`
+    *   Return `410 Gone` after sunset date.
 
 ```csharp
 // ASP.NET Core — add Sunset header for deprecated version
@@ -340,35 +296,16 @@ app.MapGet("/api/v1/users", handler)
 ```
 
 ---
-# Rate Limiting & Quotas
 
-## Response Headers
+## 🚦 Rate Limiting & Quotas
+
+### Response Headers
 APIs should signal rate limit status to clients via standard headers:
-- `X-RateLimit-Limit`: The quota limit in the current window.
-- `X-RateLimit-Remaining`: The remaining quota in the current window.
-- `X-RateLimit-Reset`: The time at which the quota resets.
+*   `X-RateLimit-Limit`: The quota limit in the current window.
+*   `X-RateLimit-Remaining`: The remaining quota in the current window.
+*   `X-RateLimit-Reset`: The time at which the quota resets.
 
-## Rate Limiting Tiers (Example)
-| Tier | Limit | Use Case |
-|------|-------|----------|
-| Anonymous | 60/min | Public browsing |
-| Authenticated User | 1000/min | Standard app usage |
-| Internal/Service | 5000/min | System-to-system |
-
----
-
-# TypeScript Interface Patterns
-
-### Use Discriminated Unions for Variants
-```typescript
-type TaskStatus =
-  | { type: 'pending' }
-  | { type: 'in_progress'; assignee: string; startedAt: Date }
-  | { type: 'completed'; completedAt: Date; completedBy: string };
-```
-
-## Tier Design
-
+### Tier Design
 | Tier | Limit | Window | Apply To |
 |------|-------|--------|----------|
 | Anonymous | 30/min | Per IP | Public search endpoints |
@@ -401,10 +338,21 @@ builder.Services.AddRateLimiter(options =>
 
 ---
 
-# API Design Checklist
+## 🧩 TypeScript Interface Patterns
+
+### Use Discriminated Unions for Variants
+```typescript
+type TaskStatus =
+  | { type: 'pending' }
+  | { type: 'in_progress'; assignee: string; startedAt: Date }
+  | { type: 'completed'; completedAt: Date; completedBy: string };
+```
+
+---
+
+## ✅ API Design Checklist
 
 Before shipping a new endpoint, verify items NOT already covered by project instructions:
-
 - [ ] Resource URL follows naming conventions (plural, kebab-case, no verbs)
 - [ ] Correct HTTP method used with proper idempotency semantics
 - [ ] List endpoints have pagination (offset or cursor, chosen by use case)

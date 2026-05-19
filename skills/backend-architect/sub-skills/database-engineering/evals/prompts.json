@@ -1,0 +1,14 @@
+[
+  {
+    "id": "tc_db_engineering_01",
+    "category": "migration_design",
+    "description": "Verify ability to design a safe, concurrent database index migration on high-traffic PostgreSQL tables.",
+    "prompt": "We need to index the 'orders' table on the column 'user_id' in our production database containing 50 million rows. Write the PostgreSQL migration code and describe any locking precautions required to prevent user downtime."
+  },
+  {
+    "id": "tc_db_engineering_02",
+    "category": "query_optimization",
+    "description": "Verify capability to analyze EXPLAIN output and suggest indexing, covering indexes, and N+1 fixes.",
+    "prompt": "Explain how you would optimize a query that is executing a Seq Scan on a large table. Show the commands you would run to inspect the query planner and how to structure a covering index to avoid heap fetch lookups."
+  }
+]

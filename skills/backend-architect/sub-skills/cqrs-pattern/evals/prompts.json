@@ -1,0 +1,8 @@
+[
+  {
+    "id": "tc_cqrs_pattern_01",
+    "category": "standard_evaluation",
+    "description": "Standard test case to verify compliance with cqrs-pattern best practices.",
+    "prompt": "Write a clean, production-ready implementation utilizing the cqrs-pattern capability. Explain security and architectural trade-offs."
+  }
+]

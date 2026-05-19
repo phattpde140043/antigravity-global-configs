@@ -1,0 +1,13 @@
+---
+skill_name: cqrs-pattern
+domain: backend-architecture
+priority: 80
+trigger_conditions:
+  file_patterns:
+    - "**/sub-skills/cqrs-pattern/**"
+  query_keywords:
+    - "cqrs pattern"
+conflict_resolutions:
+  override: []
+  delegate_before: []
+---

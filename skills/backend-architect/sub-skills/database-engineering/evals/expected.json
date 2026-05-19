@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tc_db_engineering_01",
+    "assertions": [
+      {
+        "target": "ddl_concurrency",
+        "criteria": "Must explicitly use `CREATE INDEX CONCURRENTLY` in PostgreSQL to prevent full table read/write locks.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "transaction_control",
+        "criteria": "Must specify that the concurrent index creation cannot be executed inside a multi-statement transaction block.",
+        "grade": "mandatory"
+      }
+    ]
+  },
+  {
+    "id": "tc_db_engineering_02",
+    "assertions": [
+      {
+        "target": "query_profiling",
+        "criteria": "Must recommend using `EXPLAIN (ANALYZE, BUFFERS)` to diagnose query resource consumption and Seq Scans.",
+        "grade": "mandatory"
+      },
+      {
+        "target": "covering_index",
+        "criteria": "Must demonstrate a covering index using `INCLUDE` or composite syntax to satisfy index-only scans and avoid heap fetch buffers.",
+        "grade": "mandatory"
+      }
+    ]
+  }
+]

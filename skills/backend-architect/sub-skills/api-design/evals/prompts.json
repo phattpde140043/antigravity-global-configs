@@ -1,0 +1,20 @@
+[
+  {
+    "id": "tc_api_design_01",
+    "category": "endpoint_design",
+    "description": "Evaluate capacity to design a REST endpoint from scratch with pagination and tenant isolation.",
+    "prompt": "Design a new HTTP endpoint for retrieving user notifications. The system has 10 million notifications, multi-tenant databases, and requires high query performance. Show the URL structure, the payload/response schema, and describe how tenant isolation is handled at the controller and repository layers."
+  },
+  {
+    "id": "tc_api_design_02",
+    "category": "contract_review",
+    "description": "Evaluate capacity to detect REST anti-patterns, missing validation, and missing envelopes.",
+    "prompt": "Review the following endpoint specification and identify all architectural and naming anti-patterns, then rewrite it according to production-grade standards:\n\nPOST /api/get_user_tasks?user=123&limit=all\nResponse:\n[\n  { \"task_id\": 1, \"title\": \"Clean database\", \"status_code\": 2 }\n]"
+  },
+  {
+    "id": "tc_api_design_03",
+    "category": "type_contract",
+    "description": "Evaluate capacity to define clean type contracts using Discriminated Unions and Pydantic/TypeScript conventions.",
+    "prompt": "Design a TypeScript type contract for a Billing Transaction resource. A transaction can have three states: 'pending', 'succeeded' (requires transactionId and paymentMethod), and 'failed' (requires errorCode and retryCount). Ensure the interfaces follow Poka-Yoke principles so that invalid combinations are impossible."
+  }
+]

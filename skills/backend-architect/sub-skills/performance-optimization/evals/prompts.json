@@ -1,0 +1,14 @@
+[
+  {
+    "id": "tc_perf_opt_01",
+    "category": "asynchronous_concurrency",
+    "description": "Evaluate ability to analyze sequential awaits and resolve them using concurrent aggregation patterns.",
+    "prompt": "Optimize the following function to achieve maximum performance. The function currently fetches user profile data, historical orders, and pending shipping statuses sequentially using three sequential await blocks."
+  },
+  {
+    "id": "tc_perf_opt_02",
+    "category": "caching_implementation",
+    "description": "Evaluate ability to implement standard Cache-Aside strategy with secure TTL expiration.",
+    "prompt": "Design a caching strategy for a high-traffic product catalog API using Redis. Show the code structure for checking, serving, and updating the cache while preventing cache stampede."
+  }
+]

@@ -1,0 +1,20 @@
+---
+skill_name: performance-optimization
+domain: backend-architecture
+priority: 95
+trigger_conditions:
+  file_patterns:
+    - "**/services/**"
+    - "**/utils/**"
+    - "**/controllers/**"
+  query_keywords:
+    - "performance tuning"
+    - "api latency"
+    - "apm bottleneck"
+    - "caching strategy"
+    - "parallelism"
+    - "promise.all"
+conflict_resolutions:
+  override: []
+  delegate_before: []
+---

@@ -1,0 +1,19 @@
+---
+skill_name: database-engineering
+domain: backend-architecture
+priority: 90
+trigger_conditions:
+  file_patterns:
+    - "**/migrations/**"
+    - "**/repositories/**"
+    - "**/*.sql"
+  query_keywords:
+    - "database index"
+    - "query tuning"
+    - "explain analyze"
+    - "pgbouncer"
+    - "migration locking"
+conflict_resolutions:
+  override: []
+  delegate_before: []
+---

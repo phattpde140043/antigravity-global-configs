@@ -54,6 +54,20 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
   👉 **[AWS Skills](sub-skills/aws-skills/SKILL.md)**
 - For **Azure Container App Deployments** (Azure Developer CLI, idempotent container architecture):
   👉 **[Azure Dev CLI Deployment](sub-skills/azd-deployment/SKILL.md)**
+- For **Vercel Cloud Edge Deployment & Tuning** (edge middlewares, serverless configurations, cache control headers, routing setups):
+  👉 **[Vercel Deployment](sub-skills/vercel-deployment/SKILL.md)**
+
+### 🛠️ Infrastructure as Code (Terraform)
+- For **Terraform Specialist Workspaces** (state locks, workspaces variables setups):
+  👉 **[Terraform Core Patterns](sub-skills/terraform/core/SKILL.md)**
+- For **Terraform Basic Integrations** (providers setup, simple resources mappings):
+  👉 **[Terraform Basics](sub-skills/terraform/basics/SKILL.md)**
+- For **Terraform Module Creation** (reusable blueprints libraries, semantic versioning configurations):
+  👉 **[Terraform Reusable Modules](sub-skills/terraform/modules/SKILL.md)**
+- For **Terraform Regional Multi-Region Orchestrations** (multi-region variables pass, state mappings):
+  👉 **[Terraform Multi-Region Architecture](sub-skills/terraform/architecture/SKILL.md)**
+- For **Terraform AWS Standard Modules** (VPC, RDS, EKS modules implementations):
+  👉 **[Terraform AWS Modules](sub-skills/terraform/aws-modules/SKILL.md)**
 - For **Defensive Bash Programming** (production-grade error resilient automation and traps):
   👉 **[Defensive Bash Patterns](sub-skills/bash-defensive-patterns/SKILL.md)**
 - For **Linux & macOS Shell Command Syntax** (piping, process control, environment management):

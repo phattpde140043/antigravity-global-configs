@@ -110,6 +110,8 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
 ### 🦀 Rust Systems Engineering & Robius
 - For **Advanced Systems Rust Programming** (lifetimes, traits bounds, memory model, cargo profiles):
   👉 **[Rust Pro](sub-skills/rust/pro/SKILL.md)**
+- For **Rust Systems Programming & Low-Level Concurrency** (atomic operations, lock-free structures, strict memory bounds):
+  👉 **[Rust Systems Programming](sub-skills/rust/systems-programming/SKILL.md)**
 - For **Rust Async Tokio Programming** (Tokio runtimes, pinning, futures select, async channel architectures):
   👉 **[Rust Async Patterns](sub-skills/rust/async-patterns/SKILL.md)**
 - For **Robius App Architecture Standards** (Makepad window lifecycle, AppMain setup, worker task threads):
@@ -126,6 +128,34 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
 ### 📈 Quantitative Finance & Risk Analysis
 - For **Quantitative Financial Risk Calculations** (Value at Risk (VaR), Sharpe Ratio, Maximum Drawdown, portfolio volatility models):
   👉 **[Risk Metrics Calculation](sub-skills/finance/risk-metrics-calculation/SKILL.md)**
+
+### 💾 Vector Databases & Advanced Storage
+- For **Vector Database Engineering** (Pinecone, Milvus, Qdrant, pgvector CRUD operations, high-concurrency vector retrievals):
+  👉 **[Vector Database Engineer](sub-skills/vector-database-engineer/SKILL.md)**
+- For **Vector Index Tuning & Quantization** (HNSW, IVF-PQ, quantization levels, distance parameter tuning):
+  👉 **[Vector Index Tuning](sub-skills/vector-index-tuning/SKILL.md)**
+- For **VideoDB Frame Storage & Searching** (storing frame assets, temporal frame indexing, metadata annotations):
+  👉 **[VideoDB Core](sub-skills/videodb/SKILL.md)**
+- For **VideoDB API Client Integrations** (fetching temporal indices, querying visual search pipelines):
+  👉 **[VideoDB Client Skills](sub-skills/videodb-skills/SKILL.md)**
+- For **Vexor OCR Schema Mappings** (parsing complex document tables, AI extraction schemas):
+  👉 **[Vexor Ingestion Core](sub-skills/vexor/SKILL.md)**
+- For **Vexor CLI Ingestion Utilities** (CLI parsing commands, loading schemas configs):
+  👉 **[Vexor CLI Tools](sub-skills/vexor-cli/SKILL.md)**
+- For **Neon Serverless PostgreSQL** (branch-on-PR database schema branching, connection pooling configurations):
+  👉 **[Neon Postgres](sub-skills/neon-postgres/SKILL.md)**
+- For **Upstash QStash Message Queue** (HTTP-based serverless queuing, schedules triggers, dynamic retry backing):
+  👉 **[Upstash QStash](sub-skills/qstash/SKILL.md)**
+- For **High-Speed Python Packaging with Astral uv** (uv dependency locks, ultra-fast virtual environments):
+  👉 **[Python uv Package Manager](sub-skills/python/uv-package-manager/SKILL.md)**
+
+### 🔄 Distributed Workflow Orchestration (Temporal)
+- For **Temporal.io Go Workflow Engines** (Go activity definitions, orchestration state workflows, signals and queries):
+  👉 **[Temporal Go](sub-skills/temporal/golang/SKILL.md)**
+- For **Temporal.io Python Workflow Engines** (Python async activity loops, state machine tracking):
+  👉 **[Temporal Python Core](sub-skills/temporal/python/core/SKILL.md)**
+- For **Temporal.io Python Testing & Mocking** (mocking Temporal environment, state triggers validation):
+  👉 **[Temporal Python Testing](sub-skills/temporal/python/testing/SKILL.md)**
 
 ### 3. API & Communication
 - For **REST/GraphQL API Design**:

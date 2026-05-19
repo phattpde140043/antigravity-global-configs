@@ -55,6 +55,18 @@ When performing UX or frontend tasks, you **MUST** chain to the following sub-sk
   👉 **[Baseline UI Standards](sub-skills/baseline-ui/SKILL.md)**
 - For **Browser Extension Interfaces & Architecture** (Chrome extension APIs, popup/options page design, background workers):
   👉 **[Browser Extension Builder](sub-skills/browser-extension-builder/SKILL.md)**
+- For **Classical UX/UI Design Principles** (Gestalt laws of grouping, typography grids, cognitive load minimization):
+  👉 **[UX/UI Principles](sub-skills/uxui-principles/SKILL.md)**
+- For **Persuasive UX & Choice Architectures** (behavioral psychology patterns, nudge mechanisms, retention layout strategies):
+  👉 **[UX Persuasion Engineering](sub-skills/ux-persuasion/SKILL.md)**
+- For **Dynamic Wireframe & Navigation Flow Mapping** (multi-route user flows, stateful wireframe mapping):
+  👉 **[UX Wireframe Flows](sub-skills/ux-flow/SKILL.md)**
+- For **Qualitative User Usability Cohort Analyses** (usability heatmap evaluations, cohort session recordings audits):
+  👉 **[UX Usability Feedback](sub-skills/ux-feedback/SKILL.md)**
+- For **UX Copywriting & Microcopy Guidelines** (readability optimizations, microcopy strategies, clear error feedback statements):
+  👉 **[UX Copywriting](sub-skills/ux-copy/SKILL.md)**
+- For **Comprehensive Usability Audits** (friction tracking, layout optimization reports):
+  👉 **[UX Auditing](sub-skills/ux-audit/SKILL.md)**
 - For **Advanced Chrome Extension Development** (manifest V3 specifications, message passing, sandbox isolation):
   👉 **[Chrome Extension Developer](sub-skills/chrome-extension-developer/SKILL.md)**
 - For **Native Mobile HIG & Layout Architectures** (Android Jetpack Compose, Apple SwiftUI standards):
@@ -65,8 +77,26 @@ When performing UX or frontend tasks, you **MUST** chain to the following sub-sk
   👉 **[Remotion Performance](sub-skills/remotion/best-practices/SKILL.md)**
 - For **HTML/CSS to SVG Image Generation Engines** (Satori, Vercel OG image generation styling):
   👉 **[Satori Image Generation](sub-skills/satori/SKILL.md)**
+- For **Unsplash API Assets Integration** (responsive visual asset hooks, optimized design grids):
+  👉 **[Unsplash Integration](sub-skills/unsplash-integration/SKILL.md)**
+- For **Telegram Mini Apps (TMA) Frontend** (TMA Webview integration, React TMA wrappers, state sync):
+  👉 **[Telegram Mini Apps](sub-skills/telegram-mini-apps/SKILL.md)**
+- For **Telegram Interactive Bots Gating UI** (bot menu actions, inline markup buttons styling):
+  👉 **[Telegram Bots UI](sub-skills/telegram-bots-ui/SKILL.md)**
 
 ### 2. Implementation & Performance
+- For **Tailwind CSS Components Patterns** (modern design tokens layout grids, reusable component templates):
+  👉 **[Tailwind Patterns](sub-skills/tailwind-patterns/SKILL.md)**
+- For **Tailwind CSS Design Systems** (spacing scales, color palette configs, custom theme integration):
+  👉 **[Tailwind Design System](sub-skills/tailwind-design-system/SKILL.md)**
+- For **Expo Native Mobile Major Upgrades** (SDK version bumping, resolving dependency locks in React Native):
+  👉 **[Expo Upgrades](sub-skills/expo/upgrade/SKILL.md)**
+- For **TanStack Query Caching & Optimistic State** (optimistic mutations, custom query key structures, cache invalidation):
+  👉 **[TanStack Query Expert](sub-skills/tanstack-query/SKILL.md)**
+- For **Modern TypeScript Generic OOP Abstractions** (generic types mappings, structural utility interfaces):
+  👉 **[TypeScript Pro](sub-skills/typescript/pro/SKILL.md)**
+- For **Advanced TypeScript Compiler Typings** (advanced generic bounds, template literal types, complex compiler flags):
+  👉 **[TypeScript Expert](sub-skills/typescript/expert/SKILL.md)**
 - For **Accessibility** Architecture:
   👉 **[A11y Architect](sub-skills/a11y-architect/SKILL.md)**
 - For **Screen Reader Compatibility Testing** (NVDA, JAWS, VoiceOver screen reader assertions, ARIA accessibility audits):

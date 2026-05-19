@@ -60,6 +60,16 @@ When performing AI or data-related tasks, you **MUST** chain to the following su
   👉 **[Claude Ally Health](sub-skills/claude-ally-health/SKILL.md)**
 - For **Physical Rehabilitation Motion Analyzer** (motion tracking AI models, physical therapy tracking, rehabilitation analytics):
   👉 **[Rehabilitation Motion Analyzer](sub-skills/rehabilitation-analyzer/SKILL.md)**
+- For **Vercel AI SDK Orchestration** (streaming generative text, handling JSON objects, dynamic UI streaming):
+  👉 **[Vercel AI SDK](sub-skills/vercel-ai-sdk/SKILL.md)**
+- For **Visual Emotion Engineering** (mood-to-layout predictions, multi-modal cognitive color associations):
+  👉 **[Visual Emotion Engineer](sub-skills/visual-emotion-engineer/SKILL.md)**
+- For **Vizcom Collaborative Design Ingestion** (vizcom sketch-to-image design renderings pipelines):
+  👉 **[Vizcom AI Rendering](sub-skills/vizcom/SKILL.md)**
+- For **Tavily Web Search API for RAG** (real-time structured web results, search optimization for agents):
+  👉 **[Tavily Search](sub-skills/tavily-search/SKILL.md)**
+- For **TCM Constitution Analyzer** (Traditional Chinese Medicine dynamic classifications, user state evaluation):
+  👉 **[TCM Analyzer](sub-skills/tcm-analyzer/SKILL.md)**
 - For **Visualizing Complex Data via D3.js** (Claude D3 graph orchestration, interactive SVG data bindings):
   👉 **[Claude D3.js Visualizations](sub-skills/claude-d3js/SKILL.md)**
 

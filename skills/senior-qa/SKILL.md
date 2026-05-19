@@ -63,6 +63,16 @@ When performing testing tasks, you **MUST** chain to the following sub-skills. N
   👉 **[Test Driven Development](sub-skills/test-driven-development/SKILL.md)**
 - For **Bash & Shell Script Unit/Integration Testing** (BATS framework, assertions, mocking):
   👉 **[BATS Testing Patterns](sub-skills/bats-testing-patterns/SKILL.md)**
+- For **TDD Orchestration Loops** (automated TDD execution, workflow driver):
+  👉 **[TDD Orchestrator](sub-skills/tdd/orchestrator/SKILL.md)**
+- For **TDD Cycle Strict Guidelines** (Red-Green-Refactor cycle timing, rules):
+  👉 **[TDD Cycle Rules](sub-skills/tdd/cycle/SKILL.md)**
+- For **TDD Red Phase Assertions** (writing precise failing test boundaries):
+  👉 **[TDD Red Phase](sub-skills/tdd/red/SKILL.md)**
+- For **TDD Green Phase Implementations** (minimal code blocks to satisfy assertions):
+  👉 **[TDD Green Phase](sub-skills/tdd/green/SKILL.md)**
+- For **TDD Refactor Phase Code Cleanups** (clean variable naming, structural improvements):
+  👉 **[TDD Refactor Phase](sub-skills/tdd/refactor/SKILL.md)**
 
 ### 4. Advanced Evaluation
 - For **Evaluation Harnesses** and Model Scoring:

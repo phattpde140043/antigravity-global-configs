@@ -61,3 +61,13 @@ Streamline processes by connecting tools and automating repetitive tasks.
   👉 **[Reddit Automation](sub-skills/reddit-automation/SKILL.md)**
 - For **Render Cloud Deployment Automation** (deploying webapps, checking build states, scaling instances via Rube MCP):
   👉 **[Render Automation](sub-skills/render-automation/SKILL.md)**
+- For **X (Twitter) Automated Scraping & Pipelines** (monitoring queries, extracting post metrics, pipeline feeding via Rube MCP):
+  👉 **[X Twitter Scraper](sub-skills/x-twitter-scraper/SKILL.md)**
+- For **Vercel Project & Deployment Automation** (assigning domains, fetching deployments status, updating env variables via Rube MCP):
+  👉 **[Vercel Automation](sub-skills/vercel-automation/SKILL.md)**
+- For **Telegram Bot Configurations** (bot setups, basic commands configurations):
+  👉 **[Telegram Core](sub-skills/telegram/SKILL.md)**
+- For **Telegram Channel Automated Operations** (auto-posting scheduled content, alerts feeds via Rube MCP):
+  👉 **[Telegram Automation](sub-skills/telegram-automation/SKILL.md)**
+- For **Git Worktree Operations** (concurring branch checkouts, multiple workspace setups):
+  👉 **[Git Worktrees](sub-skills/git/worktrees/SKILL.md)**

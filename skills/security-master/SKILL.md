@@ -84,6 +84,8 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[Red Team Tools](sub-skills/red-team-tools/SKILL.md)**
 - For **Binary Reverse Engineering** (binary disassemblers, Ghidra pipelines, ELF/PE header analysis, stack patching):
   👉 **[Reverse Engineering](sub-skills/reverse-engineer/SKILL.md)**
+- For **CodeQL Variant Audits & Analyses** (writing custom semantic queries, variant tracking across large repositories):
+  👉 **[Variant Analysis](sub-skills/variant-analysis/SKILL.md)**
 
 ### 4. Cloud & Infrastructure
 - For **AWS Hardening** and **SCA (Supply Chain)**: 

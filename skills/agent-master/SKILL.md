@@ -104,6 +104,20 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[RecallMax Memory](sub-skills/recallmax/SKILL.md)**
 - For **Recursive Context Pruning & Token Budgeting** (token cost reduction, recursive trim-down execution):
   👉 **[Recursive Context Pruning](sub-skills/recursive-context-pruning/SKILL.md)**
+- For **Secure Sandboxing & Variables Lock** (Varlock execution scopes, secure key/value local storage):
+  👉 **[Varlock Secure Variables](sub-skills/varlock/SKILL.md)**
+- For **Claude Varlock Secure Integration** (Claude API bindings for local key storage):
+  👉 **[Varlock Claude Hooks](sub-skills/varlock-claude-skill/SKILL.md)**
+- For **Vibe Checks & Alignment Monitors** (Viboscope dynamic mood meters, user sentiment trajectory matching):
+  👉 **[Viboscope Dynamic Monitor](sub-skills/viboscope/SKILL.md)**
+- For **Prompting Capabilities & Superpowers** (invoking maximum capacity prompt configurations):
+  👉 **[Superpowers Prompting](sub-skills/superpowers/SKILL.md)**
+- For **Tokenwise Economy Tracking** (token density monitoring, context optimization indicators):
+  👉 **[Tokenwise Economy](sub-skills/tokenwise/SKILL.md)**
+- For **Technical Change Tracker inside Context** (mapping dynamic codebase diffs inside active model contexts):
+  👉 **[Technical Change Tracker](sub-skills/technical-change-tracker/SKILL.md)**
+- For **Task Intelligence & Objective Decomposition** (breaking complex requirements into task execution trees):
+  👉 **[Task Intelligence](sub-skills/task-intelligence/SKILL.md)**
 - For **Redesigning Existing Legacy Projects** (greenfield code audits, decoupled domain models, structural refactoring):
   👉 **[Redesign Existing Projects](sub-skills/redesign-existing-projects/SKILL.md)**
 - For **Rich Elicitation Prompt Strategies** (elaborated target details, user criteria mapping):

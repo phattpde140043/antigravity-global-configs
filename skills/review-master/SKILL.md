@@ -50,8 +50,16 @@ When performing reviews, you **MUST** chain to the following sub-skills. Navigat
   👉 **[Clarvia AEO Auditor](sub-skills/clarvia-aeo-check/SKILL.md)**
 - For **Constructive Reception of Code Review Feedback** (implementing feedback loops, validating suggested changes, collaborative iteration):
   👉 **[Receiving Code Review](sub-skills/code-review-feedback/receiving/SKILL.md)**
+- For **Visual & Styling Component Code Auditing** (checking component markup cleanliness, enforcing CSS design token structures):
+  👉 **[Vibers Component Review](sub-skills/vibers-code-review/SKILL.md)**
 - For **Requesting Structured Code Reviews** (pull request description guidelines, scoping context for reviewers, creating readable diffs):
   👉 **[Requesting Code Review](sub-skills/code-review-feedback/requesting/SKILL.md)**
+- For **Standardized Collaboration Issue Creation** (writing dynamic issue descriptions, reproducing guides specifications):
+  👉 **[Collaboration Issue Standards](sub-skills/collaboration/issues/SKILL.md)**
+- For **Collaboration Standup Outlining** (daily progress logs format, tracking blockages structures):
+  👉 **[Collaboration Standup Notes](sub-skills/collaboration/standup/SKILL.md)**
+- For **Boilerplate Code Slop Removal** (eradicating verbose wrapper functions, simplifying layout naming conventions):
+  👉 **[Unslop Code Review](sub-skills/unslop/SKILL.md)**
 
 ### 3. Workflow & Artifact Management
 - For **PR/Diff-based Review** and Summary Templates:

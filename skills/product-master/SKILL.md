@@ -66,6 +66,14 @@ Navigate the sub-skills in the sequential order defined below to ensure structur
   👉 **[RevOps Strategy](sub-skills/revops/SKILL.md)**
 - For **Corporate & Product Risk Management** (risk register, impact evaluation framework, mitigation execution):
   👉 **[Risk Manager](sub-skills/risk-manager/SKILL.md)**
+- For **Viral Loop Growth Engine & K-Factor Modeling** (organic loops, coefficient calculators, viral sharing hooks):
+  👉 **[Viral Generator Builder](sub-skills/viral-generator-builder/SKILL.md)**
+- For **Xiaohongshu Branding & Content Strategy** (Red Book content hooks, search optimization, Chinese consumer psychology):
+  👉 **[Xiaohongshu Content Strategist](sub-skills/xiaohongshu-content-strategist/SKILL.md)**
+- For **WeChat Official Account Growth & Campaigns** (Chinese social media amplification, WeChat ecosystem mechanics):
+  👉 **[WeChat Account Strategist](sub-skills/wechat-official-account-strategist/SKILL.md)**
+- For **Team Composition & Organizational Design** (scaling models, sizing ratios, team architecture mappings):
+  👉 **[Team Composition Analysis](sub-skills/team-composition/SKILL.md)**
 
 ### 🚀 Startup Strategy & Financial Modeling
 - For **High-Level Startup Business Analysis** (startup lifecycle strategy, funding pitch decks, product-market-fit benchmarks):

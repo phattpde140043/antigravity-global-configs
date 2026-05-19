@@ -33,6 +33,13 @@ description: Use when creating new skills, editing existing skills, or verifying
 ## Overview
 What is this? Core principle in 1-2 sentences.
 
+**Writing skills IS Test-Driven Development applied to process documentation.**
+**Personal skills live in agent-specific directories (`~/.claude/skills` for Claude Code, `~/.agents/skills/` for Codex)** 
+You write test cases (pressure scenarios with subagents), watch them fail (baseline behavior), write the skill (documentation), watch tests pass (agents comply), and refactor (close loopholes).
+**Core principle:** If you didn't watch an agent fail without the skill, you don't know if the skill teaches the right thing.
+**REQUIRED BACKGROUND:** You MUST understand superpowers:test-driven-development before using this skill. That skill defines the fundamental RED-GREEN-REFACTOR cycle. This skill adapts TDD to documentation.
+**Official guidance:** For Anthropic's official skill authoring best practices, see anthropic-best-practices.md. This document provides additional patterns and guidelines that complement the TDD-focused approach in this skill.
+
 ## What is a Skill?
 A **skill** is a reference guide for proven techniques, patterns, or tools. Skills help future Claude instances find and apply effective approaches.
 
@@ -141,6 +148,8 @@ What goes wrong + fixes
 
 ## Real-World Impact (optional)
 Concrete results
+## Overview
+What is this? Core principle in 1-2 sentences.
 ```
 
 ## Claude Search Optimization (CSO)
@@ -162,6 +171,8 @@ When the description was changed to just "Use when executing implementation plan
 **The trap:** Descriptions that summarize workflow create a shortcut Claude will take. The skill body becomes documentation Claude skips.
 
 ```yaml
+
+```
 
 # ❌ BAD: Summarizes workflow - Claude may follow this instead of reading skill
 description: Use when executing plans - dispatches subagent per task with code review between tasks
@@ -202,6 +213,8 @@ description: Use when tests have race conditions, timing dependencies, or pass/f
 description: Use when using React Router and handling authentication redirects
 ```
 
+```
+
 ### 2. Keyword Coverage
 Use words Claude would search for:
 - Error messages: "Hook timed out", "ENOTEMPTY", "race condition"
@@ -226,6 +239,8 @@ Use words Claude would search for:
 
 **Move details to tool help:**
 ```bash
+
+```
 
 # ❌ BAD: Document all flags in SKILL.md
 search-conversations supports --text, --both, --after DATE, --before DATE, --limit N
@@ -283,6 +298,8 @@ wc -w skills/path/SKILL.md
 **Gerunds (-ing) work well for processes:**
 - `creating-skills`, `testing-skills`, `debugging-with-logs`
 - Active, describes the action you're taking
+
+```
 
 ### 4. Cross-Referencing Other Skills
 **When writing documentation that references other skills:**

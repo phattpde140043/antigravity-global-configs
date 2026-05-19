@@ -3,10 +3,12 @@ name: coding-standards-and-simplification
 description: "Core quality baseline and code simplification guides. Use when writing code, reviewing for maintainability, or refactoring for clarity. Focuses on KISS, DRY, YAGNI, naming, async hygiene, and error handling."
 ---
 
+
+
 # Coding Standards and Simplification
 
-## Purpose
 
+## Purpose
 Define a minimal quality baseline and a systematic process for simplifying code. 
 
 **Senior Mindset**: Code is written for **people** (teammates and your future self), not just for machines. Follow the **Kaizen** mindset and the **TDD Iron Law** (Write tests before code) to ensure quality by design.
@@ -16,7 +18,6 @@ Define a minimal quality baseline and a systematic process for simplifying code.
 ---
 
 ## When to Activate
-
 - **Readability Rules**: Clean Code by Robert C. Martin (Uncle Bob).
 - **Naming Conventions**: Intention-revealing, pronounceable, and searchable.
 - **Function Hygiene**: Small (< 20 lines), high cohesion, one level of abstraction.
@@ -28,7 +29,6 @@ Define a minimal quality baseline and a systematic process for simplifying code.
 ---
 
 ## Scope Boundaries
-
 Use this skill for:
 - descriptive naming and consistency
 - readability and simplicity (KISS)
@@ -51,8 +51,8 @@ If available, defer to narrower skills for those areas.
 
 ## Core Principles
 
-## 1) Readable First, Clever Later (Strict)
 
+## 1) Readable First, Clever Later (Strict)
 - **Prioritize Clarity**: Choose easy-to-understand code over "clever" or "hacky" implementations that save a few lines but increase cognitive load.
 - **The 6-Month Rule**: Ask yourself: "Will I or my teammates understand this logic in 6 months without explanation?"
 - Make intent obvious from function and variable names.
@@ -60,46 +60,38 @@ If available, defer to narrower skills for those areas.
 - Prefer self-documenting code; comment only to explain **WHY** (logic/intent), not **WHAT** (the code itself).
 
 ## 2) KISS & Trade-offs
-
 - Choose the simplest correct design.
 - Avoid premature optimization or abstraction.
 - **Balanced Trade-offs**: For senior tasks, balance readability, performance, and deadlines. Don't over-engineer for scenarios that don't exist yet.
 
-
 ## 3) DRY (Don't Repeat Yourself)
-
 - **Duplication = Technical Debt**: Extract repeated logic into shared helpers or modules to prevent maintenance silos.
 - Centralize shared constants and validation patterns.
 - Do not over-abstract one-off logic (avoid "premature DRY").
 
-
 ## 4) YAGNI
-
 - Build for current requirements first
 - Avoid speculative extension points
 - Add abstraction only after repeat demand appears
 
 ## 5) Immutability-First
-
 - Prefer non-mutating updates for objects/collections
 - Avoid in-place changes unless there is a clear measured benefit
 - When mutation is required for performance, isolate and document why
 
 ## 6) Poka-Yoke (Error Proofing)
-
 - **Design for structural impossibility**: Make invalid states unrepresentable (e.g., use Discriminated Unions/Enums instead of free strings).
 - **Validate at boundaries**: Trust internal code; strictly verify at system edges.
 - **Fail Fast & Loudly**: Stop execution immediately on contract violation.
 
 ## 7) Just-In-Time (JIT) Optimization
-
 - Implement only current requirements (YAGNI).
 - **Optimize only after measurement**: Profile before optimizing. Never optimize based on intuition alone.
 
 
 ---
-# The Principles of Simplicity
 
+# The Principles of Simplicity
 1. **Readability First**: Clear names over short names. Intent should be obvious.
 2. **KISS (Keep It Simple, Stupid)**: Choose the simplest correct design. Avoid cleverness.
 3. **DRY (Don't Repeat Yourself)**: Extract repeated logic, but don't over-abstract one-offs.
@@ -110,8 +102,9 @@ If available, defer to narrower skills for those areas.
 
 ---
 
-# The Simplification Process
+8. **Idempotency**: Ensure mutation operations are safe to retry.
 
+# The Simplification Process
 1. **Understand Before Touching**: Read context, check git blame, and identify edge cases.
 2. **Identify Opportunities**:
     - **Structural Complexity**: Nested logic (3+ levels), long functions (50+ lines).
@@ -137,7 +130,6 @@ If available, defer to narrower skills for those areas.
 ---
 
 # Naming Rules
-
 - **Verb-Noun Intent**: Functions should use verb-noun naming (e.g., `fetchUserProfile`, `calculateScore`).
 - **Predicates for Booleans**: Booleans should read as questions/predicates (`isReady`, `hasAccess`, `canRetry`).
 - **Domain over Technical**: Prefer domain terms over technical placeholders.
@@ -166,7 +158,6 @@ If available, defer to narrower skills for those areas.
 ---
 
 # Function and Structure Rules
-
 - **Single Responsibility (SRP)**: Each function should do **one thing well**. If you need a "step-by-step" comment inside a function, consider extracting those steps into smaller, named functions.
 - **Early Returns**: Use guard clauses to reduce nesting.
 - **The Kaizen (Boy Scout) Rule**: Always leave the code cleaner than you found it. Small, frequent improvements are the engine of quality.
@@ -181,7 +172,6 @@ If available, defer to narrower skills for those areas.
 ---
 
 # Async and Concurrency Baseline
-
 - Use async patterns consistently for I/O
 - Run independent I/O concurrently where safe
 - Avoid accidental sequential waits
@@ -190,7 +180,6 @@ If available, defer to narrower skills for those areas.
 ---
 
 ## Review Checklist
-
 Before finalizing code, verify:
 
 - [ ] Names are descriptive and consistent
@@ -212,7 +201,6 @@ Before finalizing code, verify:
 
 ---
 
-## Review Checklist
 
 Before finalizing code, verify:
 
@@ -226,8 +214,9 @@ Before finalizing code, verify:
 
 ---
 
-## Output Contract
+- [ ] **Idempotency**: Mutation operations are safe to retry
 
+## Output Contract
 When this skill is activated, return:
 
 1. Key findings (or proposed conventions)
@@ -244,8 +233,7 @@ This keeps output practical and review-ready.
 
 ---
 
-# Error Handling Baseline
-
+## Error Handling Baseline
 - **Validate at Boundaries**: Trust internal code; validate at system edges (API handlers, form inputs).
 - **Fail Fast**: Stop execution as soon as a failure condition is met.
 - **Safe Messages**: Provide actionable, non-sensitive error messages.
@@ -253,7 +241,7 @@ This keeps output practical and review-ready.
 
 ---
 
-# Red Flags
+## Red Flags
 - Simplification that requires modifying tests to pass (you changed behavior).
 - "Simplified" code that is harder to follow than the original.
 - Broad cleanup mixed with feature or bug fix work (Must be separate PRs).
@@ -261,9 +249,16 @@ This keeps output practical and review-ready.
 
 ---
 
-# Verification
+## Verification
 - [ ] All existing tests pass without modification.
 - [ ] Linter and Build pass.
 - [ ] Refactoring is separate from feature/fix logic.
 - [ ] No behavioral changes were introduced.
 - [ ] Naming and Structure rules followed.
+
+## 8) Idempotency by Design
+- **Handle Retries Gracefully**: Mutation operations should produce the same result whether called once or multiple times.
+- **Conflict Resolution**: If a resource already exists (e.g., during a Create operation), verify if it's in the desired state. If yes, treat it as a success.
+- **Safe Retries**: Especially in Cloud/Distributed environments, network timeouts often lead to retries. APIs must be resilient against these.
+
+---

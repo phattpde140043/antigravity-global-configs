@@ -240,6 +240,8 @@ Preference order (most to least preferred):
 3. Stub                 → Returns canned data, no behavior
 4. Mock (interaction)   → Verifies method calls — use sparingly
 
+```
+
 ## F.I.R.S.T. Strategy
 - **Fast**: Tests should run quickly to provide instant feedback.
 - **Independent**: Tests should not depend on the state or execution order of other tests.
@@ -249,6 +251,8 @@ Preference order (most to least preferred):
 ```
 
 **Use mocks only when:** the real implementation is too slow, non-deterministic, or has side effects you can't control (external APIs, email sending). Over-mocking creates tests that pass while production breaks.
+
+```
 
 ### Use the Arrange-Act-Assert Pattern
 ```typescript

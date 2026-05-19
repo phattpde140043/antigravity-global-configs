@@ -407,6 +407,8 @@ new RemoteServiceException("TokenEndpoint", "Token endpoint returned 401", 401)
 **For fixture dependency bugs specifically:**
 ```python
 
+```
+
 # BUG: session-scoped fixture depending on function-scoped fixture
 @pytest.fixture(scope="session")
 def alpha_api(playwright, base_url, alpha_jwt):  # alpha_jwt is session-scoped âœ…
@@ -419,6 +421,8 @@ def alpha_api(playwright, base_url, alpha_jwt):  # alpha_jwt is session-scoped â
 ```
 
 ---
+
+```
 
 #### JavaScript/React.js Bug Hunt
 | Category | What to Verify |

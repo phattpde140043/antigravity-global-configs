@@ -23,6 +23,8 @@ Git worktrees create isolated workspaces sharing the same repository, allowing w
 ## Creation Steps
 ```bash
 
+```
+
 # Create worktree
 git worktree add .worktrees/branch-name -b branch-name
 
@@ -31,6 +33,8 @@ npm install # or equivalent
 
 # Verify baseline
 npm test # or equivalent
+```
+
 ```
 
 ## Overview
@@ -46,6 +50,8 @@ Follow this priority order:
 ### 1. Check Existing Directories
 ```bash
 
+```
+
 # Check in priority order
 grep -i "worktree.*director" CLAUDE.md 2>/dev/null
 grep -i "worktree.*director" GEMINI.md 2>/dev/null
@@ -54,8 +60,15 @@ grep -i "worktree.*director" AGENTS.md 2>/dev/null
 
 **If preference specified in any config file:** Use it without asking.
 
+ls -d .worktrees 2>/dev/null     # Preferred (hidden)
+ls -d worktrees 2>/dev/null      # Alternative
+**If found:** Use that directory. If both exist, `.worktrees` wins.
+```
+
 ### 2. Check Agent Configuration Files
 ```bash
+
+```
 
 ### 3. Ask User
 If no directory exists and no CLAUDE.md preference:
@@ -77,6 +90,8 @@ Which would you prefer?
 
 ```bash
 
+```
+
 # Check if directory is ignored (respects local, global, and system gitignore)
 git check-ignore -q .worktrees 2>/dev/null || git check-ignore -q worktrees 2>/dev/null
 ```
@@ -90,6 +105,8 @@ Per Jesse's rule "Fix broken things immediately":
 
 **Why critical:** Prevents accidentally committing worktree contents to repository.
 
+```
+
 ### For Global Directory (~/.config/superpowers/worktrees)
 No .gitignore verification needed - outside project entirely.
 
@@ -100,6 +117,8 @@ project=$(basename "$(git rev-parse --show-toplevel)")
 
 ### 2. Create Worktree
 ```bash
+
+```
 
 # Determine full path
 case $LOCATION in
@@ -116,10 +135,14 @@ git worktree add "$path" -b "$BRANCH_NAME"
 cd "$path"
 ```
 
+```
+
 ### 3. Run Project Setup
 Auto-detect and run appropriate setup:
 
 ```bash
+
+```
 
 # Node.js
 if [ -f package.json ]; then npm install; fi
@@ -135,10 +158,14 @@ if [ -f pyproject.toml ]; then poetry install; fi
 if [ -f go.mod ]; then go mod download; fi
 ```
 
+```
+
 ### 4. Verify Clean Baseline
 Run tests to ensure worktree starts clean:
 
 ```bash
+
+```
 
 # Examples - use project-appropriate command
 npm test
@@ -150,6 +177,8 @@ go test ./...
 **If tests fail:** Report failures, ask whether to proceed or investigate.
 
 **If tests pass:** Report ready.
+
+```
 
 ### 5. Report Location
 ```

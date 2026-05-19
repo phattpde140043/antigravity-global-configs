@@ -78,6 +78,8 @@ git add tests/path/test.py src/path/file.py
 git commit -m "feat: add specific feature"
 ````
 
+```
+
 ## Remember
 - **Exact paths always**.
 - **Complete code in plan**.

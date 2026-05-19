@@ -31,6 +31,8 @@ When performing testing tasks, you **MUST** chain to the following sub-skills:
   👉 **[Browser Automation](sub-skills/browser-automation/SKILL.md)**
 - For **DevTools Debugging** and Browser Analysis:
   👉 **[Browser Testing with DevTools](sub-skills/browser-testing-with-devtools/SKILL.md)**
+- For **Building E2E Tests** (OSP Search multi-tenant E2E testing):
+  👉 **[Building E2E Tests](sub-skills/building-e2e-tests/SKILL.md)**
 
 ### 2. Test Strategy & Design
 - For **Test Writing**, Coverage Analysis, and Scenarios:

@@ -31,6 +31,8 @@ When performing writing or documentation tasks, you **MUST** chain to the follow
   👉 **[Documentation and ADRs](sub-skills/documentation-and-adrs/SKILL.md)**
 - For **Documentation Search** and Lookup:
   👉 **[Documentation Lookup](sub-skills/documentation-lookup/SKILL.md)**
+- For **Grill With Docs** (Stress-testing plans against glossaries and ADRs):
+  👉 **[Grill With Docs](sub-skills/grill-with-docs/SKILL.md)**
 
 ### 2. Specialized Content
 - For **Article Writing** and Long-form:

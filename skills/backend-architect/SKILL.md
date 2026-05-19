@@ -38,6 +38,8 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Domain Driven Design](sub-skills/domain-driven-design/SKILL.md)**
 - For **Distributed Systems** and Scalability:
   👉 **[Distributed System](sub-skills/distributed-system/SKILL.md)**
+- For **System Architecture** (REST/GraphQL API and High-Level System Architecture):
+  👉 **[System Architecture](sub-skills/system-architecture/SKILL.md)**
 
 ### 2. Specialized Frameworks & Platforms
 - For **.NET Development** and Patterns:
@@ -48,6 +50,8 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Python Backend](sub-skills/python-backend/SKILL.md)**
 - For **WordPress Architecture**:
   👉 **[WordPress Architect](sub-skills/wordpress-architect/SKILL.md)**
+- For **Python Best Practices** (Modern Python development patterns and best practices):
+  👉 **[Python Best Practices](sub-skills/python-best-practices/SKILL.md)**
 
 ### 3. API & Communication
 - For **REST/GraphQL API Design**:
@@ -76,6 +80,8 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Architect](sub-skills/architect/SKILL.md)**
 
 ---
+- For **Improve Codebase Architecture** (Deepening existing codebase modular architecture):
+  👉 **[Improve Codebase Architecture](sub-skills/improve-codebase-architecture/SKILL.md)**
 
 ## 🏗️ Operating Pipeline
 This Orchestrator enforces the **[Agent Review Framework](file:///Users/macos/.antigravity-global/agent_review_framework.md)**.

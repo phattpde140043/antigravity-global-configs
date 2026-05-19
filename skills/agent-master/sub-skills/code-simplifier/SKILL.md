@@ -6,8 +6,9 @@ source: "Dimillian/Skills (MIT)"
 date_added: "2026-03-25"
 ---
 
-# Simplify Code
 
+
+# Simplify Code
 Review changed code for reuse, quality, efficiency, and clarity issues. Use Codex sub-agents to review in parallel, then optionally apply only high-confidence, behavior-preserving fixes.
 
 ## When to Use
@@ -15,7 +16,6 @@ Review changed code for reuse, quality, efficiency, and clarity issues. Use Code
 - When you want high-confidence, behavior-preserving improvements on a scoped diff.
 
 ## Modes
-
 Choose the mode from the user's request:
 
 - `review-only`: user asks to review, audit, or check the changes
@@ -28,7 +28,6 @@ If the user does not specify, default to:
 - `safe-fixes` for "simplify", "clean up", or "refactor"
 
 ## Step 1: Determine the Scope and Diff Command
-
 Prefer this scope order:
 
 1. Files or paths explicitly named by the user
@@ -56,7 +55,6 @@ Before reviewing standards or applying fixes, read the repo's local instruction 
 Use those instructions to distinguish real issues from intentional local patterns.
 
 ## Step 2: Launch Four Review Sub-Agents in Parallel
-
 Use Codex sub-agents when the scope is large enough for parallel review to help. For a tiny diff or one very small file, it is acceptable to review locally instead.
 
 When spawning sub-agents:
@@ -69,7 +67,6 @@ When spawning sub-agents:
 Use four review roles.
 
 ### Sub-Agent 1: Code Reuse Review
-
 Review the changes for reuse opportunities:
 
 1. Search for existing helpers, utilities, or shared abstractions that already solve the same problem.
@@ -79,7 +76,6 @@ Review the changes for reuse opportunities:
 Recommended sub-agent role: `explorer` for broad codebase lookup, or `reviewer` if a stronger review pass is more useful than wide search.
 
 ### Sub-Agent 2: Code Quality Review
-
 Review the same changes for code quality issues:
 
 1. Redundant state, cached values, or derived values stored unnecessarily
@@ -91,7 +87,6 @@ Review the same changes for code quality issues:
 Recommended sub-agent role: `reviewer`
 
 ### Sub-Agent 3: Efficiency Review
-
 Review the same changes for efficiency issues:
 
 1. Repeated work, duplicate reads, duplicate API calls, or unnecessary recomputation
@@ -104,7 +99,6 @@ Review the same changes for efficiency issues:
 Recommended sub-agent role: `reviewer`
 
 ### Sub-Agent 4: Clarity and Standards Review
-
 Review the same changes for clarity, local standards, and balance:
 
 1. Violations of local project conventions or module patterns
@@ -118,7 +112,6 @@ Recommended sub-agent role: `reviewer`
 Only report issues that materially improve maintainability, correctness, or cost. Do not churn code just to make it look different.
 
 ## Step 3: Aggregate Findings
-
 Wait for all review sub-agents to complete, then merge their findings.
 
 Normalize findings into this shape:
@@ -132,7 +125,6 @@ Normalize findings into this shape:
 Discard weak, duplicative, or instruction-conflicting findings before editing.
 
 ## Step 4: Fix Issues Carefully
-
 In `review-only` mode, stop after reporting findings.
 
 In `safe-fixes` or `fix-and-validate` mode:
@@ -153,7 +145,6 @@ Prefer fixes like:
 Do not stage, commit, or push changes as part of this skill.
 
 ## Step 5: Validate When Required
-
 In `fix-and-validate` mode, run the smallest relevant validation for the touched scope after edits.
 
 Examples:
@@ -167,7 +158,6 @@ Prefer fast, scoped validation over full-suite runs unless the change breadth ju
 If validation is skipped because the user asked not to run it, say so explicitly.
 
 ## Step 6: Summarize Outcome
-
 Close with a brief result:
 
 - what was reviewed
@@ -181,3 +171,39 @@ If the code is already clean for this rubric, say that directly instead of manuf
 - Use this skill only when the task clearly matches the scope described above.
 - Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
 - Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.
+
+# Code Simplifier (Excellence)
+
+
+## Overview
+Improve readability and maintainability through surgical, behavior-preserving edits. Focus on reducing cognitive load by removing noise, flattening logic, and improving naming.
+
+## Iron Law
+**NEVER change behavior. Every simplification MUST be functionally equivalent to the original code. If in doubt, back it with a test.**
+
+## The Rules
+1. **Clarity Over Brevity**: Prefer 3 lines of clear code over 1 line of "clever" code.
+2. **Flatten Logic**: Use guard clauses and early returns to eliminate deep nesting (3+ levels).
+3. **No Side Effects**: Do not add, remove, or reorder side effects (API calls, DB writes).
+4. **Descriptive Names**: Replace generic names (`data`, `temp`, `res`) with domain-specific terms.
+
+## Common Targets
+| Pattern | Simplification |
+| :--- | :--- |
+| **Deep Nesting** | Use Guard Clauses (`if (!valid) return;`) |
+| **Complex Conditionals** | Extract to named boolean variables or helpers |
+| **Nested Ternaries** | Convert to `if/else` or `switch` |
+| **Duplicate Logic** | Extract to a shared, cohesive helper function |
+| **Dead Code** | Remove unused imports, variables, and commented-out code |
+
+## Quick Reference: The "Diamond" Check
+- **Scalable**: Does this abstraction help or hinder growth?
+- **Secure**: Did I accidentally remove a validation step?
+- **Aesthetic**: Does the code "look" balanced and harmonious?
+
+---
+
+## 🔗 Related Skills
+- **coding-standards**: Baseline rules for naming and style.
+- **performing-code-review**: Post-simplification validation.
+- **systematic-debugging**: Use when simplification reveals hidden bugs.

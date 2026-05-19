@@ -44,6 +44,14 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Planning and Task Breakdown](sub-skills/planning-and-task-breakdown/SKILL.md)**
 - For **Workflows** (DMUX):
   👉 **[DMUX Workflows](sub-skills/dmux-workflows/SKILL.md)**
+- For **Using Superpowers** (Aggressive Skill Activation & Discovery):
+  👉 **[Using Superpowers](sub-skills/using-superpowers/SKILL.md)**
+- For **Prototype** (Rapid throwaway prototyping for validation):
+  👉 **[Prototype](sub-skills/prototype/SKILL.md)**
+- For **Finishing A Development Branch** (Completion and merge options for branches):
+  👉 **[Finishing A Development Branch](sub-skills/finishing-a-development-branch/SKILL.md)**
+- For **To Issues** (Breaking down plans into tracer-bullet issues):
+  👉 **[To Issues](sub-skills/to-issues/SKILL.md)**
 
 ### 2. Debugging & Error Handling
 - For **Systematic Debugging**:
@@ -66,6 +74,8 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Source Driven Development](sub-skills/source-driven-development/SKILL.md)**
 - For **Spec-Driven Development**:
   👉 **[Spec Driven Development](sub-skills/spec-driven-development/SKILL.md)**
+- For **Zoom Out** (High-level map and structural codebase context):
+  👉 **[Zoom Out](sub-skills/zoom-out/SKILL.md)**
 
 ### 4. Infrastructure & Context
 - For **CI/CD and Automation**:
@@ -76,6 +86,8 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Deprecation and Migration](sub-skills/deprecation-and-migration/SKILL.md)**
 
 ---
+- For **Handoff** (Session handoff and state consolidation):
+  👉 **[Handoff](sub-skills/handoff/SKILL.md)**
 
 ## 🏗️ Operating Pipeline
 1. **Intake**: Audit workspace surface area and clarify requirements.

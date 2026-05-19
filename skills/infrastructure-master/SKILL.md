@@ -31,3 +31,6 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
 - [ ] Is the principle of least privilege applied to all IAM roles?
 - [ ] Are production resources protected by RemovalPolicy.RETAIN?
 - [ ] Are all resources properly tagged?
+
+- For **Reviewing Cicd Pipelines** (Reviewing CI/CD pipelines and pipeline security):
+  👉 **[Reviewing Cicd Pipelines](sub-skills/reviewing-cicd-pipelines/SKILL.md)**

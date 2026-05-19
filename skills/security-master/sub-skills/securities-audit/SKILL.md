@@ -3,8 +3,9 @@ name: securities-audit
 description: "Expert security auditor. Performs STRIDE threat modeling, blast radius analysis, and validates security controls."
 ---
 
-# Securities Audit (Tier 2)
 
+
+# Securities Audit (Tier 2)
 Proactive security validation and threat-centric auditing. Ensure systems are secure-by-design and resilient against modern attack vectors.
 
 ## ⚡ Quick References (MANDATORY)
@@ -20,6 +21,7 @@ Proactive security validation and threat-centric auditing. Ensure systems are se
 ---
 
 ## 🛡️ Audit Workflow
+
 
 ### 1. Discovery & Triage
 - Identify entry points and data flow trust boundaries.
@@ -37,5 +39,9 @@ Proactive security validation and threat-centric auditing. Ensure systems are se
 - **SSRF Protection**: Implement IP pinning and DNS resolution validation to prevent DNS rebinding attacks on internal endpoints.
 
 ### 4. Mitigation & Verification
+- Propose detective, preventive, and corrective controls.
+- Generate security assessment reports in `docs/assessment/`.
+
+### 3. Mitigation & Verification
 - Propose detective, preventive, and corrective controls.
 - Generate security assessment reports in `docs/assessment/`.

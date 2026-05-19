@@ -102,6 +102,30 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[SQL Pro](sub-skills/sql-pro/SKILL.md)**
 - For **PostgreSQL Lock Mechanisms & Concurrency** (row locking, claiming tasks, deadlock avoidance, transactional isolation):
   👉 **[Claimable Postgres Locks](sub-skills/claimable-postgres/SKILL.md)**
+- For **Advanced Ruby Programming & Rails** (OOP Ruby patterns, Rails MVC, active record optimizations):
+  👉 **[Ruby Pro](sub-skills/ruby-pro/SKILL.md)**
+- For **Recommendation System Pipeline Architectures** (candidate retrieval, candidate ranking, feature stores, real-time prediction):
+  👉 **[Recsys Pipeline](sub-skills/recsys-pipeline/SKILL.md)**
+
+### 🦀 Rust Systems Engineering & Robius
+- For **Advanced Systems Rust Programming** (lifetimes, traits bounds, memory model, cargo profiles):
+  👉 **[Rust Pro](sub-skills/rust/pro/SKILL.md)**
+- For **Rust Async Tokio Programming** (Tokio runtimes, pinning, futures select, async channel architectures):
+  👉 **[Rust Async Patterns](sub-skills/rust/async-patterns/SKILL.md)**
+- For **Robius App Architecture Standards** (Makepad window lifecycle, AppMain setup, worker task threads):
+  👉 **[Robius App Architecture](sub-skills/rust/robius/app-architecture/SKILL.md)**
+- For **Robius Event & Action Handling** (Cx post action, UI-to-async routing, event matching):
+  👉 **[Robius Event Action](sub-skills/rust/robius/event-action/SKILL.md)**
+- For **Robius Matrix chat Client Integrations** (Matrix protocol sync, background thread subscriptions):
+  👉 **[Robius Matrix Integration](sub-skills/rust/robius/matrix-integration/SKILL.md)**
+- For **Robius Application State Persistence** (saving window geometry, app state serialization on shutdown):
+  👉 **[Robius State Management](sub-skills/rust/robius/state-management/SKILL.md)**
+- For **Robius live_design Widget Patterns** (styling components, registering theme bundles):
+  👉 **[Robius Widget Patterns](sub-skills/rust/robius/widget-patterns/SKILL.md)**
+
+### 📈 Quantitative Finance & Risk Analysis
+- For **Quantitative Financial Risk Calculations** (Value at Risk (VaR), Sharpe Ratio, Maximum Drawdown, portfolio volatility models):
+  👉 **[Risk Metrics Calculation](sub-skills/finance/risk-metrics-calculation/SKILL.md)**
 
 ### 3. API & Communication
 - For **REST/GraphQL API Design**:

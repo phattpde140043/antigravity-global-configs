@@ -58,6 +58,14 @@ Navigate the sub-skills in the sequential order defined below to ensure structur
   👉 **[Social Proof Architect](sub-skills/social-proof-architect/SKILL.md)**
 - For **SaaS Churn Prevention & Retention Optimization** (churn analysis, customer engagement loops, email activation sequences):
   👉 **[Churn Prevention](sub-skills/churn-prevention/SKILL.md)**
+- For **SaaS Referral Programs & Viral Growth** (viral loops, invite-and-reward architectures, growth funnel hacks):
+  👉 **[Referral Program](sub-skills/referral-program/SKILL.md)**
+- For **Returns & Reverse Logistics Systems** (returns management, supply chain flow optimizations, reverse logistics KPIs):
+  👉 **[Reverse Logistics](sub-skills/returns-reverse-logistics/SKILL.md)**
+- For **Revenue Operations (RevOps)** (subscription metrics matching, sales/marketing/success alignment, funnel analytics math):
+  👉 **[RevOps Strategy](sub-skills/revops/SKILL.md)**
+- For **Corporate & Product Risk Management** (risk register, impact evaluation framework, mitigation execution):
+  👉 **[Risk Manager](sub-skills/risk-manager/SKILL.md)**
 
 ### 🚀 Startup Strategy & Financial Modeling
 - For **High-Level Startup Business Analysis** (startup lifecycle strategy, funding pitch decks, product-market-fit benchmarks):

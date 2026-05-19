@@ -100,6 +100,14 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Claude API Monitor](sub-skills/claude-monitor/SKILL.md)**
 - For **Claude Console Safety & Settings Auditing** (temperature configuration, safety filters audit):
   👉 **[Claude Settings Auditor](sub-skills/claude-settings-audit/SKILL.md)**
+- For **RecallMax Long-Context Memory** (conversation adapters, intent/tone summaries, 14-turn to 800 tokens compression):
+  👉 **[RecallMax Memory](sub-skills/recallmax/SKILL.md)**
+- For **Recursive Context Pruning & Token Budgeting** (token cost reduction, recursive trim-down execution):
+  👉 **[Recursive Context Pruning](sub-skills/recursive-context-pruning/SKILL.md)**
+- For **Redesigning Existing Legacy Projects** (greenfield code audits, decoupled domain models, structural refactoring):
+  👉 **[Redesign Existing Projects](sub-skills/redesign-existing-projects/SKILL.md)**
+- For **Rich Elicitation Prompt Strategies** (elaborated target details, user criteria mapping):
+  👉 **[Rich Elicitation](sub-skills/rich-elicitation/SKILL.md)**
 
 ### 2. Debugging & Error Handling
 - For **Systematic Debugging**:

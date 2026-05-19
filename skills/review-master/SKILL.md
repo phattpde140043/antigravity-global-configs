@@ -48,6 +48,10 @@ When performing reviews, you **MUST** chain to the following sub-skills. Navigat
   👉 **[Performance Multi-Agent Auditor](sub-skills/performance-testing-review/multi-agent-review/SKILL.md)**
 - For **Clarvia Agent Experience Optimization (AEO) Quality Gates** (scoring MCP servers, evaluating tool agent-readiness):
   👉 **[Clarvia AEO Auditor](sub-skills/clarvia-aeo-check/SKILL.md)**
+- For **Constructive Reception of Code Review Feedback** (implementing feedback loops, validating suggested changes, collaborative iteration):
+  👉 **[Receiving Code Review](sub-skills/code-review-feedback/receiving/SKILL.md)**
+- For **Requesting Structured Code Reviews** (pull request description guidelines, scoping context for reviewers, creating readable diffs):
+  👉 **[Requesting Code Review](sub-skills/code-review-feedback/requesting/SKILL.md)**
 
 ### 3. Workflow & Artifact Management
 - For **PR/Diff-based Review** and Summary Templates:

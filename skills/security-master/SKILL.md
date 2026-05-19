@@ -78,6 +78,12 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[SQLmap Database Pentesting](sub-skills/sqlmap-database-pentesting/SKILL.md)**
 - For **SSH Protocol Penetration Testing & Auditing** (SSH keys leakage, weak ciphers checking, brute-force validation):
   👉 **[SSH Penetration Testing](sub-skills/ssh-penetration-testing/SKILL.md)**
+- For **Red Team Tactical Engagements** (lateral movement, network evasion, active directories compromise):
+  👉 **[Red Team Tactics](sub-skills/red-team-tactics/SKILL.md)**
+- For **Red Team Exploitation Tools & C2** (command and control setup, payload compilation, post-exploitation scripts):
+  👉 **[Red Team Tools](sub-skills/red-team-tools/SKILL.md)**
+- For **Binary Reverse Engineering** (binary disassemblers, Ghidra pipelines, ELF/PE header analysis, stack patching):
+  👉 **[Reverse Engineering](sub-skills/reverse-engineer/SKILL.md)**
 
 ### 4. Cloud & Infrastructure
 - For **AWS Hardening** and **SCA (Supply Chain)**: 

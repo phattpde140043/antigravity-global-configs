@@ -57,3 +57,7 @@ Streamline processes by connecting tools and automating repetitive tasks.
   👉 **[Canva Automation](sub-skills/canva-automation/SKILL.md)**
 - For **Changelog Generating & Releases Automation** (git commit logs summaries, product changelogs, automated Slack notifications via Rube MCP):
   👉 **[Changelog Automation](sub-skills/changelog-automation/SKILL.md)**
+- For **Reddit Automated Engagement & Operations** (auto-posting subreddits, tracking brand mentions, upvotes analytics via Rube MCP):
+  👉 **[Reddit Automation](sub-skills/reddit-automation/SKILL.md)**
+- For **Render Cloud Deployment Automation** (deploying webapps, checking build states, scaling instances via Rube MCP):
+  👉 **[Render Automation](sub-skills/render-automation/SKILL.md)**

@@ -49,6 +49,10 @@ When performing writing or documentation tasks, you **MUST** chain to the follow
   👉 **[SR&ED Work Summary](sub-skills/sred-work-summary/SKILL.md)**
 - For **Academic Citation & Reference Management** (APA, IEEE, BibTeX references structuring, database formatting):
   👉 **[Citation Management](sub-skills/citation-management/SKILL.md)**
+- For **Structured Reference Section Building** (reference building schemas, cross-linking specifications):
+  👉 **[Reference Builder](sub-skills/reference-builder/SKILL.md)**
+- For **System README Structuring & Standards** (complete markdown architecture, codebase onboarding guides):
+  👉 **[System README Standards](sub-skills/readme/SKILL.md)**
 - For **Claude Scientific Writing & Prompts** (academic prose, scientific paper drafts structuring, abstract styling):
   👉 **[Claude Scientific Writing](sub-skills/claude-scientific-skills/SKILL.md)**
 - For **PDF Raw Text Parsing & Scraping** (PyPDF2, pdfplumber, layout-preserving text extraction):

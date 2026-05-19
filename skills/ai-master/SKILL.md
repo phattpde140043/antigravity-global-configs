@@ -58,6 +58,8 @@ When performing AI or data-related tasks, you **MUST** chain to the following su
   👉 **[Statsmodels Analysis](sub-skills/statsmodels/SKILL.md)**
 - For **Domain-Specific AI Health Assisting** (medical information extraction, symptoms tracking, wellness metrics):
   👉 **[Claude Ally Health](sub-skills/claude-ally-health/SKILL.md)**
+- For **Physical Rehabilitation Motion Analyzer** (motion tracking AI models, physical therapy tracking, rehabilitation analytics):
+  👉 **[Rehabilitation Motion Analyzer](sub-skills/rehabilitation-analyzer/SKILL.md)**
 - For **Visualizing Complex Data via D3.js** (Claude D3 graph orchestration, interactive SVG data bindings):
   👉 **[Claude D3.js Visualizations](sub-skills/claude-d3js/SKILL.md)**
 

@@ -59,6 +59,10 @@ When performing UX or frontend tasks, you **MUST** chain to the following sub-sk
   👉 **[Chrome Extension Developer](sub-skills/chrome-extension-developer/SKILL.md)**
 - For **Native Mobile HIG & Layout Architectures** (Android Jetpack Compose, Apple SwiftUI standards):
   👉 **[Building Native UI](sub-skills/building-native-ui/SKILL.md)**
+- For **Programmatic Video Generation with React (Remotion)** (React canvas elements, video composition layouts, timeline interpolation):
+  👉 **[Remotion Core](sub-skills/remotion/core/SKILL.md)**
+- For **Remotion Video Rendering Performance & Best Practices** (concurrency optimizations, caching frames, serverless Lambda scaling):
+  👉 **[Remotion Performance](sub-skills/remotion/best-practices/SKILL.md)**
 - For **HTML/CSS to SVG Image Generation Engines** (Satori, Vercel OG image generation styling):
   👉 **[Satori Image Generation](sub-skills/satori/SKILL.md)**
 

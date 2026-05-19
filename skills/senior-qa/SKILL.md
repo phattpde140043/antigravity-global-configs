@@ -22,7 +22,13 @@ The lead authority for test engineering and systemic stability. This master skil
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing testing tasks, you **MUST** chain to the following sub-skills:
+When performing testing tasks, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure high-fidelity test implementation and execution:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Test Strategy] ──→ [Test Driven Development (Pattern)] ──→ [TDD Workflow (Cycle)] ──→ [Verification Loop] ──→ [E2E Testing (Playwright)]
+```
+
 
 ### 1. E2E Automation & UI Testing
 - For **Playwright**, POM, and Flaky Mitigation:
@@ -59,6 +65,13 @@ When performing testing tasks, you **MUST** chain to the following sub-skills:
   👉 **[Eval Harness](sub-skills/eval-harness/SKILL.md)**
 - For **Backtesting Frameworks** and Historical Validation:
   👉 **[Backtesting Frameworks](sub-skills/backtesting-frameworks/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the test strategy design and test suites (TDD baseline / reproduction tests):
+- 👉 Recommend calling **[Agent Master](../agent-master/SKILL.md)** to proceed with the core BUILD phase, writing the minimal production code to pass the tests.
 
 ---
 

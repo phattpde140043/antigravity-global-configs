@@ -26,7 +26,13 @@ The visual and interaction lead. This master skill coordinates the creation of b
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing UX or frontend tasks, you **MUST** chain to the following sub-skills:
+When performing UX or frontend tasks, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure stunning visual quality, performance, and complete accessibility:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Baseline UI Standards] ──→ [Frontend Design] ──→ [Frontend Patterns] ──→ [Animejs Animations] ──→ [A11y Architect]
+```
+
 
 ### 1. Visual Design & UI
 - For **Frontend Design** Systems:
@@ -55,6 +61,13 @@ When performing UX or frontend tasks, you **MUST** chain to the following sub-sk
   👉 **[Screen Reader Testing](sub-skills/screen-reader-testing/SKILL.md)**
 - For **Next.js Performance** (Turbopack):
   👉 **[Nextjs Turbopack](sub-skills/nextjs-turbopack/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the user interface design and accessibility implementation:
+- 👉 Recommend calling **[Review Master](../review-master/SKILL.md)** next to perform the final code readiness audit and ensure zero technical debt.
 
 ---
 

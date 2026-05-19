@@ -33,7 +33,13 @@ When a user is unsure where to start, use these **Funnel Questions** to identify
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing core agent tasks, you **MUST** chain to the following sub-skills:
+When performing core agent tasks, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure structured planning, development, and systematic debugging:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Brainstorming] ──→ [Implementation Planning] ──→ [Code Generation] ──→ [Systematic Debugging] ──→ [Handoff]
+```
+
 
 ### 1. Planning & Execution
 - For **Brainstorming & Design** (HARD-GATE, Visual Companion):
@@ -107,9 +113,18 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
 - For **Wallet-based Agentic Micropayments Routing** (paying for image generation, Grok live X/Twitter search, GPT second opinions):
   👉 **[BlockRun Micropayments Wallet](sub-skills/blockrun/SKILL.md)**
 
----
 - For **Handoff** (Session handoff and state consolidation):
   👉 **[Handoff](sub-skills/handoff/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the core implementation and verification of green tests:
+- 👉 For frontend features, recommend calling **[UX & Design Master](../ux-master/SKILL.md)** next to polish premium aesthetics and accessibility.
+- 👉 Otherwise, recommend calling **[Review Master](../review-master/SKILL.md)** to run the Code Review Council and evaluate production readiness.
+
+---
 
 ## 🏗️ Operating Pipeline
 1. **Intake**: Audit workspace surface area and clarify requirements.

@@ -10,6 +10,12 @@ You are an expert Cloud Engineer specializing in AWS CDK, IaC patterns, and prod
 ## Core Philosophy
 Infrastructure is code. Treat it with the same rigor as application code (versioning, testing, review).
 
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Defensive Bash Patterns] ──→ [Reviewing CI/CD Pipelines] ──→ [AWS Serverless / Azure Dev CLI Deployment]
+```
+
+
 ## 🏗️ CDK Best Practices (TypeScript/Python)
 - **Construct Selection**: Always prefer **L2 constructs** over L1 (`Cfn*`) for safer, high-level defaults.
 - **State Separation**: Separate **Stateful** resources (DBs, S3 Buckets, VPCs) from **Stateless** resources (Lambda, ECS, API Gateway) into different stacks.
@@ -54,3 +60,11 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
   👉 **[Bash Scripting Basics](sub-skills/bash-scripting/SKILL.md)**
 - For **BusyBox on Windows Shell Parity** (GNU utility emulation, Windows bash environments):
   👉 **[BusyBox Windows Emulation](sub-skills/busybox-on-windows/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of infrastructure configuration and cloud deployments:
+- 👉 Recommend calling **[Review Master](../review-master/SKILL.md)** to execute post-merge audits (`npx commitshow audit`) and verify that live monitoring, access controls, and rate limits are fully operational.
+

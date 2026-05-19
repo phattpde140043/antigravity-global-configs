@@ -62,3 +62,28 @@ When starting a task, identify the relevant discipline and delegate to its **Mas
 2. **Delegate**: Open the corresponding Master Skill.
 3. **Chain**: Follow the internal `Sub-Discipline Chain` within the Master Skill to reach the specific expertise required.
 4. **Execute**: Maintain the Diamond Standard across all operations.
+
+---
+
+## 🔄 Master Skill Pipelines (Sequential Chaining)
+
+To achieve the Diamond Standard and maintain systematic discipline, use these pre-defined, sequential workflows for common development and audit cycles:
+
+### 1. Feature Development Lifecycle
+```
+[Product Master] ──→ [Backend Architect] ──→ [Security Master] ──→ [Senior QA] ──→ [Agent Master] ──→ [UX Master] ──→ [Review Master] ──→ [Content Master] ──→ [Infrastructure Master]
+```
+- **Goal**: End-to-end robust feature creation. From requirements/PRDs to design, threat modeling, TDD tests, core coding, UI polish, readiness audit, documentation (ADRs), and cloud deployment.
+
+### 2. Security Audit & Remediation
+```
+[Review Master] ──→ [Security Master] ──→ [Backend Architect] ──→ [Senior QA] ──→ [Agent Master] ──→ [Review Master] ──→ [Content Master]
+```
+- **Goal**: Audit, identify, and mitigate security vulnerabilities (OWASP, tenant isolation). From code-review discovery to STRIDE modeling, secure boundary design, test verification, implementation, final audit scoring, and compliance documentation.
+
+### 3. Performance & Scaling Optimization
+```
+[Backend Architect] ──→ [Infrastructure Master] ──→ [Senior QA] ──→ [Agent Master] ──→ [Review Master] ──→ [Content Master]
+```
+- **Goal**: Resolve performance bottlenecks (N+1 queries, high latency, scaling issues). From architectural profiling to IaC adjustments, load/benchmark tests, refactoring, verification, and performance ADR recording.
+

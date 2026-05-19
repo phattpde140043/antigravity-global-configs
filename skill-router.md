@@ -73,6 +73,30 @@ When a task exceeds a specialized skill's scope, delegate to the Master Orchestr
 
 ---
 
+## 🔄 Sequential Chaining Rules
+
+Master Orchestrators and specialized sub-skills follow strict sequence pathways to ensure comprehensive, high-quality development lifecycle management.
+
+### 1. Master Skill Sequence
+Refer to the following chain for the next recommended Master Orchestrator:
+
+| Completed Master Skill | Recommended Successor | Purpose / Next Phase |
+|:---|:---|:---|
+| **product-master** | **backend-architect** | Translate business requirements & user stories into architecture designs & APIs. |
+| **backend-architect** | **security-master** | Threat model (STRIDE) the architecture design before starting the TDD cycle. |
+| **security-master** | **senior-qa** | Convert mitigated threat vectors into regression & E2E tests (TDD). |
+| **senior-qa** | **agent-master** | Implement the core logic of the codebase (BUILD phase). |
+| **agent-master** | **ux-master** (if UI) or **review-master** | Polish user experience/aesthetics or initiate the code readiness review council. |
+| **ux-master** | **review-master** | Validate design accessibility, performance, and complete a final slop scan. |
+| **review-master** | **content-master** | Update architectural records, documentation (ADRs), and logs. |
+| **content-master** | **infrastructure-master** | Deploy application stacks and stateful resources using IaC/CDK. |
+| **infrastructure-master** | **review-master** (Post-Merge) | Execute automated external audits (`npx commitshow audit`) and sign off. |
+
+### 2. Sub-Skill Pipeline
+When executing a Master Orchestrator, navigate its sub-skills sequentially using the `──→` pipeline defined within its `SKILL.md`.
+
+---
+
 ## Notes
 - This file guides selection; source-of-truth remains each Master's **SKILL.md**.
 - Master Skills will perform internal chaining to their respective `sub-skills/` folders.

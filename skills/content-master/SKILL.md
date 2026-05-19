@@ -22,7 +22,13 @@ The authoritative lead for documentation and written communication. This master 
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing writing or documentation tasks, you **MUST** chain to the following sub-skills:
+When performing writing or documentation tasks, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure structured technical writing and governance:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Writing Skills] ──→ [Documentation and ADRs] ──→ [Coding Standards]
+```
+
 
 ### 1. Technical Writing & Docs
 - For **Core Writing** and Style:
@@ -65,6 +71,13 @@ When performing writing or documentation tasks, you **MUST** chain to the follow
 ### 3. Governance
 - For **Coding Standards** and Guidelines:
   👉 **[Coding Standards](sub-skills/coding-standards/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of documentation and ADR writing:
+- 👉 Recommend calling **[Infrastructure Master](../infrastructure-master/SKILL.md)** next to translate the architectural decisions into CDK or other IaC setup for deployment.
 
 ---
 

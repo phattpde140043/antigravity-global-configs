@@ -21,7 +21,13 @@ The final authority for craftsmanship and production readiness. This master skil
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing reviews, you **MUST** chain to the following sub-skills:
+When performing reviews, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure comprehensive code quality auditing:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Workspace Surface Audit] ──→ [Code Reviewer (Framework)] ──→ [Code Review Excellence] ──→ [Vibe Code Auditor]
+```
+
 
 ### 1. General Review Framework & Mindset
 - For **Review Dimensions** (6 Dimensions) and **6-Month Test**:
@@ -50,6 +56,13 @@ When performing reviews, you **MUST** chain to the following sub-skills:
   👉 **[Comment Analyzer](sub-skills/comment-analyzer/SKILL.md)**
 - For **Conversation Analysis** and Decision Tracking:
   👉 **[Conversation Analyzer](sub-skills/conversation-analyzer/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the code review audit and scoring:
+- 👉 Recommend calling **[Content Master](../content-master/SKILL.md)** next to update code documentation, record final architectural decisions (ADRs), and compile release notes.
 
 ---
 

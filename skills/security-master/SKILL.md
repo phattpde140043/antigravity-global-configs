@@ -23,7 +23,13 @@ The central authority and dispatcher for all security-related activities. This m
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing specific security tasks, you **MUST** chain to the following sub-skills for deep expertise:
+When performing specific security tasks, you **MUST** chain to the following sub-skills for deep expertise. Navigate the sub-skills in the sequential order defined below to ensure structured secure implementation:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Securities Audit (STRIDE)] ──→ [Security Architecture & Design] ──→ [SAST Engineering] ──→ [Backend Security Coder] ──→ [Security Review]
+```
+
 
 ### 1. Strategy & Threat Modeling (DESIGN Phase)
 - For **STRIDE** and Risk Assessment: 
@@ -68,6 +74,13 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[Regulatory Compliance](sub-skills/regulatory-compliance/SKILL.md)**
 - For **AI File Provenance & Trust Auditing** (AKF native file metadata, EU AI Act, SOX):
   👉 **[AKF Trust Metadata](sub-skills/akf-trust-metadata/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the threat modeling and security architecture review:
+- 👉 Recommend calling **[Senior QA](../senior-qa/SKILL.md)** next to translate the identified security boundaries and abuse cases into targeted regression and security unit/integration test cases (TDD).
 
 ---
 

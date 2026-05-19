@@ -23,7 +23,13 @@ The technical lead for intelligent systems. This master skill coordinates data p
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing AI or data-related tasks, you **MUST** chain to the following sub-skills:
+When performing AI or data-related tasks, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure structured research, data exploration, and model modeling:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Exa Search] ──→ [Deep Research] ──→ [AI/ML Architect] ──→ [Fal AI Media]
+```
+
 
 ### 1. Architecture & Modeling
 - For **Advanced AI/ML Architecture** (JEPA, EBM, LeCun Review):
@@ -50,6 +56,13 @@ When performing AI or data-related tasks, you **MUST** chain to the following su
   👉 **[Behavioral X-Ray](sub-skills/bdistill-behavioral-xray/SKILL.md)**
 - For **Structured Domain Knowledge Extraction from LLMs** (adversarial model distilling, knowledge mining):
   👉 **[Model Knowledge Extraction](sub-skills/bdistill-knowledge-extraction/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the AI/ML design and data analysis:
+- 👉 Recommend calling **[Backend Architect](../backend-architect/SKILL.md)** next to translate the ML models and data pipelines into production-ready API schemas and architectural designs.
 
 ---
 

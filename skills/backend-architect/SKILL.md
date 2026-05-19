@@ -27,7 +27,13 @@ The strategic lead for scalable and resilient systems. This master skill coordin
 
 ## 🔗 Sub-Discipline Chain (MANDATORY DELEGATION)
 
-When performing architectural tasks, you **MUST** chain to the following sub-skills:
+When performing architectural tasks, you **MUST** chain to the following sub-skills. Navigate the sub-skills in the sequential order defined below to ensure structured design:
+
+### 🔄 Sequential Sub-Skill Pipeline
+```
+[Software Architecture] ──→ [Architecture Design] ──→ [System Architecture] ──→ [API Design] ──→ [Performance Optimization]
+```
+
 
 ### 1. High-Level Design & Strategy
 - For **Systemic Integrity**, Clean Architecture, and DDD:
@@ -106,6 +112,16 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
 ---
 - For **Improve Codebase Architecture** (Deepening existing codebase modular architecture):
   👉 **[Improve Codebase Architecture](sub-skills/improve-codebase-architecture/SKILL.md)**
+
+---
+
+## 🔄 Sequential Master Chains (Next Recommended Action)
+
+Upon completion of the system and API architecture design:
+- 👉 Recommend calling **[Security Master](../security-master/SKILL.md)** next to perform a comprehensive STRIDE analysis and map security boundaries before coding.
+- 👉 Alternatively, call **[Senior QA](../senior-qa/SKILL.md)** to establish the test strategy and write TDD test cases matching the designed APIs.
+
+---
 
 ## 🏗️ Operating Pipeline
 This Orchestrator enforces the **[Agent Review Framework](file:///Users/macos/.antigravity-global/agent_review_framework.md)**.

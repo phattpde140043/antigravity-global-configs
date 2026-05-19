@@ -38,10 +38,26 @@ When performing specific security tasks, you **MUST** chain to the following sub
   👉 **[Backend Security Coder](sub-skills/backend-security-coder/SKILL.md)**
 - For **Review Checklists** and Injection prevention: 
   👉 **[Security Review (Checklist)](sub-skills/security-review/SKILL.md)**
+- For **Broken Authentication Remediation** (session hijacking, credential stuffing, secure cookies, OAuth vulnerabilities):
+  👉 **[Broken Authentication Remediation](sub-skills/broken-authentication/SKILL.md)**
+- For **Static Application Security Testing (SAST) Rule Configuration** (Semgrep rules, security linters, SonarQube filters):
+  👉 **[SAST Configuration](sub-skills/sast-configuration/SKILL.md)**
 
 ### 3. Offensive Security & Pentesting
 - For **Scanning, Exploitation, and Hardening**: 
   👉 **[Penetration Testing Methodology](sub-skills/penetration-testing/SKILL.md)**
+- For **Reverse Engineering, Anti-Debugging, and Obfuscation**:
+  👉 **[Anti-Reversing Techniques](sub-skills/anti-reversing-techniques/SKILL.md)**
+- For **Binary Analysis, Instrumentation, and Buffer Overflow Exploitation** (GDB, Ghidra, radare2, shellcode):
+  👉 **[Binary Analysis Patterns](sub-skills/binary-analysis-patterns/SKILL.md)**
+- For **AWS Cloud Penetration Testing & Privilege Escalation** (IAM enum, SSRF to metadata, Lambda code extraction):
+  👉 **[AWS Penetration Testing](sub-skills/aws-penetration-testing/SKILL.md)**
+- For **Offensive Security Vulnerability Scanners** (Nmap, Nikto, OWASP ZAP, active host discovery):
+  👉 **[Scanning Tools](sub-skills/scanning-tools/SKILL.md)**
+- For **Burp Suite Professional Web Penetration Testing** (intercepting proxy, intruder, repeater, active scans):
+  👉 **[Burp Suite Testing](sub-skills/burp-suite-testing/SKILL.md)**
+- For **Burp Suite Project XML Parsing & Remediation** (vulnerability parsing, reporting automation):
+  👉 **[Burpsuite Project Parser](sub-skills/burpsuite-project-parser/SKILL.md)**
 
 ### 4. Cloud & Infrastructure
 - For **AWS Hardening** and **SCA (Supply Chain)**: 
@@ -50,6 +66,8 @@ When performing specific security tasks, you **MUST** chain to the following sub
 ### 5. Compliance & Governance
 - For **Regulatory Compliance** (GDPR, SOC2, HIPAA, etc.):
   👉 **[Regulatory Compliance](sub-skills/regulatory-compliance/SKILL.md)**
+- For **AI File Provenance & Trust Auditing** (AKF native file metadata, EU AI Act, SOX):
+  👉 **[AKF Trust Metadata](sub-skills/akf-trust-metadata/SKILL.md)**
 
 ---
 

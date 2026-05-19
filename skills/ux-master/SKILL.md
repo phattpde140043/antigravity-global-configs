@@ -35,10 +35,24 @@ When performing UX or frontend tasks, you **MUST** chain to the following sub-sk
   👉 **[Frontend Patterns](sub-skills/frontend-patterns/SKILL.md)**
 - For **Presentations** and Slides:
   👉 **[Frontend Slides](sub-skills/frontend-slides/SKILL.md)**
+- For **High-Performance Micro-Animations** (DOM/SVG timelines using Anime.js):
+  👉 **[Anime.js Animations](sub-skills/animejs-animation/SKILL.md)**
+- For **Advanced Smooth Scrolling & Parallax Experiences** (GSAP ScrollTrigger, scroll-driven interactive experiences):
+  👉 **[Scroll Experience Design](sub-skills/scroll-experience/SKILL.md)**
+- For **Opinionated UI Baselines & Standards** (Tailwind CSS guidelines, accessibility, motion rules):
+  👉 **[Baseline UI Standards](sub-skills/baseline-ui/SKILL.md)**
+- For **Browser Extension Interfaces & Architecture** (Chrome extension APIs, popup/options page design, background workers):
+  👉 **[Browser Extension Builder](sub-skills/browser-extension-builder/SKILL.md)**
+- For **Native Mobile HIG & Layout Architectures** (Android Jetpack Compose, Apple SwiftUI standards):
+  👉 **[Building Native UI](sub-skills/building-native-ui/SKILL.md)**
+- For **HTML/CSS to SVG Image Generation Engines** (Satori, Vercel OG image generation styling):
+  👉 **[Satori Image Generation](sub-skills/satori/SKILL.md)**
 
 ### 2. Implementation & Performance
 - For **Accessibility** Architecture:
   👉 **[A11y Architect](sub-skills/a11y-architect/SKILL.md)**
+- For **Screen Reader Compatibility Testing** (NVDA, JAWS, VoiceOver screen reader assertions, ARIA accessibility audits):
+  👉 **[Screen Reader Testing](sub-skills/screen-reader-testing/SKILL.md)**
 - For **Next.js Performance** (Turbopack):
   👉 **[Nextjs Turbopack](sub-skills/nextjs-turbopack/SKILL.md)**
 

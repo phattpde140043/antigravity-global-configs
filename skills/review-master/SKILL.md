@@ -34,6 +34,8 @@ When performing reviews, you **MUST** chain to the following sub-skills:
   👉 **[C# Reviewer](sub-skills/csharp-reviewer/SKILL.md)**
 - For **AI Slop Detection** and **Readiness Scoring**:
   👉 **[Vibe Code Auditor](sub-skills/vibe-code-auditor/SKILL.md)**
+- For **Classic Software Engineering Code Review** (DRY/duplication, APOSD complexity, Clean Code naming, Release It stability, DDIA data consistency):
+  👉 **[Brooks Lint](sub-skills/brooks-lint/SKILL.md)**
 
 ### 3. Workflow & Artifact Management
 - For **PR/Diff-based Review** and Summary Templates:

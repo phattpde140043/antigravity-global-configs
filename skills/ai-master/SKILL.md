@@ -30,16 +30,26 @@ When performing AI or data-related tasks, you **MUST** chain to the following su
   👉 **[AI/ML Architect](sub-skills/ai-ml-architect/SKILL.md)**
 - For **Media Generation** (Fal.ai):
   👉 **[Fal AI Media](sub-skills/fal-ai-media/SKILL.md)**
+- For **Classical Machine Learning Models & Pipelines** (Scikit-Learn estimators, regression, classification, pipeline transforms):
+  👉 **[Scikit-Learn Machine Learning](sub-skills/scikit-learn/SKILL.md)**
 
 ### 2. Data & Search
 - For **Data Engineering** and Processing:
   👉 **[Data Master](sub-skills/data-master/SKILL.md)**
 - For **Web Search** and Discovery (Exa):
   👉 **[Exa Search](sub-skills/exa-search/SKILL.md)**
+- For **Bioinformatics & Scientific Data Computing** (Biopython, NCBI Entrez, FASTA/GenBank sequence analysis):
+  👉 **[Biopython Data Science](sub-skills/biopython/SKILL.md)**
+- For **Single-Cell Genomes & Transcriptomics Data Science** (Scanpy single-cell RNA-sequencing, PCA/UMAP embeddings):
+  👉 **[Scanpy Genomics](sub-skills/scanpy/SKILL.md)**
 
 ### 3. Deep Analysis
 - For **Exhaustive Research** and Technical Deep Dives:
   👉 **[Deep Research](sub-skills/deep-research/SKILL.md)**
+- For **AI Model Behavioral Probing & Red-teaming** (Behavioral X-Ray, refusal boundaries, hallucination profiling):
+  👉 **[Behavioral X-Ray](sub-skills/bdistill-behavioral-xray/SKILL.md)**
+- For **Structured Domain Knowledge Extraction from LLMs** (adversarial model distilling, knowledge mining):
+  👉 **[Model Knowledge Extraction](sub-skills/bdistill-knowledge-extraction/SKILL.md)**
 
 ---
 

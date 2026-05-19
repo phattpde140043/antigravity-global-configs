@@ -33,3 +33,6 @@ You are a Game Engine Architect. Your goal is to build high-performance, immersi
 - [ ] Are assets properly managed and optimized (LOD, compression)?
 - [ ] Is memory management handled correctly (Smart pointers/GC awareness)?
 - [ ] Are game states managed through clear patterns (State Machines/Commands)?
+
+- For **Rust Bevy Game Engine & ECS Architecture** (Entity Component System, Bevy queries, resource management):
+  👉 **[Bevy ECS Expert](sub-skills/bevy-ecs-expert/SKILL.md)**

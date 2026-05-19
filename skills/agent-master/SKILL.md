@@ -52,10 +52,24 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Finishing A Development Branch](sub-skills/finishing-a-development-branch/SKILL.md)**
 - For **To Issues** (Breaking down plans into tracer-bullet issues):
   👉 **[To Issues](sub-skills/to-issues/SKILL.md)**
+- For **Forensic Session Root Cause Analysis** (session deltas, severities):
+  👉 **[Analyze Project](sub-skills/analyze-project/SKILL.md)**
+- For **Autonomous Agent Loops** (ReAct, Plan-Execute, Reflection, Guardrails):
+  👉 **[Autonomous Agents](sub-skills/autonomous-agents/SKILL.md)**
+- For **First-Principles Assumption Auditing & Logic Audits** (Axiom, prosecuting assumptions):
+  👉 **[Axiom](sub-skills/axiom/SKILL.md)**
+- For **Adaptive AI Operating Modes** (BRAINSTORM, IMPLEMENT, DEBUG, REVIEW, TEACH, SHIP, EXPLORE, PEC):
+  👉 **[Behavioral Modes](sub-skills/behavioral-modes/SKILL.md)**
+- For **Multi-Session Construction Plans** (cold-start self-contained context briefs, adversarial plan gates):
+  👉 **[Blueprint Construction Planning](sub-skills/blueprint/SKILL.md)**
+- For **Phased Major Feature Development & Tracking** (research, implementation plans, PROGRESS log, phased delivery):
+  👉 **[Phased Feature Build](sub-skills/build/SKILL.md)**
 
 ### 2. Debugging & Error Handling
 - For **Systematic Debugging**:
   👉 **[Systematic Debugging](sub-skills/systematic-debugging/SKILL.md)**
+- For **Evidence-Based Bug Hunting & Diagnosis** (reproduction, root cause tracing, regression prevention):
+  👉 **[Bug Hunter](sub-skills/bug-hunter/SKILL.md)**
 - For **Error Analysis**:
   👉 **[Error Detective](sub-skills/error-detective/SKILL.md)**
 - For **Build Failures**:
@@ -76,6 +90,12 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Spec Driven Development](sub-skills/spec-driven-development/SKILL.md)**
 - For **Zoom Out** (High-level map and structural codebase context):
   👉 **[Zoom Out](sub-skills/zoom-out/SKILL.md)**
+- For **Andrej Karpathy Persona Simulation** (deep learning, Vibe Coding, Software 2.0):
+  👉 **[Andrej Karpathy](sub-skills/ai-expert-personas/andrej-karpathy/SKILL.md)**
+- For **Bill Gates Persona Simulation** (high-level system design, strategic technology scaling, enterprise MVP):
+  👉 **[Bill Gates](sub-skills/ai-expert-personas/bill-gates/SKILL.md)**
+- For **Sam Altman Persona Simulation** (strategic hypergrowth scaling, extreme product market fit, fundraising, AGI timelines):
+  👉 **[Sam Altman](sub-skills/ai-expert-personas/sam-altman/SKILL.md)**
 
 ### 4. Infrastructure & Context
 - For **CI/CD and Automation**:
@@ -84,6 +104,8 @@ When performing core agent tasks, you **MUST** chain to the following sub-skills
   👉 **[Brain Context Engineering](sub-skills/brain-context-engineering/SKILL.md)**
 - For **Migrations**:
   👉 **[Deprecation and Migration](sub-skills/deprecation-and-migration/SKILL.md)**
+- For **Wallet-based Agentic Micropayments Routing** (paying for image generation, Grok live X/Twitter search, GPT second opinions):
+  👉 **[BlockRun Micropayments Wallet](sub-skills/blockrun/SKILL.md)**
 
 ---
 - For **Handoff** (Session handoff and state consolidation):

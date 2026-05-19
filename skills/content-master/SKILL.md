@@ -33,12 +33,34 @@ When performing writing or documentation tasks, you **MUST** chain to the follow
   👉 **[Documentation Lookup](sub-skills/documentation-lookup/SKILL.md)**
 - For **Grill With Docs** (Stress-testing plans against glossaries and ADRs):
   👉 **[Grill With Docs](sub-skills/grill-with-docs/SKILL.md)**
+- For **AI-ism Auditing & Humanizing Prose** (detecting and rewriting AI-generated copy):
+  👉 **[Avoid AI Writing](sub-skills/avoid-ai-writing/SKILL.md)**
+- For **Academic & Scientific Research Writing** (paper formatting, abstract design, LaTeX layout guidelines):
+  👉 **[Scientific Writing Standards](sub-skills/scientific-writing/SKILL.md)**
 
 ### 2. Specialized Content
 - For **Article Writing** and Long-form:
   👉 **[Article Writing](sub-skills/article-writing/SKILL.md)**
 - For **Content Generation** Engines:
   👉 **[Content Engine](sub-skills/content-engine/SKILL.md)**
+- For **Stunning Prose & Narrative Design** (avoiding corporate cliches, writing with impact):
+  👉 **[Beautiful Prose Guidelines](sub-skills/beautiful-prose/SKILL.md)**
+- For **Engaging Technical Blog Design & Writing** (structured outlines, Hook-Body-CTA):
+  👉 **[Blog Writing Guide](sub-skills/blog-writing-guide/SKILL.md)**
+- For **Sentry Brand Voice & Copywriting Guidelines** (Plain Speech, empathetic snark, onboarding/empty states):
+  👉 **[Sentry Brand Guidelines](sub-skills/brand-guidelines/SKILL.md)**
+- For **Anthropic Brand Voice & Technical Prose Standards** (direct tone, user-first formatting):
+  👉 **[Anthropic Brand Guidelines](sub-skills/brand-guidelines-anthropic/SKILL.md)**
+- For **Community Copywriting & Style Standards** (open-source guidelines, tone modeling):
+  👉 **[Community Brand Guidelines](sub-skills/brand-guidelines-community/SKILL.md)**
+- For **Consumer Brand Perception Psychology** (consumer psychology, user trust triggers):
+  👉 **[Brand Perception Psychologist](sub-skills/brand-perception-psychologist/SKILL.md)**
+- For **Hierarchical Bullet-only Structured Note-taking** (formatting lists, compression strategy, ultra granularity):
+  👉 **[Bulletmind Structured Thinking](sub-skills/bulletmind/SKILL.md)**
+- For **Scarcity & Urgency Persuasion Psychology** (sales copywriting, consumer urgency triggers):
+  👉 **[Scarcity Urgency Psychologist](sub-skills/scarcity-urgency-psychologist/SKILL.md)**
+- For **Schema Markup & JSON-LD Structured Data** (semantic web tags, rich snippets, SEO optimization):
+  👉 **[Schema Markup SEO](sub-skills/schema-markup/SKILL.md)**
 
 ### 3. Governance
 - For **Coding Standards** and Guidelines:

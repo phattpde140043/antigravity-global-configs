@@ -34,3 +34,23 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
 
 - For **Reviewing Cicd Pipelines** (Reviewing CI/CD pipelines and pipeline security):
   👉 **[Reviewing Cicd Pipelines](sub-skills/reviewing-cicd-pipelines/SKILL.md)**
+- For **AWS Cost Cleanup** (automated cleanup of unused AWS resources):
+  👉 **[AWS Cost Cleanup](sub-skills/aws-cost-cleanup/SKILL.md)**
+- For **AWS Cost Optimization** (Cost Explorer analytics, rightsizing recommendations):
+  👉 **[AWS Cost Optimizer](sub-skills/aws-cost-optimizer/SKILL.md)**
+- For **AWS Serverless Development** (Lambda, API Gateway, DynamoDB, SnapStart, cold start optimization):
+  👉 **[AWS Serverless](sub-skills/aws-serverless/SKILL.md)**
+- For **AWS Cloud Architecture Patterns** (infrastructure automation and general AWS patterns):
+  👉 **[AWS Skills](sub-skills/aws-skills/SKILL.md)**
+- For **Azure Container App Deployments** (Azure Developer CLI, idempotent container architecture):
+  👉 **[Azure Dev CLI Deployment](sub-skills/azd-deployment/SKILL.md)**
+- For **Defensive Bash Programming** (production-grade error resilient automation and traps):
+  👉 **[Defensive Bash Patterns](sub-skills/bash-defensive-patterns/SKILL.md)**
+- For **Linux & macOS Shell Command Syntax** (piping, process control, environment management):
+  👉 **[Bash Linux Command Patterns](sub-skills/bash-linux/SKILL.md)**
+- For **Advanced Professional Shell Development** (clean, reusable, modular shell scripting):
+  👉 **[Bash Professional Scripting](sub-skills/bash-pro/SKILL.md)**
+- For **General Shell Scripting & Automation** (essential file operations and script loops):
+  👉 **[Bash Scripting Basics](sub-skills/bash-scripting/SKILL.md)**
+- For **BusyBox on Windows Shell Parity** (GNU utility emulation, Windows bash environments):
+  👉 **[BusyBox Windows Emulation](sub-skills/busybox-on-windows/SKILL.md)**

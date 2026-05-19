@@ -28,3 +28,22 @@ Streamline processes by connecting tools and automating repetitive tasks.
 - [ ] Are timestamps in the correct UTC format?
 - [ ] Is pagination handled for large datasets?
 - [ ] Was user confirmation obtained for high-risk actions?
+
+- For **BambooHR Automation** (employees, time-off, benefits via Rube MCP):
+  👉 **[BambooHR Automation](sub-skills/bamboohr-automation/SKILL.md)**
+- For **Basecamp Project Management Automation** (todos, schedules, posts via Rube MCP):
+  👉 **[Basecamp Automation](sub-skills/basecamp-automation/SKILL.md)**
+- For **Stripe & Stripe Billing Automation** (invoices, subscriptions via Rube MCP):
+  👉 **[Billing Automation](sub-skills/billing-automation/SKILL.md)**
+- For **Box Storage Automation** (files, folders, metadata via Rube MCP):
+  👉 **[Box Automation](sub-skills/box-automation/SKILL.md)**
+- For **Bitbucket VCS Automation** (repositories, pull requests, issues via Rube MCP):
+  👉 **[Bitbucket Automation](sub-skills/bitbucket-automation/SKILL.md)**
+- For **Skyvern Browser-Automation** (LLM-driven visual web parsing and task execution):
+  👉 **[Skyvern Automation](sub-skills/skyvern-automation/SKILL.md)**
+- For **Brevo Email CRM Automation** (contacts, lists, campaigns via Rube MCP):
+  👉 **[Brevo Automation](sub-skills/brevo-automation/SKILL.md)**
+- For **Sales Outbound Outreach & CRM Automation** (HubSpot deals, custom CRM automations):
+  👉 **[Sales Automator](sub-skills/sales-automator/SKILL.md)**
+- For **Salesforce Outbound & Integration Automation** (Salesforce Process Builder, Salesforce Flows via Rube MCP):
+  👉 **[Salesforce Automation](sub-skills/salesforce-automation/SKILL.md)**

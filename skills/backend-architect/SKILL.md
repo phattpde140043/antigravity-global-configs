@@ -40,10 +40,22 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Distributed System](sub-skills/distributed-system/SKILL.md)**
 - For **System Architecture** (REST/GraphQL API and High-Level System Architecture):
   👉 **[System Architecture](sub-skills/system-architecture/SKILL.md)**
+- For **Decentralized System Design & Smart Contracts** (EVM/Solidity patterns, Solana Rust, DeFi, NFTs):
+  👉 **[Blockchain Developer](sub-skills/blockchain-developer/SKILL.md)**
+- For **Multi-Tenant SaaS isolation & Scaling** (database-per-tenant, schema-per-tenant, row-level security):
+  👉 **[SaaS Multi-Tenant Architecture](sub-skills/saas-multi-tenant/SKILL.md)**
+- For **Saga Orchestration & Choreography** (distributed transaction rollbacks, compensating actions):
+  👉 **[Saga Orchestration](sub-skills/saga-orchestration/SKILL.md)**
 
 ### 2. Specialized Frameworks & Platforms
 - For **.NET Development** and Patterns:
   👉 **[Dotnet Patterns](sub-skills/dotnet-patterns/SKILL.md)**
+- For **Avalonia UI Layouts & Styling** (Zafiro semantic containers, EdgePanel):
+  👉 **[Avalonia Layout Zafiro](sub-skills/avalonia-layout-zafiro/SKILL.md)**
+- For **Avalonia ViewModels & Wizard Flows** (SlimWizard, ReactiveUI commands):
+  👉 **[Avalonia ViewModels Zafiro](sub-skills/avalonia-viewmodels-zafiro/SKILL.md)**
+- For **Avalonia Zafiro Development Conventions** (naming standards, DynamicData pipelines):
+  👉 **[Avalonia Zafiro Development](sub-skills/avalonia-zafiro-development/SKILL.md)**
 - For **Node.js** Backend:
   👉 **[Nodejs Backend](sub-skills/nodejs-backend/SKILL.md)**
 - For **Python/FastAPI** Backend:
@@ -52,6 +64,16 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[WordPress Architect](sub-skills/wordpress-architect/SKILL.md)**
 - For **Python Best Practices** (Modern Python development patterns and best practices):
   👉 **[Python Best Practices](sub-skills/python-best-practices/SKILL.md)**
+- For **BullMQ Redis-backed Message Queuing** (async background jobs, scheduling, worker processing):
+  👉 **[BullMQ Queue Specialist](sub-skills/bullmq-specialist/SKILL.md)**
+- For **High Performance JS/TS Bun Runtime** (Bun server setup, dependency packing):
+  👉 **[Bun Development](sub-skills/bun-development/SKILL.md)**
+- For **Salesforce Core Backend Development** (Apex classes, LWC components, SOQL queries):
+  👉 **[Salesforce Development](sub-skills/salesforce-development/SKILL.md)**
+- For **Sankhya Java ERP Dashboard BI widgets** (custom JSP/JSTL dashboard controllers, SQL parameter protection):
+  👉 **[Sankhya BI Dashboards](sub-skills/sankhya-dashboard/SKILL.md)**
+- For **Advanced Scala Programming** (functional patterns, Scala 3, Cats, ZIO pipelines):
+  👉 **[Scala Pro](sub-skills/scala-pro/SKILL.md)**
 
 ### 3. API & Communication
 - For **REST/GraphQL API Design**:
@@ -72,6 +94,8 @@ When performing architectural tasks, you **MUST** chain to the following sub-ski
   👉 **[Framework Migration](sub-skills/framework-migration/SKILL.md)**
 - For **MCP Server Patterns**:
   👉 **[MCP Server Patterns](sub-skills/mcp-server-patterns/SKILL.md)**
+- For **Bazel Build System & Optimization** (monorepo build graphs, action caching, hermeticity):
+  👉 **[Bazel Build Optimization](sub-skills/bazel-build-optimization/SKILL.md)**
 
 ### 5. Deep Analysis & Code Craftsmanship
 - For **Deep Codebase Analysis** and Structural Diagrams:

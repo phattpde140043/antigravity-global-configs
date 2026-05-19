@@ -29,10 +29,14 @@ When performing testing tasks, you **MUST** chain to the following sub-skills:
   👉 **[E2E Testing Excellence (Playwright)](sub-skills/e2e-testing/SKILL.md)**
 - For **Browser Automation** and Low-Level Interaction:
   👉 **[Browser Automation](sub-skills/browser-automation/SKILL.md)**
+- For **AI-Powered E2E Testing** (AWT Watch Tester, OCR, visual template matching, platform auto-detection):
+  👉 **[AI Watch Tester E2E](sub-skills/awt-e2e-testing/SKILL.md)**
 - For **DevTools Debugging** and Browser Analysis:
   👉 **[Browser Testing with DevTools](sub-skills/browser-testing-with-devtools/SKILL.md)**
 - For **Building E2E Tests** (OSP Search multi-tenant E2E testing):
   👉 **[Building E2E Tests](sub-skills/building-e2e-tests/SKILL.md)**
+- For **Playwright Automated Screenshots & Visual Verification** (screenshot capture, element isolation, visual diffing):
+  👉 **[Playwright Screenshots](sub-skills/screenshots/SKILL.md)**
 
 ### 2. Test Strategy & Design
 - For **Test Writing**, Coverage Analysis, and Scenarios:
@@ -47,6 +51,8 @@ When performing testing tasks, you **MUST** chain to the following sub-skills:
   👉 **[TDD Workflow](sub-skills/tdd-workflow/SKILL.md)**
 - For **Testing Patterns** and specific logic validation:
   👉 **[Test Driven Development](sub-skills/test-driven-development/SKILL.md)**
+- For **Bash & Shell Script Unit/Integration Testing** (BATS framework, assertions, mocking):
+  👉 **[BATS Testing Patterns](sub-skills/bats-testing-patterns/SKILL.md)**
 
 ### 4. Advanced Evaluation
 - For **Evaluation Harnesses** and Model Scoring:

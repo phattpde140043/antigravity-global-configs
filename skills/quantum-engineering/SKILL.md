@@ -35,5 +35,5 @@ Expertise in designing, optimizing, and executing quantum algorithms on simulato
 ---
 
 ## 🔗 Quantum Framework Sub-Skills
-- For **Google Cirq Quantum Simulation** (designing Google Sycamore circuits, gate decomposition, NumPy-backed simulators):
-  👉 **[Cirq Quantum Engineering](sub-skills/cirq/SKILL.md)**
+
+- **[Cirq Quantum Engineering](sub-skills/cirq/SKILL.md)** — Google Quantum AI's Cirq framework for designing, simulating, and running quantum circuits. **Use when:** targeting Google/Sycamore hardware, performing gate decomposition, or running NumPy-backed circuit simulation with Cirq. **Not for:** Qiskit / IBM Quantum work — covered by this master's core Qiskit workflow.

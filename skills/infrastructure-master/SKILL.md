@@ -38,48 +38,37 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
 - [ ] Are production resources protected by RemovalPolicy.RETAIN?
 - [ ] Are all resources properly tagged?
 
-- For **Reviewing Cicd Pipelines** (Reviewing CI/CD pipelines and pipeline security):
-  👉 **[Reviewing Cicd Pipelines](sub-skills/reviewing-cicd-pipelines/SKILL.md)**
-- For **Generic CI/CD Workflow & Automation** (standard YAML syntax, runner selection, trigger patterns):
-  👉 **[CI/CD Workflow Automation](sub-skills/cicd-automation-workflow-automate/SKILL.md)**
-- For **CircleCI Pipelines & Workflows** (caching strategies, runner configurations, parallelism, custom build triggers):
-  👉 **[CircleCI Automation](sub-skills/circleci-automation/SKILL.md)**
-- For **AWS Cost Cleanup** (automated cleanup of unused AWS resources):
-  👉 **[AWS Cost Cleanup](sub-skills/aws-cost-cleanup/SKILL.md)**
-- For **AWS Cost Optimization** (Cost Explorer analytics, rightsizing recommendations):
-  👉 **[AWS Cost Optimizer](sub-skills/aws-cost-optimizer/SKILL.md)**
-- For **AWS Serverless Development** (Lambda, API Gateway, DynamoDB, SnapStart, cold start optimization):
-  👉 **[AWS Serverless](sub-skills/aws-serverless/SKILL.md)**
-- For **AWS Cloud Architecture Patterns** (infrastructure automation and general AWS patterns):
-  👉 **[AWS Skills](sub-skills/aws-skills/SKILL.md)**
-- For **Azure Container App Deployments** (Azure Developer CLI, idempotent container architecture):
-  👉 **[Azure Dev CLI Deployment](sub-skills/azd-deployment/SKILL.md)**
-- For **Vercel Cloud Edge Deployment & Tuning** (edge middlewares, serverless configurations, cache control headers, routing setups):
-  👉 **[Vercel Deployment](sub-skills/vercel-deployment/SKILL.md)**
+## 🧭 Sub-Skill Catalog
+
+### 🔁 CI/CD & Pipelines
+- **[Reviewing Cicd Pipelines](sub-skills/reviewing-cicd-pipelines/SKILL.md)** — audits CI/CD pipeline changes for correctness and security. **Use when:** reviewing GitHub Actions workflows or deployment configs for secret injection, environment targeting, and pipeline-security issues. **Not for:** authoring new pipelines from scratch (see CI/CD Workflow Automation).
+- **[CI/CD Workflow Automation](sub-skills/cicd-automation-workflow-automate/SKILL.md)** — designs and builds CI/CD pipelines and GitHub Actions workflows. **Use when:** creating or refactoring automated build/test/deploy workflows, choosing runners, or defining trigger patterns. **Not for:** security review of existing pipelines (see Reviewing Cicd Pipelines).
+- **[CircleCI Automation](sub-skills/circleci-automation/SKILL.md)** — drives CircleCI programmatically via Rube MCP (Composio). **Use when:** triggering CircleCI pipelines, monitoring workflows/jobs, or retrieving artifacts and test metadata. **Not for:** GitHub Actions or provider-agnostic pipeline authoring.
+
+### ☁️ Cloud & AWS
+- **[AWS Skills](sub-skills/aws-skills/SKILL.md)** — general AWS development, infrastructure automation, and cloud-architecture patterns. **Use when:** you need broad AWS guidance not covered by a more specialized AWS skill. **Not for:** serverless builds (see AWS Serverless) or cost work (see the AWS Cost skills).
+- **[AWS Serverless](sub-skills/aws-serverless/SKILL.md)** — builds production-ready serverless apps on AWS. **Use when:** implementing Lambda, API Gateway, DynamoDB, or SQS/SNS event-driven patterns with SAM/CDK, or fixing cold starts/SnapStart. **Not for:** non-serverless compute such as EC2/ECS/EKS.
+- **[AWS Cost Optimizer](sub-skills/aws-cost-optimizer/SKILL.md)** — analyzes AWS spend and produces optimization recommendations. **Use when:** investigating cost drivers or rightsizing via AWS CLI and Cost Explorer. **Not for:** actually deleting resources (see AWS Cost Cleanup).
+- **[AWS Cost Cleanup](sub-skills/aws-cost-cleanup/SKILL.md)** — automated cleanup of unused or orphaned AWS resources. **Use when:** reclaiming idle resources (unattached EBS volumes, unused Elastic IPs, stale snapshots) to cut cost. **Not for:** spend analysis or recommendations (see AWS Cost Optimizer).
+
+### 🚀 Deployment (Azure / Vercel)
+- **[Azure Dev CLI Deployment](sub-skills/azd-deployment/SKILL.md)** — deploys containerized frontend + backend apps to Azure Container Apps via the Azure Developer CLI. **Use when:** deploying containers to Azure with remote builds, managed identity, and idempotent infrastructure. **Not for:** AWS or Vercel targets.
+- **[Vercel Deployment](sub-skills/vercel-deployment/SKILL.md)** — deploys and tunes Next.js apps on Vercel's edge. **Use when:** configuring edge middleware, serverless functions, cache-control headers, or routing on Vercel. **Not for:** non-Vercel hosts.
 
 ### 🛠️ Infrastructure as Code (Terraform)
-- For **Terraform Specialist Workspaces** (state locks, workspaces variables setups):
-  👉 **[Terraform Core Patterns](sub-skills/terraform/core/SKILL.md)**
-- For **Terraform Basic Integrations** (providers setup, simple resources mappings):
-  👉 **[Terraform Basics](sub-skills/terraform/basics/SKILL.md)**
-- For **Terraform Module Creation** (reusable blueprints libraries, semantic versioning configurations):
-  👉 **[Terraform Reusable Modules](sub-skills/terraform/modules/SKILL.md)**
-- For **Terraform Regional Multi-Region Orchestrations** (multi-region variables pass, state mappings):
-  👉 **[Terraform Multi-Region Architecture](sub-skills/terraform/architecture/SKILL.md)**
-- For **Terraform AWS Standard Modules** (VPC, RDS, EKS modules implementations):
-  👉 **[Terraform AWS Modules](sub-skills/terraform/aws-modules/SKILL.md)**
-- For **Defensive Bash Programming** (production-grade error resilient automation and traps):
-  👉 **[Defensive Bash Patterns](sub-skills/bash-defensive-patterns/SKILL.md)**
-- For **Linux & macOS Shell Command Syntax** (piping, process control, environment management):
-  👉 **[Bash Linux Command Patterns](sub-skills/bash-linux/SKILL.md)**
-- For **Advanced Professional Shell Development** (clean, reusable, modular shell scripting):
-  👉 **[Bash Professional Scripting](sub-skills/bash-pro/SKILL.md)**
-- For **General Shell Scripting & Automation** (essential file operations and script loops):
-  👉 **[Bash Scripting Basics](sub-skills/bash-scripting/SKILL.md)**
-- For **BusyBox on Windows Shell Parity** (GNU utility emulation, Windows bash environments):
-  👉 **[BusyBox Windows Emulation](sub-skills/busybox-on-windows/SKILL.md)**
-- For **POSIX Standard Shell Scripting & Portability** (cross-platform compatibility, standard utility options, strict sh compatibility):
-  👉 **[POSIX Shell Pro](sub-skills/posix-shell-pro/SKILL.md)**
+- **[Terraform Core Patterns](sub-skills/terraform/core/SKILL.md)** — advanced/enterprise Terraform & OpenTofu automation and state management. **Use when:** designing remote state backends, workspaces, policy-as-code, or multi-cloud stacks at enterprise scale. **Not for:** one-off manual changes or a non-Terraform IaC tool.
+- **[Terraform Basics](sub-skills/terraform/basics/SKILL.md)** — Terraform/OpenTofu best-practices and testing guidance. **Use when:** creating new configs/modules, choosing a testing approach (validate/plan/frameworks), or reviewing/refactoring existing IaC. **Not for:** basic syntax lookups or provider API reference.
+- **[Terraform Reusable Modules](sub-skills/terraform/modules/SKILL.md)** — production-ready, multi-cloud Terraform module patterns. **Use when:** building reusable modules across AWS, Azure, and GCP or standardizing organizational module conventions. **Not for:** AWS-only modules (see Terraform AWS Modules).
+- **[Terraform AWS Modules](sub-skills/terraform/aws-modules/SKILL.md)** — Terraform module creation specifically for AWS. **Use when:** building or reviewing VPC, RDS, or EKS modules and AWS-focused HCL. **Not for:** Azure/GCP or multi-cloud modules (see Terraform Reusable Modules).
+- **[Terraform Infrastructure Workflow](sub-skills/terraform/architecture/SKILL.md)** — end-to-end Terraform provisioning workflow orchestrating setup → modules → multi-environment deployment. **Use when:** running the full IaC lifecycle (init, backend, providers, multi-environment infra) rather than a single focused task. **Not for:** a narrow single-step change (use a specific Terraform skill above).
+
+### 🐚 Bash & Shell
+- **[Defensive Bash Patterns](sub-skills/bash-defensive-patterns/SKILL.md)** — catalog of defensive Bash techniques (strict mode, traps, safe argument handling). **Use when:** hardening shell scripts, CI/CD pipelines, or system utilities for fault tolerance and safety. **Not for:** interactive one-liners (see Bash Linux Command Patterns).
+- **[Bash Professional Scripting](sub-skills/bash-pro/SKILL.md)** — professional, testable Bash script authoring and review. **Use when:** writing or reviewing automation/CI/CD/ops scripts and adding Bats/ShellCheck tests. **Not for:** POSIX-only sh (see POSIX Shell Pro) or Windows PowerShell.
+- **[Bash Scripting Workflow](sub-skills/bash-scripting/SKILL.md)** — guided end-to-end workflow for producing production-ready Bash scripts (design → implement → test). **Use when:** you want a phased process that invokes the bash-pro and defensive-patterns skills to build a script from scratch. **Not for:** quick command lookups.
+- **[Bash Linux Command Patterns](sub-skills/bash-linux/SKILL.md)** — interactive Linux/macOS shell command syntax. **Use when:** composing pipes, process control, and environment management at the terminal on Unix-like systems. **Not for:** writing hardened scripts (see the Bash scripting skills).
+- **[POSIX Shell Pro](sub-skills/posix-shell-pro/SKILL.md)** — strict POSIX `sh` scripting for maximum portability. **Use when:** targeting dash/ash/busybox `sh` or any POSIX-compliant shell where Bash features are unavailable. **Not for:** Bash-specific features (see Bash Professional Scripting).
+- **[BusyBox Windows Emulation](sub-skills/busybox-on-windows/SKILL.md)** — runs standard UNIX CLI tools on Windows via a Win32 BusyBox build. **Use when:** you need GNU/UNIX utilities inside a Windows environment. **Not for:** native Windows PowerShell scripting.
 
 ---
 

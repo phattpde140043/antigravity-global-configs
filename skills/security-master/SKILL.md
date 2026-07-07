@@ -31,71 +31,51 @@ When performing specific security tasks, you **MUST** chain to the following sub
 ```
 
 
-### 1. Strategy & Threat Modeling (DESIGN Phase)
-- For **STRIDE** and Risk Assessment: 
-  👉 **[Securities Audit (Tier 2)](sub-skills/securities-audit/SKILL.md)**
-- For **User Stories** and Boundary Analysis: 
-  👉 **[Security Architecture & Design](sub-skills/security-design/SKILL.md)**
+### 1. Threat Modeling & Security Design (DESIGN Phase)
+- **[Securities Audit (STRIDE)](sub-skills/securities-audit/SKILL.md)** — STRIDE threat modeling, blast-radius analysis, and security-control validation. **Use when:** enumerating and prioritizing attack vectors across trust boundaries during design. **Not for:** writing or remediating application code.
+- **[Security Architecture & Design](sub-skills/security-design/SKILL.md)** — security architecture design, STRIDE modeling, and security-requirement extraction. **Use when:** in DEFINE/PLAN phases deriving user stories, security requirements, and boundary analysis before build. **Not for:** post-build code fixes or live exploitation.
+- **[Security Auditor](sub-skills/security-auditor/SKILL.md)** — security-engineer review spanning vulnerability detection, threat modeling, and secure-coding practice. **Use when:** performing security-focused code review, threat analysis, or hardening recommendations on existing code.
 
-### 2. Secure Coding & Implementation (BUILD Phase)
-- For **SAST Rules** and Semgrep Detections:
-  👉 **[SAST Engineering](sub-skills/sast-engineering/SKILL.md)**
-- For **Backend Security** and Data Handling: 
-  👉 **[Backend Security Coder](sub-skills/backend-security-coder/SKILL.md)**
-- For **Review Checklists** and Injection prevention: 
-  👉 **[Security Review (Checklist)](sub-skills/security-review/SKILL.md)**
-- For **Broken Authentication Remediation** (session hijacking, credential stuffing, secure cookies, OAuth vulnerabilities):
-  👉 **[Broken Authentication Remediation](sub-skills/broken-authentication/SKILL.md)**
-- For **Static Application Security Testing (SAST) Rule Configuration** (Semgrep rules, security linters, SonarQube filters):
-  👉 **[SAST Configuration](sub-skills/sast-configuration/SKILL.md)**
-- For **PCI DSS Payment Security Compliance** (cardholder data protection, network hardening, PCI compliance audits):
-  👉 **[PCI Compliance](sub-skills/pci-compliance/SKILL.md)**
+### 2. Secure Coding & Hardening (BUILD Phase)
+- **[Backend Security Coder](sub-skills/backend-security-coder/SKILL.md)** — secure backend coding and data-handling practices for proactive vulnerability prevention. **Use when:** writing or reviewing backend/service code during the BUILD phase.
+- **[Security & Hardening](sub-skills/security-and-hardening/SKILL.md)** — hardens code against vulnerabilities at the point of input and integration. **Use when:** handling untrusted user input, authentication, data storage, sessions, or third-party integrations.
+- **[Broken Authentication Remediation](sub-skills/broken-authentication/SKILL.md)** — identifies and fixes authentication and session-management weaknesses. **Use when:** addressing session hijacking, credential stuffing, insecure cookies, or OAuth vulnerabilities.
+- **[Security Review (Checklist)](sub-skills/security-review/SKILL.md)** — practical security checklist and remediation patterns for common features. **Use when:** adding auth/authorization, handling user input or file uploads, managing secrets, or building API/payment endpoints. **Not for:** deep architecture-level threat modeling across large systems, or compliance/legal interpretation.
+- **[Security Checklists](sub-skills/security-checklists/SKILL.md)** — quick-reference audit checklists for OWASP Top 10:2025, authentication, API, and data protection. **Use when:** you need a fast go/no-go list to verify defensive controls during a review. **Not for:** offensive testing or tool execution.
+- **[Solidity Security](sub-skills/solidity-security/SKILL.md)** — secure Solidity development patterns and EVM smart-contract vulnerability prevention. **Use when:** writing or auditing smart contracts for reentrancy, access-control, and other on-chain flaws.
 
-### 3. Offensive Security & Pentesting
-- For **Scanning, Exploitation, and Hardening**: 
-  👉 **[Penetration Testing Methodology](sub-skills/penetration-testing/SKILL.md)**
-- For **Reverse Engineering, Anti-Debugging, and Obfuscation**:
-  👉 **[Anti-Reversing Techniques](sub-skills/anti-reversing-techniques/SKILL.md)**
-- For **Binary Analysis, Instrumentation, and Buffer Overflow Exploitation** (GDB, Ghidra, radare2, shellcode):
-  👉 **[Binary Analysis Patterns](sub-skills/binary-analysis-patterns/SKILL.md)**
-- For **AWS Cloud Penetration Testing & Privilege Escalation** (IAM enum, SSRF to metadata, Lambda code extraction):
-  👉 **[AWS Penetration Testing](sub-skills/aws-penetration-testing/SKILL.md)**
-- For **Offensive Security Vulnerability Scanners** (Nmap, Nikto, OWASP ZAP, active host discovery):
-  👉 **[Scanning Tools](sub-skills/scanning-tools/SKILL.md)**
-- For **Burp Suite Professional Web Penetration Testing** (intercepting proxy, intruder, repeater, active scans):
-  👉 **[Burp Suite Testing](sub-skills/burp-suite-testing/SKILL.md)**
-- For **Burp Suite Project XML Parsing & Remediation** (vulnerability parsing, reporting automation):
-  👉 **[Burpsuite Project Parser](sub-skills/burpsuite-project-parser/SKILL.md)**
-- For **Penetration Testing Standard Checklists** (systematic security assessment checklists, scoping protocols):
-  👉 **[Pentest Checklist](sub-skills/pentest-checklist/SKILL.md)**
-- For **Offensive Pentesting CLI Commands Cheatsheet** (Nmap, Metasploit, hydra command cheatsheets):
-  👉 **[Pentest Commands](sub-skills/pentest-commands/SKILL.md)**
-- For **EVM Smart Contract Security Audits** (Solidity vulnerability patterns, reentrancy attacks, access control checks):
-  👉 **[Solidity Security](sub-skills/solidity-security/SKILL.md)**
-- For **SQL Injection (SQLi) Vulnerability Testing** (payloads formulation, bypass techniques, manual validation):
-  👉 **[SQL Injection Testing](sub-skills/sql-injection-testing/SKILL.md)**
-- For **SQLmap Automated Database Penetesting** (sqlmap command parameters, DBMS takeover, hash cracking):
-  👉 **[SQLmap Database Pentesting](sub-skills/sqlmap-database-pentesting/SKILL.md)**
-- For **SSH Protocol Penetration Testing & Auditing** (SSH keys leakage, weak ciphers checking, brute-force validation):
-  👉 **[SSH Penetration Testing](sub-skills/ssh-penetration-testing/SKILL.md)**
-- For **Red Team Tactical Engagements** (lateral movement, network evasion, active directories compromise):
-  👉 **[Red Team Tactics](sub-skills/red-team-tactics/SKILL.md)**
-- For **Red Team Exploitation Tools & C2** (command and control setup, payload compilation, post-exploitation scripts):
-  👉 **[Red Team Tools](sub-skills/red-team-tools/SKILL.md)**
-- For **Binary Reverse Engineering** (binary disassemblers, Ghidra pipelines, ELF/PE header analysis, stack patching):
-  👉 **[Reverse Engineering](sub-skills/reverse-engineer/SKILL.md)**
-- For **CodeQL Variant Audits & Analyses** (writing custom semantic queries, variant tracking across large repositories):
-  👉 **[Variant Analysis](sub-skills/variant-analysis/SKILL.md)**
+### 3. SAST & Static Analysis
+- **[SAST Engineering](sub-skills/sast-engineering/SKILL.md)** — authors custom Semgrep rules to detect vulnerabilities and dangerous patterns. **Use when:** creating detection rules to enforce security standards in the pipeline.
+- **[SAST Configuration](sub-skills/sast-configuration/SKILL.md)** — sets up and tunes SAST tooling and custom rules across languages. **Use when:** configuring Semgrep/SonarQube/security linters or filtering scan findings.
+- **[Variant Analysis](sub-skills/variant-analysis/SKILL.md)** — pattern-based hunting for similar vulnerabilities across a codebase using CodeQL/Semgrep. **Use when:** you have an initial finding and need to track its variants across large repositories, or run systematic semantic audits.
 
-### 4. Cloud & Infrastructure
-- For **AWS Hardening** and **SCA (Supply Chain)**: 
-  👉 **[Infrastructure Security Reference](sub-skills/infrastructure-security/SKILL.md)**
+### 4. Offensive Security & Penetration Testing (Authorized Testing)
+- **[Penetration Testing Methodology](sub-skills/penetration-testing/SKILL.md)** — end-to-end ethical-hacking methodology covering recon, scanning, exploitation, maintaining access, and reporting. **Use when:** planning or running a full authorized security assessment.
+- **[Offensive Security (Web)](sub-skills/offensive-security/SKILL.md)** — authorized offensive web testing focused on XSS, HTML injection, SQLi, and filter-bypass techniques. **Use when:** actively probing web input handling for injection/XSS during an authorized assessment.
+- **[Pentest Checklist](sub-skills/pentest-checklist/SKILL.md)** — structured checklist for scoping, executing, and following up on penetration tests. **Use when:** defining engagement scope and ensuring remediation coverage. **Not for:** ad-hoc tool command lookup (see Pentest Commands).
+- **[Pentest Commands](sub-skills/pentest-commands/SKILL.md)** — command reference for scanning, exploitation, password cracking, and web-testing tools. **Use when:** you need quick tool-command lookup (Nmap, Metasploit, hydra) mid-assessment.
+- **[Scanning Tools](sub-skills/scanning-tools/SKILL.md)** — selection and usage of network, vulnerability, web, and wireless scanners. **Use when:** performing active host discovery or vulnerability scanning (Nmap, Nikto, OWASP ZAP) and choosing the right scanner.
+- **[Red Team Tactics](sub-skills/red-team-tactics/SKILL.md)** — MITRE ATT&CK-based attack phases, detection evasion, and reporting. **Use when:** planning lateral movement, evasion, or Active Directory compromise in an authorized red-team engagement.
+- **[Red Team Tools](sub-skills/red-team-tools/SKILL.md)** — tool workflows for recon, vulnerability discovery, and post-exploitation/C2. **Use when:** setting up command-and-control, compiling payloads, or automating attack-surface coverage in an authorized engagement.
+- **[Burp Suite Testing](sub-skills/burp-suite-testing/SKILL.md)** — web-app testing with Burp Suite (intercepting proxy, repeater, intruder, active scans). **Use when:** intercepting/modifying HTTP traffic and running manual or automated web scans.
+- **[Burpsuite Project Parser](sub-skills/burpsuite-project-parser/SKILL.md)** — searches and extracts data from Burp `.burp` project files via the command line. **Use when:** regex-searching captured requests/responses, dumping proxy history or site map, or automating findings extraction from a Burp project.
+- **[SQL Injection Testing](sub-skills/sql-injection-testing/SKILL.md)** — manual SQL injection assessment: payload crafting, bypass techniques, and validation. **Use when:** manually testing and validating SQLi and input-sanitization on web apps.
+- **[SQLmap Database Pentesting](sub-skills/sqlmap-database-pentesting/SKILL.md)** — automated SQLi detection and exploitation with SQLMap. **Use when:** automating DBMS takeover, data extraction, or hash cracking via sqlmap parameters.
+- **[SSH Penetration Testing](sub-skills/ssh-penetration-testing/SKILL.md)** — SSH service assessment: enumeration, credential attacks, tunneling, and post-exploitation. **Use when:** auditing SSH for weak ciphers, key leakage, or brute-forceable credentials.
+- **[AWS Penetration Testing](sub-skills/aws-penetration-testing/SKILL.md)** — offensive AWS testing: IAM enumeration, privilege escalation, SSRF-to-metadata, S3/Lambda exploitation, and persistence. **Use when:** running an authorized red-team assessment against an AWS environment. **Not for:** defensive AWS hardening (see Infrastructure Security).
 
-### 5. Compliance & Governance
-- For **Regulatory Compliance** (GDPR, SOC2, HIPAA, etc.):
-  👉 **[Regulatory Compliance](sub-skills/regulatory-compliance/SKILL.md)**
-- For **AI File Provenance & Trust Auditing** (AKF native file metadata, EU AI Act, SOX):
-  👉 **[AKF Trust Metadata](sub-skills/akf-trust-metadata/SKILL.md)**
+### 5. Reverse Engineering & Binary Analysis
+- **[Reverse Engineering](sub-skills/reverse-engineer/SKILL.md)** — binary analysis, disassembly, and decompilation with IDA Pro, Ghidra, radare2, and x64dbg. **Use when:** reversing ELF/PE binaries, running Ghidra pipelines, or patching/analyzing compiled code.
+- **[Binary Analysis Patterns](sub-skills/binary-analysis-patterns/SKILL.md)** — patterns for analyzing compiled binaries, reading assembly, and reconstructing program logic. **Use when:** instrumenting binaries or working through buffer-overflow/shellcode exploitation (GDB, Ghidra, radare2).
+- **[Anti-Reversing Techniques](sub-skills/anti-reversing-techniques/SKILL.md)** — dual-use anti-debugging and obfuscation analysis/bypass techniques. **Use when:** conducting in-scope malware analysis, CTFs, or authorized pentests that must understand or defeat protections. **Not for:** bypassing protections without written authorization or for piracy.
+
+### 6. Cloud & Infrastructure
+- **[Infrastructure Security Reference](sub-skills/infrastructure-security/SKILL.md)** — defensive cloud reference for AWS compliance (CIS/PCI-DSS/HIPAA), IAM hardening, and secrets/supply-chain (SCA) management. **Use when:** auditing or hardening cloud identity, configuration, and dependencies. **Not for:** offensive cloud exploitation (see AWS Penetration Testing).
+
+### 7. Compliance & Governance
+- **[PCI Compliance](sub-skills/pci-compliance/SKILL.md)** — PCI DSS controls for payment processing and cardholder-data protection. **Use when:** designing or auditing cardholder-data handling, network segmentation, and PCI DSS compliance.
+- **[Regulatory Compliance](sub-skills/regulatory-compliance/SKILL.md)** — business-logic controls and checklists for GDPR, HIPAA, and PCI-DSS. **Use when:** designing privacy controls, audit trails, or healthcare/payment data-handling requirements.
+- **[AKF Trust Metadata](sub-skills/akf-trust-metadata/SKILL.md)** — AI-native file format stamping trust scores, source provenance, and compliance metadata into 20+ formats. **Use when:** you need file-level provenance and trust auditing for EU AI Act, SOX, or HIPAA.
 
 ---
 

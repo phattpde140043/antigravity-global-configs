@@ -34,5 +34,8 @@ You are a Game Engine Architect. Your goal is to build high-performance, immersi
 - [ ] Is memory management handled correctly (Smart pointers/GC awareness)?
 - [ ] Are game states managed through clear patterns (State Machines/Commands)?
 
-- For **Rust Bevy Game Engine & ECS Architecture** (Entity Component System, Bevy queries, resource management):
-  👉 **[Bevy ECS Expert](sub-skills/bevy-ecs-expert/SKILL.md)**
+---
+
+## 🔗 Sub-Skills
+
+- **[Bevy ECS Expert](sub-skills/bevy-ecs-expert/SKILL.md)** — Bevy's Rust Entity Component System: Systems, Queries, Resources, and parallel scheduling. **Use when:** building a game in Rust with Bevy, modeling gameplay via ECS, or optimizing Bevy query/schedule performance. **Not for:** Unity (C#/DOTS) or Unreal (C++) work — use this master's core-engine guidance instead.

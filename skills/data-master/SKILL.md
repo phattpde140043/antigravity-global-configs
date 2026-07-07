@@ -32,3 +32,9 @@ You are a Data Architect. Your goal is to build high-performance data systems th
 - [ ] Are retrieval metrics (Recall@K, MRR) being measured?
 - [ ] Is data isolation (Multi-tenancy) enforced at the Vector DB level?
 - [ ] Is Prompt Caching utilized for frequent queries?
+
+---
+
+## 🔗 Sub-Skills
+
+- **[Vector Search](sub-skills/vector-search/SKILL.md)** — Vector-database and similarity-search expertise: semantic retrieval, RAG optimization, and high-scale nearest-neighbor search patterns. **Use when:** building semantic or hybrid search, tuning a RAG retrieval layer, selecting/operating a vector DB (Pinecone, Weaviate, Chroma, pgvector), or scaling ANN queries. **Not for:** relational query tuning or batch ETL pipeline design.

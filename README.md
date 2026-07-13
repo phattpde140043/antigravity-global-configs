@@ -8,20 +8,32 @@ These configurations encode the workflows, quality gates, and best practices tha
 
 ## 🏗️ Master Orchestrators (The Brains)
 
-The system uses a **Conductor-Musician** pattern. These 10 Master Skills orchestrate specialized sub-disciplines to ensure high-fidelity results.
+The system uses a **Conductor-Musician** pattern. These **11 primary Master Skills** orchestrate specialized sub-disciplines to ensure high-fidelity results.
 
 | Master Skill | Responsibility |
 |:---|:---|
 | [**backend-architect**](./skills/backend-architect/SKILL.md) | **System Lead**. Microservices, Scalability, and Clean Architecture standards. |
+| [**data-master**](./skills/data-master/SKILL.md) | **Data Lead**. Databases (PostgreSQL, ClickHouse, Redis), SQL/query tuning, schema & migration design, and AI data (RAG, vector search). |
 | [**security-master**](./skills/security-master/SKILL.md) | **Security Lead**. Threat Modeling, Secure Coding, Pentesting, and Hardening. |
 | [**senior-qa**](./skills/senior-qa/SKILL.md) | **Quality Lead**. E2E (Playwright), Unit Testing, TDD, and Flaky Mitigation. |
 | [**review-master**](./skills/review-master/SKILL.md) | **Audit Lead**. Readiness Scoring (>85), AI Slop Scan, and PR Excellence. |
-| [**ai-master**](./skills/ai-master/SKILL.md) | **AI & Data Lead**. ML Architecture, Data Engineering, Search, and Research. |
+| [**ai-master**](./skills/ai-master/SKILL.md) | **AI Lead**. ML Architecture, Deep Research, and Search (Exa/Tavily). |
 | [**agent-master**](./skills/agent-master/SKILL.md) | **Agent Lead**. Core Operations, Debugging, Planning, and Context Engineering. |
 | [**product-master**](./skills/product-master/SKILL.md) | **Product Lead**. Business Strategy, Market Research, and Stakeholder Comms. |
 | [**ux-master**](./skills/ux-master/SKILL.md) | **UX Lead**. Frontend Design, UI Patterns, and Accessibility. |
 | [**content-master**](./skills/content-master/SKILL.md) | **Content Lead**. Technical Writing, Documentation, and Standards. |
-| [**infrastructure-master**](./skills/infrastructure-master/SKILL.md) | **Infra Lead**. Cloud IaC, AWS CDK, and Production Hardening. |
+| [**infrastructure-master**](./skills/infrastructure-master/SKILL.md) | **Infra Lead**. Cloud IaC, AWS CDK, Docker, and Production Hardening. |
+
+### Specialized Masters
+Narrower-domain orchestrators, invoked directly when their domain applies:
+
+| Master Skill | Domain |
+|:---|:---|
+| [**workflow-automation**](./skills/workflow-automation/SKILL.md) | Third-party integrations & automation (Salesforce, Telegram, Git, Square, …). |
+| [**game-development-master**](./skills/game-development-master/SKILL.md) | Game engines & ECS (Bevy). |
+| [**quantum-engineering**](./skills/quantum-engineering/SKILL.md) | Quantum circuits (Cirq). |
+
+> Empty placeholder masters have been retired to [`archive/empty-masters/`](./archive/empty-masters/). A master with zero sub-skills does not belong in `skills/` (see [Rule 20](./rules.md) — *Router Must Not Lie*).
 
 ---
 
@@ -34,6 +46,13 @@ Master Skills delegate deep-dive tasks to specialized sub-skills.
 - [Architecture Design](./skills/backend-architect/sub-skills/architecture-design/SKILL.md)
 - [API Design](./skills/backend-architect/sub-skills/api-design/SKILL.md)
 - [Performance Optimization](./skills/backend-architect/sub-skills/performance-optimization/SKILL.md)
+
+### 🗄️ Data & Storage Cluster
+- [PostgreSQL Development](./skills/data-master/sub-skills/postgresql/SKILL.md)
+- [PostgreSQL Optimization](./skills/data-master/sub-skills/postgresql-optimization/SKILL.md)
+- [ClickHouse Engineering](./skills/data-master/sub-skills/cc-skill-clickhouse-io/SKILL.md)
+- [Redis CLI Reference](./skills/data-master/sub-skills/redis-cli/SKILL.md)
+- [Vector Search](./skills/data-master/sub-skills/vector-search/SKILL.md)
 
 ### 🛡️ Security & Compliance Cluster
 - [Security Design & STRIDE](./skills/security-master/sub-skills/security-design/SKILL.md)

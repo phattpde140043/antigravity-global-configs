@@ -4,6 +4,18 @@ description: "Hard constraints that must never be violated when generating or mo
 
 # Engineering Rules (Strict)
 
+## 🧭 The Spine — 5 Core Principles
+
+The memorable index to everything below. Structured after [Andrej Karpathy's coding guidelines](https://x.com/karpathy). The **numbered rules that follow are the authoritative detail** — this spine is how to hold them in your head, not a replacement for them. Bias toward caution over speed; for trivial tasks, use judgment.
+
+1. **Think before coding.** Surface assumptions, name confusion, present tradeoffs, and get approval before you touch code — never pick a path silently. → *Rules 1, 15, 16.*
+2. **Simplicity first.** The minimum code that solves the problem, nothing speculative. If 200 lines could be 50, rewrite it. No slop, no cleverness. → *Rules 2, 10, 12, 13.*
+3. **Surgical changes.** Touch only what the request requires; preserve existing behavior and style; clean up only your own mess. Every changed line traces to the ask. → *Rules 3, 4, 6, 8, 9.*
+4. **Goal-driven & verified.** Turn the task into a checkable success criterion, then loop until it passes — including performance and plan-completion. Weak criteria ("make it work") are not done. → *Rules 5, 11, 17.*
+5. **Guardrails are non-negotiable.** Security baseline, the user-approval iron law, no rationalizing past a rule, and skill-registry integrity hold under every pressure. → *Rules 7, 14, 18, 19, 20.*
+
+---
+
 ## 1. No Assumptions Without Acknowledgement
 
 - Never silently assume unclear requirements

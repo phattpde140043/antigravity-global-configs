@@ -55,6 +55,9 @@ Infrastructure is code. Treat it with the same rigor as application code (versio
 - **[Azure Dev CLI Deployment](sub-skills/azd-deployment/SKILL.md)** — deploys containerized frontend + backend apps to Azure Container Apps via the Azure Developer CLI. **Use when:** deploying containers to Azure with remote builds, managed identity, and idempotent infrastructure. **Not for:** AWS or Vercel targets.
 - **[Vercel Deployment](sub-skills/vercel-deployment/SKILL.md)** — deploys and tunes Next.js apps on Vercel's edge. **Use when:** configuring edge middleware, serverless functions, cache-control headers, or routing on Vercel. **Not for:** non-Vercel hosts.
 
+### 🐳 Containers
+- **[Docker Expert](sub-skills/docker-expert/SKILL.md)** — container image optimization, multi-stage builds, security hardening, and orchestration patterns. **Use when:** writing or optimizing Dockerfiles/Compose, shrinking image size, or hardening containers for production (e.g. Rails 8 / Ruby service images). **Not for:** cloud IaC provisioning (see Terraform) or CI/CD pipeline authoring (see CI/CD Workflow Automation).
+
 ### 🛠️ Infrastructure as Code (Terraform)
 - **[Terraform Core Patterns](sub-skills/terraform/core/SKILL.md)** — advanced/enterprise Terraform & OpenTofu automation and state management. **Use when:** designing remote state backends, workspaces, policy-as-code, or multi-cloud stacks at enterprise scale. **Not for:** one-off manual changes or a non-Terraform IaC tool.
 - **[Terraform Basics](sub-skills/terraform/basics/SKILL.md)** — Terraform/OpenTofu best-practices and testing guidance. **Use when:** creating new configs/modules, choosing a testing approach (validate/plan/frameworks), or reviewing/refactoring existing IaC. **Not for:** basic syntax lookups or provider API reference.

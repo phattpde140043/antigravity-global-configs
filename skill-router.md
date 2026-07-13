@@ -55,6 +55,11 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. O
 | `implementation-planning` | **agent-master** | Creating phased, dependency-ordered task lists. |
 | `frontend-design` | **ux-master** | Building premium, high-aesthetic UI systems. |
 | `documentation-and-adrs` | **content-master** | Recording critical architectural decisions. |
+| `skill-rails-upgrade` | **backend-architect** | Assessing and planning a Ruby on Rails version upgrade — gem/Ruby compatibility, deprecations, config changes, and risk hotspots. USE WHEN: upgrading Rails (e.g. to Rails 8) or auditing gem compatibility. NOT FOR: creating a new app (use `new-rails-project`). |
+| `cc-skill-clickhouse-io` | **backend-architect** | ClickHouse OLAP schema design, query optimization, and analytical data-engineering (MergeTree, materialized views, partitioning). USE WHEN: modeling analytics tables or tuning aggregate queries on ClickHouse. NOT FOR: transactional schema work (use `postgresql`). |
+| `stripe-integration` | **backend-architect** | PCI-conscious Stripe payment flows — Checkout, subscriptions, webhooks, idempotency, and refunds. USE WHEN: implementing Stripe billing or webhook handling specifically. NOT FOR: non-Stripe processors (use `payment-integration`). |
+| `docker-expert` | **infrastructure-master** | Container image optimization, multi-stage builds, security hardening, and orchestration patterns. USE WHEN: writing or optimizing Dockerfiles/Compose or hardening production containers. NOT FOR: cloud IaC provisioning (use `terraform`) or CI/CD authoring (use `cicd-automation-workflow-automate`). |
+| `cucumber-skill` | **senior-qa** | Cucumber BDD suites — Gherkin feature files and step definitions (Ruby/JS/Java). USE WHEN: writing behavior-driven acceptance tests with Given/When/Then (e.g. cucumber-rails). NOT FOR: unit-level TDD (use `tdd-workflow`) or Playwright E2E (use `e2e-testing`). |
 
 ---
 

@@ -149,3 +149,12 @@ Exception:
 - If you think there is even a **1% chance** a skill might apply to what you are doing, you **ABSOLUTELY MUST** invoke the skill.
 - This is not negotiable. This is not optional. You cannot rationalize your way out of this.
 - Invoke relevant skills BEFORE any response or action, including clarifying questions. Skills tell you HOW to gather information and approach the task.
+
+## 20. Skill Registry Integrity — Router Must Not Lie (NEW)
+
+Rule 19 governs *invoking* skills (be liberal at runtime). This rule governs *authoring* them (be disciplined when you add/rename/remove/relocate one).
+
+- **Router-must-not-lie:** whenever you add, rename, remove, or relocate a skill, in the SAME change re-sync `skill-router.md` and the parent master's `SKILL.md`. A router that references a missing skill (dangling link) or omits a present one (orphan), or a master that lists a moved sub-skill, is a defect — fix it before finishing.
+- **Single source of truth:** a given capability lives in exactly one canonical skill. If two masters need it, one holds the skill and the other cross-references it (`../<master>/sub-skills/<name>/SKILL.md`) — never a second divergent copy.
+- **Split only when the cut earns it:** add a new skill only when it has a distinct trigger or another skill must reach it. Prefer extending or disambiguating an existing skill over creating a near-duplicate. No empty master orchestrators — a master with zero sub-skills belongs in `archive/`, not `skills/`.
+- **Prune, don't just add:** when editing a skill, hunt no-ops and duplication and remove them. See [Writing Skills → Skill Architecture & Pruning](skills/agent-master/sub-skills/writing-skills/SKILL.md) for the authoring standard.

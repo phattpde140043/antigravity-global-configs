@@ -31,7 +31,7 @@ When performing writing or documentation tasks, you **MUST** chain to the follow
 
 
 ### 1. Technical Writing & Style
-- **[Writing Skills](sub-skills/writing-skills/SKILL.md)** — authoring guide for creating and refining agent skills themselves. **Use when:** building or improving a SKILL.md, its frontmatter, or delegation structure. **Not for:** writing end-user prose or documentation (use the style and docs skills below).
+- **[Writing Skills](../agent-master/sub-skills/writing-skills/SKILL.md)** — authoring guide for creating and refining agent skills themselves (canonical skill lives in **agent-master**). **Use when:** building or improving a SKILL.md, its frontmatter, or delegation structure. **Not for:** writing end-user prose or documentation (use the style and docs skills below).
 - **[Beautiful Prose Guidelines](sub-skills/beautiful-prose/SKILL.md)** — a strict style contract for clean, forceful English free of AI cadence, filler, and therapeutic tone. **Use when:** a draft or rewrite must read as timeless, concrete human prose. **Not for:** structured reference or API docs where terseness beats voice.
 - **[Avoid AI Writing](sub-skills/avoid-ai-writing/SKILL.md)** — audits and rewrites copy against 21 categories of AI writing tells using a 43-entry replacement table. **Use when:** text sounds AI-generated and needs humanizing before publish. **Not for:** first-draft generation from scratch.
 - **[Bulletmind Structured Thinking](sub-skills/bulletmind/SKILL.md)** — converts input into clean, hierarchical bullet points. **Use when:** summarizing, note-taking, or compressing content into nested bullets. **Not for:** flowing narrative prose.
@@ -74,7 +74,7 @@ When performing writing or documentation tasks, you **MUST** chain to the follow
 - **[PDF Processing (Official)](sub-skills/pdf-official/SKILL.md)** — the same PDF processing guide (extraction, generation, form filling). **Use when:** the same PDF tasks as above. **Not for:** anything distinct — this file is a duplicate copy of PDF Processing.
 
 ### 8. Governance — Coding Standards
-- **[Coding Standards](sub-skills/coding-standards/SKILL.md)** — core code-quality baseline and simplification guide (KISS, DRY, YAGNI, naming, async hygiene, error handling). **Use when:** writing code, reviewing for maintainability, or refactoring for clarity. **Not for:** prose or documentation style.
+- **[Coding Standards](../agent-master/sub-skills/coding-standards/SKILL.md)** — core code-quality baseline and simplification guide (KISS, DRY, YAGNI, naming, async hygiene, error handling); canonical skill lives in **agent-master**. **Use when:** writing code, reviewing for maintainability, or refactoring for clarity. **Not for:** prose or documentation style.
 
 ---
 

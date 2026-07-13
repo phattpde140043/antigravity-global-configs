@@ -657,3 +657,41 @@ Same cycle: RED (baseline) → GREEN (write skill) → REFACTOR (close loopholes
 Same benefits: Better quality, fewer surprises, bulletproof results.
 
 If you follow TDD for code, follow it for skills. It's the same discipline applied to documentation.
+
+---
+
+# Skill Architecture & Pruning
+
+TDD (above) proves a skill *works*. This section keeps it *predictable and lean* — the structural discipline that stops a skill set from rotting into sprawl. (Adapted from Matt Pocock's `writing-great-skills`.)
+
+**Predictability is the root virtue:** the agent should take the same *process* every run. Every lever below serves it.
+
+## Information Hierarchy (the disclosure ladder)
+Rank every piece of content by how immediately the agent needs it, and place it accordingly:
+
+1. **In-skill step** — an ordered action in `SKILL.md`; what the agent does, in order. Each step ends on a **completion criterion** that is *checkable* (can the agent tell done from not-done?) and, where it matters, *exhaustive* ("every modified model accounted for", not "produce a list"). A vague criterion invites premature completion.
+2. **In-skill reference** — a rule/fact/definition consulted on demand. A flat peer-set (e.g. every rule of a review on one rung) is fine, not a smell.
+3. **External reference** — reference pushed out of `SKILL.md` into a sibling file, reached by a **context pointer** and loaded only when the pointer fires.
+
+**Progressive disclosure** is the move down the ladder: inline what *every* run needs; push behind a pointer what only *some* runs (branches) reach. A pointer's *wording*, not its target, decides how reliably the agent follows it. **In antigravity specifically:** sub-skills are read on demand via the master → so the always-paid cost is the **master `SKILL.md` length + router**. Keep masters to a lean catalog; push depth into the sub-skill files.
+
+## Leading Words
+A **leading word** is a compact concept already in the model's pretraining (e.g. *tracer bullet*, *fog of war*, *red* loop) that the agent thinks *with* while running the skill. Repeated across the text it accumulates a distributed definition and anchors a whole region of behaviour in the fewest tokens. Collapse restated triads into one — "fast, deterministic, low-overhead" → *tight*. You win twice: fewer tokens and a sharper hook.
+
+## Single Source of Truth
+Keep each meaning in exactly one authoritative place, so changing behaviour is a one-place edit. The same skill referenced from two masters, or two skills teaching the same thing, is a **duplication** defect — pick one canonical home and have the other point to it.
+
+## Split Only When the Cut Earns It
+Granularity spends effort and context, so split a skill only when the cut pays for itself:
+- **By trigger** — carve out a skill when it has a distinct **leading word** that should fire it on its own, or another skill must reach it.
+- **By sequence** — split a run of steps when the steps *ahead* tempt the agent to rush the one in front of it (premature completion); hiding them forces more legwork on the current task.
+
+## Failure Modes (diagnose skills with these)
+- **No-op** — a line the model already obeys by default; you pay tokens to say nothing. Test: does it change behaviour vs the default? Fix a weak word (*be thorough*) with a stronger one (*relentless*), not more prose.
+- **Duplication** — the same meaning in more than one place; costs maintenance and tokens and inflates a meaning's apparent rank.
+- **Sediment** — stale layers that accrete because adding feels safe and removing feels risky. The default fate of any skill without a pruning pass.
+- **Sprawl** — simply too long even when every line is live; cure with the ladder (disclose reference behind pointers, split by branch).
+- **Negation** — steering by prohibition backfires (*don't think of an elephant*). Prompt the **positive**: state the target behaviour so the banned one is never named; keep a bare prohibition only as a hard guardrail, paired with what to do instead.
+
+## Pruning Pass
+Periodically: check every line for **relevance** (does it still bear on what the skill does?), then hunt **no-ops sentence by sentence** — when one fails the no-op test, delete the whole sentence rather than trim words. Be aggressive; most prose that fails should go, not be rewritten.

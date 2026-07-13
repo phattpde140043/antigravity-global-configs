@@ -21,6 +21,7 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. O
 | **senior-qa** | Test strategy, E2E (Playwright), Unit tests, TDD cycles, and flaky test investigation. | Production features (unless TDD). |
 | **review-master** | Code audits, PR reviews, readiness scoring (>85), and context analysis. | Initial architecture planning. |
 | **ai-master** | ML architecture, data pipelines, advanced search (Exa), and deep research. | Simple CRUD logic; UI design. |
+| **data-master** | Databases (PostgreSQL, ClickHouse, Redis), SQL/query tuning, schema & migration design, and AI data (RAG, vector search). | Application/business logic; API endpoint design (use backend-architect). |
 | **agent-master** | Core operations, systematic debugging, context engineering, and planning. | Domain-specific business logic. |
 | **product-master** | Business strategy, product discovery, investor materials, and brand voice. | Deep technical implementation. |
 | **ux-master** | Frontend design, UI patterns, accessibility (a11y), and presentations. | Backend infra; security audits. |
@@ -56,7 +57,7 @@ description: "Skill routing map with explicit USE WHEN and NOT FOR boundaries. O
 | `frontend-design` | **ux-master** | Building premium, high-aesthetic UI systems. |
 | `documentation-and-adrs` | **content-master** | Recording critical architectural decisions. |
 | `skill-rails-upgrade` | **backend-architect** | Assessing and planning a Ruby on Rails version upgrade — gem/Ruby compatibility, deprecations, config changes, and risk hotspots. USE WHEN: upgrading Rails (e.g. to Rails 8) or auditing gem compatibility. NOT FOR: creating a new app (use `new-rails-project`). |
-| `cc-skill-clickhouse-io` | **backend-architect** | ClickHouse OLAP schema design, query optimization, and analytical data-engineering (MergeTree, materialized views, partitioning). USE WHEN: modeling analytics tables or tuning aggregate queries on ClickHouse. NOT FOR: transactional schema work (use `postgresql`). |
+| `cc-skill-clickhouse-io` | **data-master** | ClickHouse OLAP schema design, query optimization, and analytical data-engineering (MergeTree, materialized views, partitioning). USE WHEN: modeling analytics tables or tuning aggregate queries on ClickHouse. NOT FOR: transactional schema work (use `postgresql`). |
 | `stripe-integration` | **backend-architect** | PCI-conscious Stripe payment flows — Checkout, subscriptions, webhooks, idempotency, and refunds. USE WHEN: implementing Stripe billing or webhook handling specifically. NOT FOR: non-Stripe processors (use `payment-integration`). |
 | `docker-expert` | **infrastructure-master** | Container image optimization, multi-stage builds, security hardening, and orchestration patterns. USE WHEN: writing or optimizing Dockerfiles/Compose or hardening production containers. NOT FOR: cloud IaC provisioning (use `terraform`) or CI/CD authoring (use `cicd-automation-workflow-automate`). |
 | `cucumber-skill` | **senior-qa** | Cucumber BDD suites — Gherkin feature files and step definitions (Ruby/JS/Java). USE WHEN: writing behavior-driven acceptance tests with Given/When/Then (e.g. cucumber-rails). NOT FOR: unit-level TDD (use `tdd-workflow`) or Playwright E2E (use `e2e-testing`). |
